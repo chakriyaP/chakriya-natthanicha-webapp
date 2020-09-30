@@ -4,12 +4,17 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: 1;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 64px;
   background-color: #eee;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#nav-bar .link {
+  text-decoration: none;
+  color: #000;
 }
 
 #nav-bar .logo {

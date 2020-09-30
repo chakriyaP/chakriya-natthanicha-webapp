@@ -37,7 +37,14 @@
   justify-content: space-around;
 }
 
-.homePage .select div img {
+.homePage .select .crad-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage .select .crad-select img {
   width: 100%;
   max-width: 420px;
   height: auto;
@@ -45,11 +52,11 @@
   margin-top: -200px;
 }
 
-.homePage .select div h2 {
+.homePage .select .crad-select h2 {
   color: #fff;
 }
 
-.homePage .select div samp {
+.homePage .select .crad-select samp {
   color: #B3B842;
   font-size: 2rem;
 }

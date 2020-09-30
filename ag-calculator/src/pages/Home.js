@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../components/NavigationBar.js";
 import "../assets/css/HomePage.css";
-import {Start} from "../components/button.js";
+import { Start } from "../components/button.js";
 
 function Home() {
   return (
@@ -17,7 +17,7 @@ function Home() {
       </div>
 
       <div className="select">
-        <div>
+        <div className="crad-select">
           <img
             src={
               "https://assets.cnhindustrial.com/caseih/APAC/APACASSETS/Products/Harvesters/Sugar-Cane-Harvester-Austoft-8010/036-case_case-ih-coloured_3533_1056.jpg"
@@ -33,7 +33,7 @@ function Home() {
           <Start></Start>
         </div>
 
-        <div>
+        <div className="crad-select">
           <img
             src={
               "https://images.unsplash.com/photo-1565647952915-9644fcd446a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"

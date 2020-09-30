@@ -42,7 +42,11 @@ $third : #353E3B;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        div {
+        .crad-select{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             img {
                 width: 100%;
                 max-width: 420px;
