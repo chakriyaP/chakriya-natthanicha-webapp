@@ -1,0 +1,18 @@
+#start {
+  max-width: 100px;
+  max-height: 90px;
+  border: none;
+  background-color: #B3B842;
+}
+
+button {
+  border: none;
+  background-color: #B3B842;
+  color: #fff;
+  width: 220px;
+  height: 100px;
+  max-width: 300px;
+  max-height: 50px;
+  border-radius: 20px;
+  font-size: 2rem;
+}
