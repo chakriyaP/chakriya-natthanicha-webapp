@@ -5,25 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
-=======
   background-image: url("https://www.engineeringtoday.net/wp-content/uploads/2020/02/kubota-01.jpg");
   background-size: cover;
   background-repeat:  no-repeat;
   background-attachment:  fixed;
->>>>>>> natthanicha
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-<<<<<<< HEAD
-=======
 /* #first-form {
   background-image: url("https://www.engineeringtoday.net/wp-content/uploads/2020/02/kubota-01.jpg");
   background-size: cover;
   background: no-repeat;
   background: fixed;
  } */
->>>>>>> natthanicha
