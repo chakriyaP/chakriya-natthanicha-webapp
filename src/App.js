@@ -13,27 +13,27 @@ import FirstformRice from "./pages/FirstformRice.js"
 
 function App() {
   return (
-    // <Router>
-    //   <Nav></Nav>
-    //   <Switch>
-    //     <Route path="/cane">
-    //       <CaneCal></CaneCal>
-    //     </Route>
-    //     <Route path="/rice">
-    //       <FirstformRice></FirstformRice>
-    //     </Route>
-    //     <Route path="/history">
-    //     <History></History>
-    //     </Route>
-    //     <Route path="/staff">
-    //       <Home />
-    //     </Route>
-    //     <Route path="/">
-    //       <Home></Home>
-    //     </Route>
-    //   </Switch>
-    // </Router>
-    <FirstformRice></FirstformRice>
+    <Router>
+      <Nav></Nav>
+      <Switch>
+        <Route path="/cane">
+          <CaneCal></CaneCal>
+        </Route>
+        <Route path="/rice">
+          <FirstformRice></FirstformRice>
+        </Route>
+        <Route path="/history">
+        <History></History>
+        </Route>
+        <Route path="/staff">
+          <Home />
+        </Route>
+        <Route path="/">
+          <Home></Home>
+        </Route>
+      </Switch>
+    </Router>
+    
   );
 }
 
