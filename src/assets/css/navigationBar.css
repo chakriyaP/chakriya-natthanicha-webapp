@@ -1,0 +1,42 @@
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 64px;
+  background-color: #eee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#nav-bar .link {
+  text-decoration: none;
+  color: #000;
+}
+
+#nav-bar .logo {
+  margin-left: 20px;
+}
+
+#nav-bar .navigata {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+#nav-bar .navigata h3 {
+  padding-right: 20px;
+}
+
+#nav-bar .navigata h3:hover {
+  color: #B3B842;
+}
+
+#nav-bar .navigata #home-page {
+  color: #B3B842;
+}

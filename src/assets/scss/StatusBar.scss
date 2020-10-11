@@ -1,0 +1,22 @@
+.status-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-top: 3%;
+}
+h2 {
+  margin: 0em;
+}
+.dot{
+  background-color:black;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rectangle{
+  background-color:black;
+  
+}
