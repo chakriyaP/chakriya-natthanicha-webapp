@@ -1,9 +1,7 @@
-$PRIMARYCOLOR : #eee;
-$SECONDCOLOR : #B3B842;
-$third : #353E3B;
+@use './common.scss';
 
 .homePage {
-    font-family: 'Kanit', sans-serif;
+    font-family: $font;
     display: flex;
     flex-direction: column;
     width: 100vw;

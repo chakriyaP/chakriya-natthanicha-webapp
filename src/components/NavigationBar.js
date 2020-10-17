@@ -1,14 +1,16 @@
 import React from "react";
 import "../assets/css/navigationBar.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
+import { FaPagelines,FaLock } from "react-icons/fa";
 
 function NavigationBar() {
   return (
     <div id="nav-bar">
       <div className="logo">
         <h1>
+        <FaPagelines/>
           AG<samp>calculator</samp>
         </h1>
       </div>
@@ -18,19 +20,19 @@ function NavigationBar() {
           <h3 id="home-page">หน้าหลัก</h3>
         </Link>
         <Link to="/cane" className="link">
-        <h3>รถตัดอ้อย</h3>
+          <h3>รถตัดอ้อย</h3>
         </Link>
         <Link to="/rice" className="link">
-        <h3>เครื่องเกี่ยวนวดข้าว </h3>
+          <h3>เครื่องเกี่ยวนวดข้าว </h3>
         </Link>
         <Link to="/history" className="link">
-        <h3>ประวัติ </h3>
+          <h3>ประวัติ </h3>
         </Link>
         <Link to="/staff" className="link">
-        <div className="staff">
-          <h3>staff</h3>
-        </div>
-        </Link>        
+          <div className="staff">
+            <h3><FaLock/> staff</h3>
+          </div>
+        </Link>
       </div>
     </div>
   );
