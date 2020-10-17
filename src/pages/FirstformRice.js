@@ -3,7 +3,6 @@ import StatusBar from "../components/StatusBar.js";
 import "../assets/css/FirstformRice.css";
 
 function FirstformRice() {
-  let widthAndHight = 60;
   return (
     <div id="first-form">
       <div className="block">
