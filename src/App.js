@@ -1,22 +1,20 @@
 import React from "react";
 import "./App.css";
 
+import HomePage from "./pages/Home.js";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Nav from "./components/NavigationBar.js";
+import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
 import FirstformRice from "./pages/FirstformRice.js"
 
-//import icon test
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-// library.add(fab)
 
 function App() {
   return (
     <Router>
-      <Nav></Nav>
+      <Navbar/>
       <Switch>
         <Route path="/cane">
           <CaneCal></CaneCal>

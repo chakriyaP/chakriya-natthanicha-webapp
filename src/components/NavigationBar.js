@@ -1,41 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../assets/css/navigationBar.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { MdFingerprint } from "react-icons/md";
+import { FaPagelines, FaBars, FaTimes, FaLock } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
 
-import { FaPagelines,FaLock } from "react-icons/fa";
+function Navbar() {
+  const [click, setClick] = useState(false);
 
-function NavigationBar() {
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+  const location = useLocation();
+
+  const isCurrentPage = (page) => {
+    return location.pathname == page ? "#B3B842" : "#353E3B";
+  };
   return (
-    <div id="nav-bar">
-      <div className="logo">
-        <h1>
-        <FaPagelines/>
+    <nav className="navbar">
+      <div className="navbar-container container">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <FaPagelines id="faPagelines" className="navbar-icon" />
           AG<samp>calculator</samp>
-        </h1>
-      </div>
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link
+              to="/"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              style={{ color: isCurrentPage("/") }}
+            >
+              หน้าหลัก
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/cane"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              style={{ color: isCurrentPage("/cane") }}
+            >
+              รถตัดอ้อย
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/rice"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              style={{ color: isCurrentPage("/rice") }}
+            >
+              เครื่องเกี่ยวนวดข้าว
+            </Link>
+          </li>
 
-      <div className="navigata">
-        <Link to="/" className="link">
-          <h3 id="home-page">หน้าหลัก</h3>
-        </Link>
-        <Link to="/cane" className="link">
-          <h3>รถตัดอ้อย</h3>
-        </Link>
-        <Link to="/rice" className="link">
-          <h3>เครื่องเกี่ยวนวดข้าว </h3>
-        </Link>
-        <Link to="/history" className="link">
-          <h3>ประวัติ </h3>
-        </Link>
-        <Link to="/staff" className="link">
-          <div className="staff">
-            <h3><FaLock/> staff</h3>
-          </div>
-        </Link>
+          <li className="nav-item">
+            <Link
+              to="/history"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              style={{ color: isCurrentPage("/history") }}
+            >
+              ประวัติ
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/staff"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              style={{ color: isCurrentPage("/staff") }}
+            >
+              <FaLock /> staff
+            </Link>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
-export default NavigationBar;
+export default Navbar;
