@@ -1,120 +1,31 @@
-    #first-form {
+.first-form {
         width: 60%;
-        display: block;
-        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin:auto ;
         margin-top: 10%;
+        margin-bottom: 10%;
         background-color: #eeeeee;
         border-radius: 40px;
-        
+}
+select{
+        border : solid 1px;
+        border-radius: 5px;
+}
+#region{
+    border : solid 1px;
+    border-radius: 5px;
+    padding: 1% 0% 1% 0%;
+    width: 600px;
+}
+.selectRG{
+    padding: 3% 1% 1% 1%;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
     }
-
-    .header-form {
-    width: 100%;
-    padding-top: 3%;
-    border-radius: 30px 30px 0 0   ;
-    background-color: white;
-    padding-bottom: 5%;
-    }
-    .block {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    
-    }
-.region{
-    text-align: left;
-    margin: 0 10% 0 10%;
-    border: 1px;
-
-    
-}
-#selectForm{
-    width: 100%;
-    padding: 1.1%;
-    border-radius: 10px;
-    border-color: black;
-}
-.form{
-    width: 100%;
-}
-.fillPrice{
-    border-radius: 10px;
-    padding: 1% ;
-    width: 97.7%;
-}
-.price{
-    text-align: left;
-    margin: 0 10% 0 10%;
-    
-}
-.fillPrice2{
-    border-radius: 10px;
-    padding: 1% ;
-    width: 97.7%;
-}
-.price2{
-    text-align: left;
-    margin: 0 10% 0 10%;
-    
-}
-.fillPrice3{
-    border-radius: 10px;
-    padding: 1% ;
-    width: 97.7%;
-}
-.price3{
-    text-align: left;
-    margin: 0 10% 0 10%;
-    
-}
-.fillPrice4{
-    border-radius: 10px;
-    padding: 1% ;
-    width: 97.7%;
-}
-.price4{
-    text-align: left;
-    margin: 0 10% 5% 10%;
-    
-}
-.buttonFill{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 0 10% 5% 10%;
-    
-}
-.buttonBack{
-    background-color: #A6A6A4;
-    padding: 2%;
-    margin: 0 10% 0 0;
-    width: 20%;
-    border: 0;
-    border-radius: 10px;
-}
-.buttonNext{
-    background-color:#B3B842;
-    padding: 2%;
-    margin: 0 0 0 10% ;
-    border: 0;
-    width: 20%;
-    border-radius: 10px;
-}
-footer{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    color: #353E3B;
-
-}
-.reg{
-    background-color: #353E3B;
-}
+  }
