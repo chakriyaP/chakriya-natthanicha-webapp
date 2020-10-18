@@ -1,0 +1,14 @@
+input {
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 1% 0% 1% 0%;
+  width: 500px;
+}
+
+form {
+  padding: 1%;
+}
+
+span {
+  width: 300px;
+}
