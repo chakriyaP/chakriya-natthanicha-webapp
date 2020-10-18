@@ -6,7 +6,6 @@ import { Start } from "../components/button.js";
 function Home() {
   return (
     <div className="homePage">
-      <Nav></Nav>
       <div className="headder">
         <div>
           <h1>

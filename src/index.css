@@ -5,10 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://www.engineeringtoday.net/wp-content/uploads/2020/02/kubota-01.jpg");
-  background-size: cover;
-  background-repeat:  no-repeat;
-  background-attachment:  fixed;
+ 
+ 
 }
 
 code {
