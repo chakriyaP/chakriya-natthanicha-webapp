@@ -9,46 +9,78 @@ function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+  const location = useLocation();
+
+  const isCurrentPage = (page) => {
+    return location.pathname == page ? "#B3B842" : "#353E3B";
+  };
+  console.log(location.pathname);
   return (
     <nav class="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
-      <div class="container-fluid">
-        <Link to="/" class="navbar-brand">
-          <FaPagelines className="mr-1 mb-1 second-cl" />
-          AG<samp className="second-cl">calculator</samp>
-        </Link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#narbarResposive"
-        >
-          {click ? <FaTimes /> : <FaBars />}
+      <div class="container-fluid row">
+        {/* <div class="navbar-brand bg-warning col-11"> */}
+          <Link to="/" class="navbar-brand">
+            <FaPagelines className="mb-4 second-cl" size="36px" />
+            <samp className="h1">AG</samp>
+            <samp className="second-cl h2">calculator</samp>
+          </Link>
+        {/* </div> */}
 
-        </button>
+          <button
+            class="btn-sm navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#narbarResposive"
+            onClick={handleClick}
+          >
+            {/* <FaTimes/>  */}
+          {click ? <FaTimes/> : <FaBars />}
+        </button> 
+      
         <div class="collapse navbar-collapse" id="narbarResposive">
           <ul class="navbar-nav ml-auto primary-bg">
             <li class="nav-item">
-              <Link to="/" class="nav-link active text-dark">
+              <Link
+                to="/"
+                class="nav-link active"
+                style={{ color: isCurrentPage("/") }}
+              >
                 หน้าหลัก
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/cane" class="nav-link text-dark">
+              <Link
+                to="/cane"
+                class="nav-link"
+                style={{ color: isCurrentPage("/cane") }}
+              >
                 รถตัดอ้อย
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/rice" class="nav-link text-dark">
+              <Link
+                to="/rice"
+                class="nav-link"
+                style={{ color: isCurrentPage("/rice") }}
+              >
                 เครื่องเกี่ยวนวดข้าว
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/history" class="nav-link text-dark">
+              <Link
+                to="/history"
+                class="nav-link"
+                style={{ color: isCurrentPage("/history") }}
+              >
                 ประวัติ
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/staff" class="nav-link text-dark">
+              <Link
+                to="/staff"
+                class="nav-link"
+                style={{ color: isCurrentPage("/staff") }}
+              >
                 <FaLock /> staff
               </Link>
             </li>

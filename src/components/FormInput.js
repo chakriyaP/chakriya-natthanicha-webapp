@@ -1,25 +1,26 @@
 import React from "react";
-import "../assets/css/FormInput.css"
+import "../assets/css/navigationBar.css";
 
-function FormInput() {
-    return (
-        // <form>
-        //     <label for = "caption">ราคาแรกซื้อ</label><br></br>
-        //         <input style={{paddingRight:"100px" }}placeholder="10,000" /><span style={{marginLeft:"-50px"}}>บาท/ปี</span>
-        // </form>
-        <form>
-            <div class="input-group">
-                <label >ff</label><br></br>
-                <input type="text" class="form-control" placeholder="ราคาแรกซื้อ"></input>
-                <div class="input-group-btn">
-                    {/* <button class="btn btn-default" type="submit"> */}
-                        <span class="">gg</span>
-                    {/* </button> */}
-                </div>
-            </div>
-        </form>
 
-    );
+function FormInput({ nameLable, nameInput, type, placeholder, unit }) {
+  return (
+    <div class="form-group">
+      <label for={nameInput}>{nameLable}</label>
+      <div class="input-group mb-3">
+        <input
+          id={nameInput}
+          type={type}
+          class="form-control"
+          placeholder={placeholder}
+        />
+        <div class="input-group-append">
+          <span class="input-group-text primary-bg" >
+            {unit}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 }
-  
+
 export default FormInput;
