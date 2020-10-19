@@ -1,5 +1,17 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1450528039619-bdc0c2d26850?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h4 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
 .first-form {
-  width: 60%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,30 +26,17 @@
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  background-color: #eeeeee;
+  margin-top: 5%;
   border-radius: 40px;
 }
 
-select {
-  border: solid 1px;
-  border-radius: 5px;
+.card-rice {
+  background-color: #eeeeee;
+  border: 0;
 }
 
-#region {
-  border: solid 1px;
-  border-radius: 5px;
-  padding: 1% 0% 1% 0%;
-  width: 600px;
-}
-
-.selectRG {
-  padding: 3% 1% 1% 1%;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+.header-card {
+  border-radius: 30px;
+  background-color: white;
+  border-radius: 30px;
 }

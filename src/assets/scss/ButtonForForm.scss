@@ -1,20 +1,15 @@
-.buttonfor{
-    width: 180px;
-    padding: 2%;
-    font-size: large;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 10%;
+@import "./common";
+$PRIMARYCOLOR : #eee;
+$SECONDCOLOR : #B3B842;
+.bt-rice-next{
+    background-color: $SECONDCOLOR ;
+    border: 0;
+    margin-bottom: 3%;    
 
 }
-.next{
-    background-color : #B3B842;
-    border : 0;
-    margin-left: 240px;
+.bt-rice-back{
+    background-color: #c2c2c2;
+    border: 0;
+    margin-bottom: 3%;
 
-}
-.back{
-    background-color : #d5d5d5;
-    border : 0;
-    margin-left: 0px;
 }
