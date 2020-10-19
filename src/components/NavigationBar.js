@@ -9,75 +9,51 @@ function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-  const location = useLocation();
-
-  const isCurrentPage = (page) => {
-    return location.pathname == page ? "#B3B842" : "#353E3B";
-  };
   return (
-    <nav className="navbar">
-      <div className="navbar-container container">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          <FaPagelines id="faPagelines" className="navbar-icon" />
-          AG<samp>calculator</samp>
+    <nav class="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
+      <div class="container-fluid">
+        <Link to="/" class="navbar-brand">
+          <FaPagelines className="mr-1 mb-1 second-cl" />
+          AG<samp className="second-cl">calculator</samp>
         </Link>
-        <div className="menu-icon" onClick={handleClick}>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#narbarResposive"
+        >
           {click ? <FaTimes /> : <FaBars />}
-        </div>
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li className="nav-item">
-            <Link
-              to="/"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              style={{ color: isCurrentPage("/") }}
-            >
-              หน้าหลัก
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/cane"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              style={{ color: isCurrentPage("/cane") }}
-            >
-              รถตัดอ้อย
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/rice"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              style={{ color: isCurrentPage("/rice") }}
-            >
-              เครื่องเกี่ยวนวดข้าว
-            </Link>
-          </li>
 
-          <li className="nav-item">
-            <Link
-              to="/history"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              style={{ color: isCurrentPage("/history") }}
-            >
-              ประวัติ
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/staff"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              style={{ color: isCurrentPage("/staff") }}
-            >
-              <FaLock /> staff
-            </Link>
-          </li>
-        </ul>
+        </button>
+        <div class="collapse navbar-collapse" id="narbarResposive">
+          <ul class="navbar-nav ml-auto primary-bg">
+            <li class="nav-item">
+              <Link to="/" class="nav-link active text-dark">
+                หน้าหลัก
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/cane" class="nav-link text-dark">
+                รถตัดอ้อย
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/rice" class="nav-link text-dark">
+                เครื่องเกี่ยวนวดข้าว
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/history" class="nav-link text-dark">
+                ประวัติ
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/staff" class="nav-link text-dark">
+                <FaLock /> staff
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

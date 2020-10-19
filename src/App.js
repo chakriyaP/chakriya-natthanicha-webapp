@@ -29,7 +29,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/">
-          <Home></Home>
+          {/* <Home></Home> */}
         </Route>
       </Switch>
     </Router>
