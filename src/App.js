@@ -8,11 +8,11 @@ import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
-import FirstformRice from "./pages/FirstformRice.js"
+
 import FirstFormCane from "./pages/FirstFormCane.js"
-import ProcessRice from "./pages/ProcessRice.js"
-
-
+import FirstFormRice from "./pages/FirstFormRice.js"
+import SecondFormRice from "./pages/SecondFormRice.js"
+import ThirdFormRice from "./pages/ThirdFormRice.js"
 
 function App() {
   return (
@@ -23,18 +23,18 @@ function App() {
           <CaneCal></CaneCal>
         </Route>
         <Route path="/rice">
-          <FirstformRice></FirstformRice>
+          {/* <FirstformRice/> */}
+          <SecondFormRice/>
         </Route>
         <Route path="/history">
         <History></History>
         </Route>
-        <Route path="/staff">
+        <Route path="/staff"> 
           <Home />
         </Route>
         <Route path="/">
           {/* <Home></Home> */}
-          {/* <FirstFormCane/> */}
-          <ProcessRice />
+          <FirstFormCane/>
         </Route>
       </Switch>
     </Router>
