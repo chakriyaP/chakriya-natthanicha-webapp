@@ -9,39 +9,38 @@ import Home from "./pages/Home.js";
 import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
 
-import FirstFormCane from "./pages/FirstFormCane.js"
-import FirstFormRice from "./pages/FirstFormRice.js"
-import SecondFormRice from "./pages/SecondFormRice.js"
-import ThirdFormRice from "./pages/ThirdFormRice.js"
+import FirstFormCane from "./pages/FirstFormCane.js";
+import FirstFormRice from "./pages/FirstFormRice.js";
+import SecondFormRice from "./pages/SecondFormRice.js";
+import ThirdFormRice from "./pages/ThirdFormRice.js";
 
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route path="/cane">
           <CaneCal></CaneCal>
         </Route>
         <Route path="/rice">
           {/* <FirstformRice/> */}
-          <SecondFormRice/>
+          <SecondFormRice />
         </Route>
         <Route path="/history">
-        <History></History>
+          <History></History>
         </Route>
-        <Route path="/staff"> 
+        <Route path="/staff">
           <Home />
         </Route>
         <Route path="/">
           {/* <Home></Home> */}
           {/* <FirstFormCane/> */}
-          <FirstFormRice/>
+          <FirstFormRice />
           {/* <SecondFormRice/> */}
           {/* <ThirdFormRice/> */}
         </Route>
       </Switch>
     </Router>
-    
   );
 }
 

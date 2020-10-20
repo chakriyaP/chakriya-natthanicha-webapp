@@ -3,8 +3,9 @@ import React from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import "../assets/css/FirstFormCane.css";
 
+
+import "../assets/css/FirstFormCane.css";
 
 function FirstFormRice() {
   return (
@@ -14,13 +15,14 @@ function FirstFormRice() {
           <div class="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
-              <br></br>ในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              <br></br>ในการใช้งาน
+              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">
             <StatusBar />
             <div className="mt-4 mb-3  col-10">
-                <h5 className="text-center">ข้อมูลทั่วไป</h5>
+              <h5 className="text-center">ข้อมูลทั่วไป</h5>
             </div>
             <form className="col-10">
               <InputForm
@@ -51,13 +53,12 @@ function FirstFormRice() {
                 placeholder="อัตราดอกเบื้ย(ร้อยละ)"
                 unit="%"
               />
-              <ButtonForForm/>
+              <ButtonForForm pathNext="../pages/SecondFormRice.js"/>
             </form>
           </div>
         </div>
       </div>
     </div>
-   
   );
 }
 

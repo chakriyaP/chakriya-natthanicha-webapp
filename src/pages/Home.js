@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../components/NavigationBar.js";
 import "../assets/css/HomePage.css";
-import { Start } from "../components/button.js";
+import { Start } from "../components/StartButton.js";
 
 function Home() {
   return (
@@ -29,7 +29,7 @@ function Home() {
             โปรแกรมประมาณการความคุ้มค่า<br></br>ในการใช้งาน
             <samp>รถตัดอ้อย</samp>
           </h2>
-          <Start></Start>
+          <Start/>
         </div>
 
         <div className="crad-select">
@@ -45,7 +45,7 @@ function Home() {
             โปรแกรมประมาณการความคุ้มค่า<br></br>ในการใช้งาน
             <samp>เครื่องเกี่ยวนวดข้าว</samp>
           </h2>
-          <Start></Start>
+          <Start/>
         </div>
       </div>
     </div>
