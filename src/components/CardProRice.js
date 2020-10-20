@@ -8,8 +8,8 @@ import { GrMoney } from "react-icons/gr";
 
 function CardProRice({ icon, nameCard, priceProcess }) {
   return (
-    <div class="card font">
-      <div class="card-header d-flex flex-row justify-content-center align-items-center ">
+    <div class="card font card-external">
+      <div class="card-header d-flex flex-row justify-content-center align-items-center  ">
         {icon == "0" ? (
           <RiMoneyDollarCircleFill size="35px" />
         ) : icon == "1" ? (

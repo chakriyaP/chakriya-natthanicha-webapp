@@ -1,10 +1,10 @@
-@import "./common.scss"
+@import "./common.scss";
+
 .font {
     font-family: $FONT;
 }
 .card-external{
-    width: 20%;
-    border-radius: 7%;
+    border-radius: 5%;
     border: solid 1px black;
 }
 .body-card{

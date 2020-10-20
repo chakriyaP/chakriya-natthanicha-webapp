@@ -13,8 +13,8 @@ function FirstFormRice() {
         <div class="card br-5">
           <div class="card-header text-center">
             <h3>
-              โปรแกรมประมาณการความคุ้มค่า
-              <br></br>ในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              
+              <br></br>ความคุ้มค่าในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">

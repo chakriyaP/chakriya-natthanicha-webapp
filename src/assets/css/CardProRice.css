@@ -1,6 +1,9 @@
+.font {
+  font-family: "Kanit", sans-serif;
+}
+
 .card-external {
-  width: 20%;
-  border-radius: 7%;
+  border-radius: 5%;
   border: solid 1px black;
 }
 
