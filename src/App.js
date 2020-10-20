@@ -8,7 +8,7 @@ import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
-
+import ProcessRice from "./pages/ProcessRice.js";
 import FirstFormCane from "./pages/FirstFormCane.js"
 import FirstFormRice from "./pages/FirstFormRice.js"
 import SecondFormRice from "./pages/SecondFormRice.js"
@@ -34,7 +34,8 @@ function App() {
         </Route>
         <Route path="/">
           {/* <Home></Home> */}
-          <FirstFormCane/>
+          <ProcessRice/>
+          {/* <FirstFormCane/> */}
         </Route>
       </Switch>
     </Router>
