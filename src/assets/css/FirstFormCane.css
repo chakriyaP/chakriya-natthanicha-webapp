@@ -3,3 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.br-5 {
+  border-radius: 5%;
+}

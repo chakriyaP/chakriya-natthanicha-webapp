@@ -7,7 +7,7 @@ function FirstFormCane() {
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div class="card">
+        <div class="card br-5">
           <div class="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า

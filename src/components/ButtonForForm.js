@@ -4,10 +4,9 @@ import "../assets/css/ButtonForForm.css";
 function ButtonForForm() {
   return (
 
-    <div>
-        <button type="button" class="btn btn-primary bt-rice-back">ยกเลิก</button>
-        <button type="button" class="btn btn-primary bt-rice-next ">ถัดไป</button>
-
+    <div className="d-flex flex-row justify-content-around mt-5 ">
+        <button type="button" class="btn  bt-rice-back shadow-lg ">ยกเลิก</button>
+        <button type="submit" class="btn bt-rice-next shadow-lg">ถัดไป</button>
     </div>
 
   );
