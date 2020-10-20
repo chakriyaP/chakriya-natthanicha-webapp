@@ -34,10 +34,7 @@ function App() {
         </Route>
         <Route path="/">
           {/* <Home></Home> */}
-          {/* <FirstFormCane/> */}
-          <FirstFormRice/>
-          {/* <SecondFormRice/> */}
-          {/* <ThirdFormRice/> */}
+          <FirstFormCane/>
         </Route>
       </Switch>
     </Router>
