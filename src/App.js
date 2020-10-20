@@ -10,6 +10,7 @@ import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
 import FirstformRice from "./pages/FirstformRice.js"
 import FirstFormCane from "./pages/FirstFormCane.js"
+import ProcessRice from "./pages/ProcessRice.js"
 
 
 
@@ -32,7 +33,8 @@ function App() {
         </Route>
         <Route path="/">
           {/* <Home></Home> */}
-          <FirstFormCane/>
+          {/* <FirstFormCane/> */}
+          <ProcessRice />
         </Route>
       </Switch>
     </Router>

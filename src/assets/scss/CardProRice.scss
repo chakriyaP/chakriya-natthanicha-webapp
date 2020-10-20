@@ -1,0 +1,21 @@
+@import "./common.scss"
+.font {
+    font-family: $FONT;
+}
+.card-external{
+    width: 20%;
+    border-radius: 7%;
+    border: solid 1px black;
+}
+.body-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iconRight{
+    text-align: right;
+}
+.iconsize{
+    width: 2%;
+}

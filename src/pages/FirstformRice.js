@@ -3,9 +3,8 @@ import StatusBar from "../components/StatusBar.js";
 import "../assets/css/FirstformRice.css";
 import FormInput from "../components/FormInput.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import Header from "../components/Header.js";
-import Footer from "../components/Footer.js";
-import ActiveState from "../components/ActiveState.js";
+
+
 
 function FirstformRice() {
   return (
