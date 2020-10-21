@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/chakriya-natthanicha-webapp/static/css/main.e72d0fb5.chunk.css",
-    "main.js": "/chakriya-natthanicha-webapp/static/js/main.51ee2d1d.chunk.js",
-    "main.js.map": "/chakriya-natthanicha-webapp/static/js/main.51ee2d1d.chunk.js.map",
+    "main.js": "/chakriya-natthanicha-webapp/static/js/main.cfe07303.chunk.js",
+    "main.js.map": "/chakriya-natthanicha-webapp/static/js/main.cfe07303.chunk.js.map",
     "runtime-main.js": "/chakriya-natthanicha-webapp/static/js/runtime-main.23789834.js",
     "runtime-main.js.map": "/chakriya-natthanicha-webapp/static/js/runtime-main.23789834.js.map",
     "static/js/2.d18f4f1e.chunk.js": "/chakriya-natthanicha-webapp/static/js/2.d18f4f1e.chunk.js",
     "static/js/2.d18f4f1e.chunk.js.map": "/chakriya-natthanicha-webapp/static/js/2.d18f4f1e.chunk.js.map",
     "index.html": "/chakriya-natthanicha-webapp/index.html",
-    "precache-manifest.63b5a3c43dc579ec8481adc00ee088dd.js": "/chakriya-natthanicha-webapp/precache-manifest.63b5a3c43dc579ec8481adc00ee088dd.js",
+    "precache-manifest.f85c4d40c2eec01dab99086f3d42e676.js": "/chakriya-natthanicha-webapp/precache-manifest.f85c4d40c2eec01dab99086f3d42e676.js",
     "service-worker.js": "/chakriya-natthanicha-webapp/service-worker.js",
     "static/css/main.e72d0fb5.chunk.css.map": "/chakriya-natthanicha-webapp/static/css/main.e72d0fb5.chunk.css.map",
     "static/js/2.d18f4f1e.chunk.js.LICENSE.txt": "/chakriya-natthanicha-webapp/static/js/2.d18f4f1e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.23789834.js",
     "static/js/2.d18f4f1e.chunk.js",
     "static/css/main.e72d0fb5.chunk.css",
-    "static/js/main.51ee2d1d.chunk.js"
+    "static/js/main.cfe07303.chunk.js"
   ]
 }
