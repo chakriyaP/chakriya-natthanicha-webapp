@@ -8,6 +8,7 @@ import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 import CaneCal from "./pages/CaneCal.js";
 import History from "./pages/History.js";
+import Staff from "./pages/Staff.js";
 
 import FirstFormCane from "./pages/FirstFormCane.js";
 import FirstFormRice from "./pages/FirstFormRice.js";
@@ -19,27 +20,23 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/cane">
-          <CaneCal></CaneCal>
-        </Route>
-        <Route path="/rice">
-          {/* <FirstformRice/> */}
-          <SecondFormRice />
-        </Route>
-        <Route path="/history">
-          <History></History>
-        </Route>
-        <Route path="/staff">
-          <Home />
-        </Route>
-        <Route path="/">
-          {/* <Home></Home> */}
-          {/* <FirstFormCane/> */}
-          <FirstFormRice />
-          {/* <SecondFormRice/> */}
-          {/* <ThirdFormRice/> */}
-        </Route>
+        <Route path="/cane" component={CaneCal} />
+        <Route path="/rice" component={FirstFormRice} />
+        <Route path="/rice2" component={SecondFormRice}/>
+        <Route path="/rice3" component={ThirdFormRice}/>
+        <Route path="/process" component={Staff}/>
+
+        <Route path="/history" component={History} />
+        <Route path="/staff" component={Staff} />
+      
+        <Route path="/" component={Home} />
+      
       </Switch>
+
+      {/* <FirstFormCane/> */}
+      {/* <FirstFormRice /> */}
+      {/* <SecondFormRice/> */}
+      {/* <ThirdFormRice/> */}
     </Router>
   );
 }

@@ -45,7 +45,9 @@ function Home() {
             โปรแกรมประมาณการความคุ้มค่า<br></br>ในการใช้งาน
             <samp>เครื่องเกี่ยวนวดข้าว</samp>
           </h2>
-          <Start/>
+          <Start pathNext="/rice/FirstFormRice"/>
+          {/* <Start pathNext="/FirstFormRice"/> */}
+
         </div>
       </div>
     </div>

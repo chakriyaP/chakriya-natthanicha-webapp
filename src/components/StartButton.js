@@ -1,18 +1,26 @@
-import React from 'react'
-import "../assets/css/StartButton.css"
+import React from "react";
+import "../assets/css/StartButton.css";
+import { Switch, Route, Link, Router } from "react-router-dom";
+import FirstFormRice from "../pages/FirstFormRice.js";
 
 function StartButton() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
 
-export  function Start() {
-    return (
-      <button>เริ่มต้นใช้งาน</button>
-    );
-  }
+export function Start({ pathNext }) {
+  return (
+    <button>เริ่มต้นใช้งาน</button>
+    // <Router>
+    //   <Link to={pathNext}>
+    //     <button>เริ่มต้นใช้งาน</button>
+    //   </Link>
+    //   <Switch>   
+    //     <Route path={pathNext}>
+    //       <FirstFormRice />
+    //     </Route>
+    //   </Switch>
+    // </Router>
+  );
+}
 
-export default StartButton
+export default StartButton;
