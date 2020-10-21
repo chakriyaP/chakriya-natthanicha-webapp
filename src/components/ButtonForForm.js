@@ -11,7 +11,8 @@ import FirstFormCane from "../pages/FirstFormCane.js";
 // import SecondFormRice from "../pages/SecondFormRice.js"
 // import ThirdFormRice from "../pages/ThirrdFormRice.js"
 
-function ButtonForForm() {
+
+function ButtonForForm({namePer, nameNext}) {
   // pathNext.split("/")[0] = "rice"
   // ? (pathNext.split("/")[1] = "FirstFormRice" ? (
   //     <FirstFormRice />
@@ -34,11 +35,11 @@ function ButtonForForm() {
   return (
      <div className="d-flex flex-row justify-content-around mt-5 ">
         <button type="button" class="btn  bt-rice-back shadow-lg">
-          ยกเลิก
+          {namePer}
         </button>
 
           <button type="submit" class="btn bt-rice-next shadow-lg">
-            ถัดไป
+            {nameNext}
           </button>
         
       </div>

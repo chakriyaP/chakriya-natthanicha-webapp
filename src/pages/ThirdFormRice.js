@@ -19,7 +19,7 @@ function ThirdFormRice() {
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">
-            <StatusBar />
+            <StatusBar status="3" />
             <div className="mt-4 mb-3 col-10">
               <h5 className="text-center">
                 ข้อมูลการทำงานในรอบปี<br></br>(ประมาณการ)
@@ -62,8 +62,8 @@ function ThirdFormRice() {
                 unit="บาท/ไร่"
               />
 
-              <Link to="/process">
-                <ButtonForForm />
+              <Link to="/riceProcess">
+                <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" />
               </Link>
             </form>
           </div>

@@ -1,6 +1,10 @@
 import React from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
+import ButtonForForm from "../components/ButtonForForm.js";
+
+import { Link } from "react-router-dom";
+
 import "../assets/css/FirstFormCane.css";
 
 function FirstFormCane() {
@@ -15,7 +19,7 @@ function FirstFormCane() {
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">
-            <StatusBar />
+            <StatusBar status="1"/>
             <div className="mt-4 mb-3 border-bottom col-10">
                 <h5>ข้อมูลทั่วไป</h5>
             </div>
@@ -48,6 +52,9 @@ function FirstFormCane() {
                 placeholder="5"
                 unit="%"
               />
+               <Link to="/home">
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
+              </Link>
             </form>
           </div>
         </div>

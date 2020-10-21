@@ -19,7 +19,7 @@ function SecondFormRice() {
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">
-            <StatusBar />
+            <StatusBar status="2"/>
             <div className="mt-4 mb-3 col-10">
               <h5 className="text-center">ข้อมูลค่าใช้จ่าย</h5>
             </div>
@@ -95,7 +95,7 @@ function SecondFormRice() {
                 unit="บาท/ปี"
               />
               <Link to="/rice3">
-              <ButtonForForm />
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
               </Link>
             </form>
           </div>

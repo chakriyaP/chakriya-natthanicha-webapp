@@ -12,14 +12,15 @@ function Navbar() {
   const location = useLocation();
 
   const isCurrentPage = (page) => {
-    return location.pathname == page ? "#B3B842" : "#353E3B";
+    return location.pathname.substring(0, page.length) == page ? "#B3B842" : "#353E3B";
   };
+  
   console.log(location.pathname);
   return (
     <nav class="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
       <div class="container-fluid row">
         {/* <div class="navbar-brand bg-warning col-11"> */}
-          <Link to="/" class="navbar-brand">
+          <Link to="/home" class="navbar-brand">
             <FaPagelines className="mb-4 second-cl" size="36px" />
             <samp className="h1">AG</samp>
             <samp className="second-cl h2">calculator</samp>
@@ -41,9 +42,9 @@ function Navbar() {
           <ul class="navbar-nav ml-auto primary-bg">
             <li class="nav-item">
               <Link
-                to="/"
+                to="/home"
                 class="nav-link active"
-                style={{ color: isCurrentPage("/") }}
+                style={{ color: isCurrentPage("/home") }}
               >
                 หน้าหลัก
               </Link>

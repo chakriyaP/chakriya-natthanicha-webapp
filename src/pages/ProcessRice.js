@@ -2,13 +2,15 @@ import React from "react";
 import "../assets/css/ProcessRice.css";
 import CardProRice from "../components/CardProRice.js";
 import { GrMoney } from "react-icons/gr";
+import { Link } from "react-router-dom";
+
 import ButtonForForm from "../components/ButtonForForm";
 
 
 function ProcessRice() {
   return ( 
-    <div class = "">
-      <div class="card-header text-center backGround col-sm-12  mb-4 " >
+    <div class="bg-process pb-">
+      <div class="card-header text-center backGround col-sm-12  mb-4 mt-0" >
             <h3 className="font ml-1 ">
               การประมวณผลความคุ้มค่าในการใช้งาน</h3><h3 className="font second-cl ml-1 ">เครื่องเกี่ยวนวดข้าว</h3> 
       </div>
@@ -17,7 +19,7 @@ function ProcessRice() {
         <div className="col-sm-10 col-lg-3 mb-2 ">
           <CardProRice
             icon="0"
-            nameCard="ค่าใช้จ่ายคงที่"
+            nameCard="ค่าใช้จ่ายคงที่" 
             priceProcess="18,000"
            
           />
@@ -50,10 +52,12 @@ function ProcessRice() {
            
           />
         </div>
-        <ButtonForForm
-          nextButton="บันทึกผลการคำนวณ"
-          previousButton="ย้อนกลับ"
+        <Link to="/home"> <ButtonForForm
+          namePer="ย้อนกลับ"
+          nameNext="บันทึกผลการคำนวณ"
         />
+        </Link>
+       
       </div>
     </div>
     </div>   
