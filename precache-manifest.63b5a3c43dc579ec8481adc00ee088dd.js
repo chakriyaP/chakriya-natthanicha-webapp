@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8f6eee5c5baf84baec5551d64704a545",
+    "revision": "d8818aeb752eca767ec01ec9a6ca426f",
     "url": "/chakriya-natthanicha-webapp/index.html"
   },
   {
-    "revision": "faa857156b768a08f745",
-    "url": "/chakriya-natthanicha-webapp/static/css/main.f0a818d9.chunk.css"
+    "revision": "4a2c94ee4983bb9dd584",
+    "url": "/chakriya-natthanicha-webapp/static/css/main.e72d0fb5.chunk.css"
   },
   {
     "revision": "e47b40a5d58fe599cdcc",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chakriya-natthanicha-webapp/static/js/2.d18f4f1e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "faa857156b768a08f745",
-    "url": "/chakriya-natthanicha-webapp/static/js/main.2a547d34.chunk.js"
+    "revision": "4a2c94ee4983bb9dd584",
+    "url": "/chakriya-natthanicha-webapp/static/js/main.51ee2d1d.chunk.js"
   },
   {
     "revision": "46d13a14de3ecec7015f",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/chakriya-natthanicha-webapp/precache-manifest.4e8352bde7b25ecc2838852f478c1602.js"
+  "/chakriya-natthanicha-webapp/precache-manifest.63b5a3c43dc579ec8481adc00ee088dd.js"
 );
 
 self.addEventListener('message', (event) => {
