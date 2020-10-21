@@ -66,7 +66,7 @@ function FirstFormRice() {
                 unit="%"
               />
 
-              <Link to="/rice2"> <ButtonForForm  namePer="ย้อนกลับ" nameNext="ถัดไป" /></Link>
+              <Link to="/chakriya-natthanicha-webapp/rice2"> <ButtonForForm  namePer="ย้อนกลับ" nameNext="ถัดไป" /></Link>
               {/* <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" /> */}
             </form>
           </div>

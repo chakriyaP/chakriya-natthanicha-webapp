@@ -62,7 +62,7 @@ function ThirdFormRice() {
                 unit="บาท/ไร่"
               />
 
-              <Link to="/riceProcess">
+              <Link to="/chakriya-natthanicha-webapp/riceProcess">
                 <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" />
               </Link>
             </form>

@@ -12,15 +12,14 @@ function Navbar() {
   const location = useLocation();
 
   const isCurrentPage = (page) => {
-    return location.pathname.substring(0, page.length) == page ? "#B3B842" : "#353E3B";
+    return location.pathname.split("/")[2] ?  (location.pathname.split("/")[2]).substring(0, page.length) == page ? "#B3B842" : "#353E3B" : "home";
   };
-  
-  console.log(location.pathname);
+
   return (
     <nav class="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
       <div class="container-fluid row">
         {/* <div class="navbar-brand bg-warning col-11"> */}
-          <Link to="/home" class="navbar-brand">
+          <Link to="/chakriya-natthanicha-webapp/home" class="navbar-brand">
             <FaPagelines className="mb-4 second-cl" size="36px" />
             <samp className="h1">AG</samp>
             <samp className="second-cl h2">calculator</samp>
@@ -42,45 +41,45 @@ function Navbar() {
           <ul class="navbar-nav ml-auto primary-bg">
             <li class="nav-item">
               <Link
-                to="/home"
+                to="/chakriya-natthanicha-webapp/home"
                 class="nav-link active"
-                style={{ color: isCurrentPage("/home") }}
+                style={{ color: isCurrentPage("home") }}
               >
                 หน้าหลัก
               </Link>
             </li>
             <li class="nav-item">
               <Link
-                to="/cane"
+                to="/chakriya-natthanicha-webapp/cane"
                 class="nav-link"
-                style={{ color: isCurrentPage("/cane") }}
+                style={{ color: isCurrentPage("cane") }}
               >
                 รถตัดอ้อย
               </Link>
             </li>
             <li class="nav-item">
               <Link
-                to="/rice"
+                to="/chakriya-natthanicha-webapp/rice"
                 class="nav-link"
-                style={{ color: isCurrentPage("/rice") }}
+                style={{ color: isCurrentPage("rice") }}
               >
                 เครื่องเกี่ยวนวดข้าว
               </Link>
             </li>
             <li class="nav-item">
               <Link
-                to="/history"
+                to="/chakriya-natthanicha-webapp/history"
                 class="nav-link"
-                style={{ color: isCurrentPage("/history") }}
+                style={{ color: isCurrentPage("history") }}
               >
                 ประวัติ
               </Link>
             </li>
             <li class="nav-item">
               <Link
-                to="/staff"
+                to="/chakriya-natthanicha-webapp/staff"
                 class="nav-link"
-                style={{ color: isCurrentPage("/staff") }}
+                style={{ color: isCurrentPage("staff") }}
               >
                 <FaLock /> staff
               </Link>

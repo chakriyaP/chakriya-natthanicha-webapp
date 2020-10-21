@@ -94,7 +94,7 @@ function SecondFormRice() {
                 placeholder="ค่าใช้จ่ายอื่นๆ"
                 unit="บาท/ปี"
               />
-              <Link to="/rice3">
+              <Link to="/chakriya-natthanicha-webapp/rice3">
               <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
               </Link>
             </form>

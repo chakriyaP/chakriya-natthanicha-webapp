@@ -52,7 +52,7 @@ function FirstFormCane() {
                 placeholder="5"
                 unit="%"
               />
-               <Link to="/home">
+               <Link to="/chakriya-natthanicha-webapp/cane2">
               <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
               </Link>
             </form>

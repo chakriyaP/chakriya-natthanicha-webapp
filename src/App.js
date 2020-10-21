@@ -11,6 +11,9 @@ import History from "./pages/History.js";
 import Staff from "./pages/Staff.js";
 
 import FirstFormCane from "./pages/FirstFormCane.js";
+import SecondFormCane from "./pages/SecondFormCane.js";
+import ThirdFormCane from "./pages/ThirdFormCane.js";
+
 import FirstFormRice from "./pages/FirstFormRice.js";
 import SecondFormRice from "./pages/SecondFormRice.js";
 import ThirdFormRice from "./pages/ThirdFormRice.js";
@@ -22,16 +25,19 @@ function App() {
       {/* <ScrollToTop> */}
       <Navbar />
       <Switch>
-        <Route path="/cane" component={FirstFormCane} />
-        <Route path="/rice" component={FirstFormRice} />
-        <Route path="/rice2" component={SecondFormRice}/>
-        <Route path="/rice3" component={ThirdFormRice}/>
-        <Route path="/riceProcess" component={ProcessRice}/>
+        <Route path="/chakriya-natthanicha-webapp/cane" component={FirstFormCane} />
+        <Route path="/chakriya-natthanicha-webapp/cane2" component={SecondFormCane} />
+        <Route path="/chakriya-natthanicha-webapp/cane3" component={ThirdFormCane} />
 
-        <Route path="/history" component={History} />
-        <Route path="/staff" component={Staff} />
+        <Route path="/chakriya-natthanicha-webapp/rice" component={FirstFormRice} />
+        <Route path="/chakriya-natthanicha-webapp/rice2" component={SecondFormRice}/>
+        <Route path="/chakriya-natthanicha-webapp/rice3" component={ThirdFormRice}/>
+        <Route path="/chakriya-natthanicha-webapp/riceProcess" component={ProcessRice}/>
+
+        <Route path="/chakriya-natthanicha-webapp/history" component={History} />
+        <Route path="/chakriya-natthanicha-webapp/staff" component={Staff} />
       
-        <Route path="/home" component={Home} />
+        <Route path="/chakriya-natthanicha-webapp/home" component={Home} />
       
       </Switch>
       {/* </ScrollToTop> */}
