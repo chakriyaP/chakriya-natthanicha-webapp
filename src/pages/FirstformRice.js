@@ -3,27 +3,33 @@ import React from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import "../assets/css/FirstFormCane.css";
+import SecondFormRice from "../pages/SecondFormRice.js";
+import { Link } from "react-router-dom";
 
+
+
+import "../assets/css/FirstFormCane.css";
 
 function FirstFormRice() {
   return (
-    <div className="bg-img d-flex justify-content-center align-items-center row font">
+    // <Router>
+      <div className="bg-img d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
         <div class="card br-5">
           <div class="card-header text-center">
             <h3>
-              
-              <br></br>ความคุ้มค่าในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              โปรแกรมประมาณการความคุ้มค่า
+              <br></br>ในการใช้งาน
+              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div class="card-body d-flex flex-column align-items-center row">
             <StatusBar />
             <div className="mt-4 mb-3  col-10">
-                <h5 className="text-center">ข้อมูลทั่วไป</h5>
+              <h5 className="text-center">ข้อมูลทั่วไป</h5>
             </div>
             <form className="col-10">
-              <InputForm
+            <InputForm
                 nameLable="ราคาแรกซื้อ"
                 nameInput="p"
                 type="number"
@@ -51,13 +57,18 @@ function FirstFormRice() {
                 placeholder="อัตราดอกเบื้ย(ร้อยละ)"
                 unit="%"
               />
-              <ButtonForForm/>
+
+              <Link to="/rice2"> <ButtonForForm /></Link>
             </form>
           </div>
         </div>
       </div>
     </div>
-   
+    /* <Switch>
+      <Route path="/rice/las" component={SecondFormRice}/>
+    </Switch>
+    </Router> */
+    
   );
 }
 

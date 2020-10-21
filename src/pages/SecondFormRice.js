@@ -1,7 +1,9 @@
 import React from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
-import ButtonForForm from "../components/ButtonForForm.js"
+import ButtonForForm from "../components/ButtonForForm.js";
+import { Link } from "react-router-dom";
+
 import "../assets/css/FirstFormCane.css";
 
 function SecondFormRice() {
@@ -92,7 +94,9 @@ function SecondFormRice() {
                 placeholder="ค่าใช้จ่ายอื่นๆ"
                 unit="บาท/ปี"
               />
+              <Link to="/rice3">
               <ButtonForForm />
+              </Link>
             </form>
           </div>
         </div>
