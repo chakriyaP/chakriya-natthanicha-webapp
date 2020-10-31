@@ -10,15 +10,15 @@ function SecondFormRice() {
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div class="card br-5">
-          <div class="card-header text-center">
+        <div className="card br-5">
+          <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
               <br></br>ในการใช้งาน
               <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
-          <div class="card-body d-flex flex-column align-items-center row">
+          <div className="card-body d-flex flex-column align-items-center row">
             <StatusBar status="2"/>
             <div className="mt-4 mb-3 col-10">
               <h5 className="text-center">ข้อมูลค่าใช้จ่าย</h5>
@@ -34,7 +34,7 @@ function SecondFormRice() {
               <InputForm
                 nameLable="อัตราการใช้น้ำมันเชื้อเพลิง"
                 nameInput="fa"
-                type="number"
+                type="number" 
                 placeholder="อัตราการใช้น้ำมันเชื้อเพลิง"
                 unit="ลิตร/ไร่"
               />
@@ -94,9 +94,12 @@ function SecondFormRice() {
                 placeholder="ค่าใช้จ่ายอื่นๆ"
                 unit="บาท/ปี"
               />
-              <Link to="/chakriya-natthanicha-webapp/rice3">
-              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
-              </Link>
+               <ButtonForForm
+                namePer="ย้อนกลับ"
+                nameNext="ถัดไป"
+                pathPer="rice"
+                pathNext="rice3"
+              />
             </form>
           </div>
         </div>

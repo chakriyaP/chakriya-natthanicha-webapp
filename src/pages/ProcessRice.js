@@ -9,8 +9,8 @@ import ButtonForForm from "../components/ButtonForForm";
 
 function ProcessRice() {
   return ( 
-    <div class="bg-process pb-">
-      <div class="card-header text-center backGround col-sm-12  mb-4 mt-0" >
+    <div className="bg-process pb-">
+      <div className="card-header text-center backGround col-sm-12  mb-4 mt-0" >
             <h3 className="font ml-1 ">
               การประมวณผลความคุ้มค่าในการใช้งาน</h3><h3 className="font second-cl ml-1 ">เครื่องเกี่ยวนวดข้าว</h3> 
       </div>

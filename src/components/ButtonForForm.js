@@ -1,65 +1,25 @@
 import React from "react";
 import "../assets/css/ButtonForForm.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// import { Link } from '@react-navigation/native';
-import FirstFormRice from "../pages/FirstFormRice.js";
-import SecondFormRice from "../pages/SecondFormRice.js";
-import ThirdFormRice from "../pages/ThirdFormRice.js";
-
-import FirstFormCane from "../pages/FirstFormCane.js";
-// import SecondFormRice from "../pages/SecondFormRice.js"
-// import ThirdFormRice from "../pages/ThirrdFormRice.js"
-
-
-function ButtonForForm({namePer, nameNext}) {
-  // pathNext.split("/")[0] = "rice"
-  // ? (pathNext.split("/")[1] = "FirstFormRice" ? (
-  //     <FirstFormRice />
-  //   ) : (
-  //     (pathNext.split("/")[1] = "SecondFormRice" ? (
-  //       console.log("jhkhkl")
-  //       // <SecondFormRice />
-  //     ) : (
-  //       <ThirdFormRice />
-  //     ))
-  //   ))
-  // : (pathNext.split("/")[1] = "FirstFormCane" ? (
-  //     <FirstFormCane />
-  //   ) : (
-  //     (pathNext.split("/")[1] = "SecondFormCane"
-  //       ? "rice/SecondFormCane"
-  //       : "rice/ThirdFormCane")
-  //   ))
-
+function ButtonForForm({ namePer, nameNext, pathPer, pathNext }) {
+  const toPathPer = `/chakriya-natthanicha-webapp/${pathPer}`
+  const toPathNext = `/chakriya-natthanicha-webapp/${pathNext}`
   return (
-     <div className="d-flex flex-row justify-content-around mt-5 ">
-        <button type="button" class="btn  bt-rice-back shadow-lg">
-          {namePer}
-        </button>
+    <div className="d-flex flex-row justify-content-around mt-5 ">
+      <Link to={toPathPer}>
+      <button type="button" className="btn  bt-rice-back shadow-lg">
+        {namePer}
+      </button>
+      </Link>
+    
 
-          <button type="submit" class="btn bt-rice-next shadow-lg">
-            {nameNext}
-          </button>
-        
-      </div>
-    // <Router>
-    //   <div className="d-flex flex-row justify-content-around mt-5 ">
-    //     <button type="button" class="btn  bt-rice-back shadow-lg">
-    //       ยกเลิก
-    //     </button>
-    //     <Link to="/rice/sdsd">
-    //     <button type="submit" class="btn bt-rice-next shadow-lg">
-    //       ถัดไป
-    //     </button>
-    //     </Link>
-    //   </div>
-    //   <Switch>
-    //     <Route path="/rice/sdsd">
-    //       <ThirdFormRice />
-    //     </Route>
-    //   </Switch>
-    // </Router>
+      <Link to={toPathNext}>
+        <button type="submit" className="btn bt-rice-next shadow-lg">
+          {nameNext}
+        </button>
+      </Link>
+    </div>
   );
 }
 export default ButtonForForm;

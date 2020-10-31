@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/StartButton.css";
 import { Switch, Route, Link, Router } from "react-router-dom";
-import FirstFormRice from "../pages/FirstFormRice.js";
+
 
 function StartButton() {
   return <div></div>;

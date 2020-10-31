@@ -8,8 +8,8 @@ import { GrMoney } from "react-icons/gr";
 
 function CardProRice({ icon, nameCard, priceProcess }) {
   return (
-    <div class="card font card-external">
-      <div class="card-header d-flex flex-row justify-content-center align-items-center  ">
+    <div className="card font card-external">
+      <div className="card-header d-flex flex-row justify-content-center align-items-center  ">
         {icon == "0" ? (
           <RiMoneyDollarCircleFill size="35px" />
         ) : icon == "1" ? (
@@ -22,7 +22,7 @@ function CardProRice({ icon, nameCard, priceProcess }) {
 
         <h5 className="ml-1">{nameCard} </h5>
       </div>
-      <div class="card-body text-success d-flex flex-column justify-content-center align-items-center">
+      <div className="card-body text-success d-flex flex-column justify-content-center align-items-center">
         {/* <p className="h5">{priceProcess} <br></br>
         <samp>บาท/ปี</samp></p> */}
 
@@ -32,7 +32,7 @@ function CardProRice({ icon, nameCard, priceProcess }) {
           บาท/ปี
         </p>
       </div>
-      <i class="card-footer bg-transparent iconRight ">
+      <i className="card-footer bg-transparent iconRight ">
         <IoIosArrowForward />
       </i>
     </div>
