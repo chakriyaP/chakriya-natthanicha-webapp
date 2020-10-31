@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import SecondFormRice from "../pages/SecondFormRice.js";
-import { Link } from "react-router-dom";
 
+import {useHistory } from "react-router-dom";
 
 import "../assets/css/FirstFormCane.css";
 
 function FirstformRice() {
-  const [value, setValue] = useState("");
+  const [rice1, setRice1] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  let history = useHistory();
 
-    console.log("jhkjhkjhkh");
-    alert("A name was submitted: " + value);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    // คำนวณ ค่าเสื่อมราคา = d,  ค่าดอกเบื้ย = it
+    let d, it;
+    d = (rice1["p"] - rice1["s"]) / rice1["y"];
+    it = ((rice1["p"] - rice1["s"]) / 2) * (rice1["i"] / 100);
+    //
+    console.log(`ค่าเสื่อมราคา(d) = ${d} , ค่าดอกเบื้ย(it) ${it}`);
+    //เปลี่ยนไปหน้าถัดไป
+    history.push("/chakriya-natthanicha-webapp/rice2");
   };
 
-  // const form = document.getElementById('firstFormRice');
-  // console.log(form.value);
+  const handleChange = (e) => {
+    setRice1({
+      ...rice1,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  //ย้อนกลับ
+  const handleReset = () => {
+    history.push("/chakriya-natthanicha-webapp/home");
+  };
+
+  // log ดูค่าที่ได้จากการเก็บเเฉยๆ เวลาค่ามันเปลี่ยน
+  useEffect(() => {
+    console.log("rice", rice1);
+  }, [rice1]);
 
   return (
     // <Router>
@@ -41,49 +62,43 @@ function FirstformRice() {
             </div>
             {/* <Child1 clock={(value) => console.log('s', value)}></Child1> */}
 
-            <form className="col-10" id="firstFormRice" onSubmit={handleSubmit}>
+            <form
+              className="col-10"
+              id="firstFormRice"
+              onSubmit={handleSubmit}
+              onReset={handleReset}
+            >
               <InputForm
                 nameLable="ราคาแรกซื้อ"
                 nameInput="p"
-                type="number"
                 placeholder="ราคาแรกซื้อ"
                 unit="บาท"
-                onChange={(e) => console.log(e)}
+                onChange={handleChange}
               />
 
               <InputForm
                 nameLable="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
                 nameInput="s"
-                type="number"
                 placeholder="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
                 unit="บาท"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
               />
               <InputForm
                 nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
                 nameInput="y"
-                type="number"
                 placeholder="คาดว่าจะใช้งานเครื่องกี่ปี"
                 unit="ปี"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
               />
               <InputForm
                 nameLable="อัตราดอกเบื้ย(ร้อยละ)"
                 nameInput="i"
-                type="number"
                 placeholder="อัตราดอกเบื้ย(ร้อยละ)"
                 unit="%"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
               />
 
-              <ButtonForForm
-                namePer="ย้อนกลับ"
-                nameNext="ถัดไป"
-                pathPer="home"
-                pathNext="rice2"
-                onChange={(e) => console.log(e.target.value)}
-
-              />
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
             </form>
           </div>
         </div>
