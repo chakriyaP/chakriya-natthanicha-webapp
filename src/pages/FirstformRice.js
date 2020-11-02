@@ -11,7 +11,8 @@ import Dropdown from "../components/Dropdown";
 
 import { useHistory } from "react-router-dom";
 
-import "../assets/css/FirstFormCane.css";
+// import "../assets/css/FirstFormCane.css";
+import "../assets/css/FirstformRice.css";
 
 function FirstformRice() {
   const [rice1, setRice1] = useState({});
