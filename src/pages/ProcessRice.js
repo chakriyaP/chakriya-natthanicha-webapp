@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/css/ProcessRice.css";
 import CardProRice from "../components/CardProRice.js";
 import { GrMoney } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { riceAction } from "../redux/actions/rice-action";
+import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 
 import ButtonForForm from "../components/ButtonForForm";
 
 
 function ProcessRice() {
+  const rice1 = useSelector(riceState(RICE_STATE.RICE1));
+  const rice2 = useSelector(riceState(RICE_STATE.RICE2));
+  const rice3 = useSelector(riceState(RICE_STATE.RICE3));
+
+  console.log(`rece1 ${rice1} , rice2 ${rice2} , rice3 ${rice3}`);
+
+
   return ( 
     <div className="bg-process pb-">
       <div className="card-header text-center backGround col-sm-12  mb-4 mt-0" >

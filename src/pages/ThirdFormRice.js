@@ -17,7 +17,7 @@ function ThirdFormRice() {
     // คำนวณ ...
 
      //เปลี่ยนไปหน้าถัดไป
-    history.push("/chakriya-natthanicha-webapp/home");
+    history.push("/chakriya-natthanicha-webapp/riceProcess");
   };
 
   // เอาค่าที่ได้จาก form ไปเก็บไว้

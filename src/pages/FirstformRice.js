@@ -1,49 +1,69 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from "react-redux";
 
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import SecondFormRice from "../pages/SecondFormRice.js";
-import {riceAction} from '../redux/actions/rice-action'
-import { RICE_STATE, riceState } from '../redux/reducers/valueRiceReducer'
+import { riceAction } from "../redux/actions/rice-action";
+import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
+import Dropdown from "../components/Dropdown";
 
-import {useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "../assets/css/FirstFormCane.css";
 
 function FirstformRice() {
   const [rice1, setRice1] = useState({});
-  const dispatch = useDispatch()
-  const cat = useSelector(riceState(RICE_STATE.RICE1))
+  const dispatch = useDispatch();
+  const cat = useSelector(riceState(RICE_STATE.RICE1));
 
   let history = useHistory();
 
-  useEffect(() => {
-    console.log('cat', cat)
-  }, [cat])
+  // useEffect(() => {
+  //   console.log("cat", cat);
+  // }, [cat]);
+  const region = [
+    { mc: 39.58, tsa: 25.99 },
+    { mc: 30.88, tsa: 25.51 },
+    { mc: 41.37, tsa: 27.0 },
+  ];
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // คำนวณ ค่าเสื่อมราคา = d,  ค่าดอกเบื้ย = it
-    // let d, it;
-    // d = (rice1["p"] - rice1["s"]) / rice1["y"];
-    // it = ((rice1["p"] - rice1["s"]) / 2) * (rice1["i"] / 100);
+    dispatch(riceAction.setRice1(rice1));
 
-    dispatch(riceAction.setRice1(rice1))
+    history.push("/chakriya-natthanicha-webapp/rice2");
 
-    //
-    // console.log(`ค่าเสื่อมราคา(d) = ${d} , ค่าดอกเบื้ย(it) ${it}`);
-    //เปลี่ยนไปหน้าถัดไป
-    // history.push("/chakriya-natthanicha-webapp/rice2");
   };
 
   const handleChange = (e) => {
     setRice1({
       ...rice1,
-      [e.target.name]: e.target.value,
+      [e.target.name]: +((e.target.value).replace(/,/g, '')),
     });
+
+  };
+
+  const selectSetRice = (selected) => {
+    setRice1({
+      ...rice1,
+      ["mc"]: region[selected].mc,
+      ["tsa"]: region[selected].tsa,
+    });
+  };
+
+  const hendleSelected = (e) => {
+    let selected = e.target.value.slice(3);
+    // console.log(selected);
+    if (selected === "เหนือ") {
+      selectSetRice(0);
+    } else if (selected === "กลาง") {
+      selectSetRice(1);
+    } else {
+      selectSetRice(2);
+    }
+
   };
 
   //ย้อนกลับ
@@ -64,7 +84,8 @@ function FirstformRice() {
           <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
-              <br></br>ในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              <br></br>ในการใช้งาน
+              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div className="card-body d-flex flex-column align-items-center row">
@@ -72,7 +93,6 @@ function FirstformRice() {
             <div className="mt-4 mb-3  col-10">
               <h5 className="text-center">ข้อมูลทั่วไป</h5>
             </div>
-            {/* <Child1 clock={(value) => console.log('s', value)}></Child1> */}
 
             <form
               className="col-10"
@@ -80,12 +100,11 @@ function FirstformRice() {
               onSubmit={handleSubmit}
               onReset={handleReset}
             >
-              <SelectInput
-                nameLable="เลือกภูมิภาค"
-                nameInput="mc"
-                inputSelect1="ภาคเหนือ"
-                inputSelect2="ภาคกลาง"
-                inputSelect3="ภาคตะวันออกเฉียงเหนือ"
+              <Dropdown
+                nameLable="ภูมิภาค"
+                optionLabal="เลือกภูมิภาค"
+                options={["ภาคเหนือ", "ภาคกลาง", "ภาคตะวันออกเฉียงเหนือ"]}
+                onSelected={hendleSelected}
               />
               <InputForm
                 nameLable="ราคาแรกซื้อ"
