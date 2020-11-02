@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from "react-redux";
 
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import SecondFormRice from "../pages/SecondFormRice.js";
-import {riceAction} from '../redux/actions/rice-action'
-import { RICE_STATE, riceState } from '../redux/reducers/valueRiceReducer'
+import { riceAction } from "../redux/actions/rice-action";
+import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
+import SelectInput from "../components/InputSelect.js";
 
-import {useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-import "../assets/css/FirstFormCane.css";
+// import "../assets/css/FirstFormCane.css";
+import "../assets/css/FirstformRice.css";
 
 function FirstformRice() {
   const [rice1, setRice1] = useState({});
-  const dispatch = useDispatch()
-  const cat = useSelector(riceState(RICE_STATE.RICE1))
-
+  const dispatch = useDispatch();
+  const cat = useSelector(riceState(RICE_STATE.RICE1));
+  // const bgImg = document.querySelector(".bg-img");
+  // // bgImg.style.backgroundImage =" https://images.unsplash.com/photo-1450528039619-bdc0c2d26850?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80";
   let history = useHistory();
 
   useEffect(() => {
-    console.log('cat', cat)
-  }, [cat])
+    console.log("cat", cat);
+  }, [cat]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -31,7 +33,7 @@ function FirstformRice() {
     // d = (rice1["p"] - rice1["s"]) / rice1["y"];
     // it = ((rice1["p"] - rice1["s"]) / 2) * (rice1["i"] / 100);
 
-    dispatch(riceAction.setRice1(rice1))
+    dispatch(riceAction.setRice1(rice1));
 
     //
     // console.log(`ค่าเสื่อมราคา(d) = ${d} , ค่าดอกเบื้ย(it) ${it}`);
@@ -64,7 +66,8 @@ function FirstformRice() {
           <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
-              <br></br>ในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              <br></br>ในการใช้งาน
+              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div className="card-body d-flex flex-column align-items-center row">

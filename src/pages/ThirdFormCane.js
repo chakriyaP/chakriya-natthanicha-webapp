@@ -32,14 +32,14 @@ function ThirdFormCane() {
 
               <InputForm
                 nameLable="ค่าจ้างเก็บเกี่ยว"
-                nameInput="oa"
+                nameInput="h"
                 type="number"
                 placeholder="200"
                 unit="บาท/ไร่"
               />
                 <InputForm
                 nameLable="ความสามารถในการทำงานของเครื่อง"
-                nameInput="oa"
+                nameInput="w"
                 type="number"
                 placeholder="12"
                 unit="ปี"
