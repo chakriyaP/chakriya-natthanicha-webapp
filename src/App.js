@@ -19,8 +19,17 @@ import SecondFormRice from "./pages/SecondFormRice.js";
 import ThirdFormRice from "./pages/ThirdFormRice.js";
 import ProcessRice from "./pages/ProcessRice.js"
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import {rootReducer} from './redux/reducers'
+
+
+const store = createStore(rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       {/* <ScrollToTop> */}
       <Navbar />
@@ -48,6 +57,7 @@ function App() {
       {/* <SecondFormRice/> */}
       {/* <ThirdFormRice/> */}
     </Router>
+    </Provider>
   );
 }
 

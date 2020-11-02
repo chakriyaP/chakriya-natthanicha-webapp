@@ -3,11 +3,15 @@ import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import {  useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
+
 
 import "../assets/css/FirstFormCane.css";
 
 function SecondFormRice() {
   const [rice2, setRice2] = useState({});
+  const dispatch = useDispatch()
+
 
   let history = useHistory();
 

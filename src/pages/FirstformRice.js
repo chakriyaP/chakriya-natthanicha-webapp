@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+
 
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import SecondFormRice from "../pages/SecondFormRice.js";
+import {riceAction} from '../redux/actions/rice-action'
+import { RICE_STATE, riceState } from '../redux/reducers/valueRiceReducer'
 
 import {useHistory } from "react-router-dom";
 
@@ -11,19 +15,28 @@ import "../assets/css/FirstFormCane.css";
 
 function FirstformRice() {
   const [rice1, setRice1] = useState({});
+  const dispatch = useDispatch()
+  const cat = useSelector(riceState(RICE_STATE.RICE1))
 
   let history = useHistory();
+
+  useEffect(() => {
+    console.log('cat', cat)
+  }, [cat])
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     // คำนวณ ค่าเสื่อมราคา = d,  ค่าดอกเบื้ย = it
-    let d, it;
-    d = (rice1["p"] - rice1["s"]) / rice1["y"];
-    it = ((rice1["p"] - rice1["s"]) / 2) * (rice1["i"] / 100);
+    // let d, it;
+    // d = (rice1["p"] - rice1["s"]) / rice1["y"];
+    // it = ((rice1["p"] - rice1["s"]) / 2) * (rice1["i"] / 100);
+
+    dispatch(riceAction.setRice1(rice1))
+
     //
-    console.log(`ค่าเสื่อมราคา(d) = ${d} , ค่าดอกเบื้ย(it) ${it}`);
+    // console.log(`ค่าเสื่อมราคา(d) = ${d} , ค่าดอกเบื้ย(it) ${it}`);
     //เปลี่ยนไปหน้าถัดไป
-    history.push("/chakriya-natthanicha-webapp/rice2");
+    // history.push("/chakriya-natthanicha-webapp/rice2");
   };
 
   const handleChange = (e) => {
