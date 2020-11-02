@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import { Link } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 
 import "../assets/css/FirstFormCane.css";
 
 function ThirdFormRice() {
+  const [rice3, setRice3] = useState({});
+
+  let history = useHistory();
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    // คำนวณ ...
+
+     //เปลี่ยนไปหน้าถัดไป
+    history.push("/chakriya-natthanicha-webapp/home");
+  };
+
+  // เอาค่าที่ได้จาก form ไปเก็บไว้
+  const handleChange = (e) => {
+    setRice3({
+      ...rice3,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  //ย้อนกลับ
+  const handleReset = () => {
+    history.push("/chakriya-natthanicha-webapp/rice2");
+  };
+
+  // log ดูค่าที่ได้จากการเก็บเเฉยๆ เวลาค่ามันเปลี่ยน
+  useEffect(() => {
+    console.log("rice3", rice3);
+  }, [rice3]);
+  
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
@@ -25,48 +56,57 @@ function ThirdFormRice() {
                 ข้อมูลการทำงานในรอบปี<br></br>(ประมาณการ)
               </h5>
             </div>
-            <form className="col-10">
+            <form className="col-10" onSubmit={handleSubmit} onReset={handleReset}>
               <InputForm
                 nameLable="พื้นที่เก็บเกี่ยวข้าวนาปี"
                 nameInput="la"
-                type="number"
+  
                 placeholder="พื้นที่เก็บเกี่ยวข้าวนาปี"
                 unit="ไร่"
+                onChange={handleChange}
+
               />
               <InputForm
                 nameLable="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
                 nameInput="fa"
-                type="number"
+        
                 placeholder="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
                 unit="ไร่"
+                onChange={handleChange}
+
               />
               <InputForm
                 nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
                 nameInput="fc"
-                type="number"
+                
                 placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
                 unit="บาท/ไร่"
+                onChange={handleChange}
+
               />
               <InputForm
                 nameLable="ความสามารถในการทำงานของเครื่อง"
-                nameInput="number"
-                type="ja"
+                nameInput="ja"
+           
                 placeholder="ความสามารถในการทำงานของเครื่อง"
                 unit="ปี"
+                onChange={handleChange}
+
               />
               <InputForm
                 nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
                 nameInput="oa"
-                type="number"
+              
                 placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
                 unit="บาท/ไร่"
+                onChange={handleChange}
+
               />
 
               <ButtonForForm
                 namePer="ย้อนกลับ"
-                nameNext="ถัดไป"
-                pathPer="rice2"
-                pathNext="riceProcess"
+                nameNext="ประมวณผล"
+        
               />
             </form>
           </div>

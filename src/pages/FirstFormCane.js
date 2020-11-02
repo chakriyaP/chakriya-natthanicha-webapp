@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
@@ -26,28 +26,28 @@ function FirstFormCane() {
             <form className="col-10">
               <InputForm
                 nameLable="ราคาแรกซื้อ"
-                nameInput="fristBuy"
+                nameInput="p"
                 type="number"
                 placeholder="20,000,000"
                 unit="บาท"
               />
               <InputForm
                 nameLable="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
-                nameInput="buyAfter"
+                nameInput="s"
                 type="number"
                 placeholder="1,200,000"
                 unit="บาท"
               />
               <InputForm
                 nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
-                nameInput="timeUse"
+                nameInput="y"
                 type="number"
                 placeholder="5"
                 unit="ปี"
               />
               <InputForm
                 nameLable="อัตราดอกเบื้ย(ร้อยละ)"
-                nameInput="dak"
+                nameInput="i"
                 type="interest"
                 placeholder="5"
                 unit="%"
