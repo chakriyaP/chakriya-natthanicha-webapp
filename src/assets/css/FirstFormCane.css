@@ -1,3 +1,7 @@
+.third-bg {
+  background-color: #353E3B;
+}
+
 .bg-img {
   background-image: url("https://images.unsplash.com/photo-1516619774863-467b60d05aa0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80");
   background-size: cover;

@@ -19,6 +19,7 @@ const FormInput = (props) => {
           // value={nameInput}
           // min={min}
           // max={max}
+          // required
         />
         <div className="input-group-append">
           <span className="input-group-text primary-bg">{unit}</span>

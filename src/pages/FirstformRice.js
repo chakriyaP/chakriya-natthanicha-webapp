@@ -4,6 +4,7 @@ import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import SecondFormRice from "../pages/SecondFormRice.js";
+import SelectInput from "../components/InputSelect.js";
 
 import {useHistory } from "react-router-dom";
 
@@ -40,7 +41,7 @@ function FirstformRice() {
 
   // log ดูค่าที่ได้จากการเก็บเเฉยๆ เวลาค่ามันเปลี่ยน
   useEffect(() => {
-    console.log("rice", rice1);
+    console.log("rice1", rice1);
   }, [rice1]);
 
   return (
@@ -67,6 +68,13 @@ function FirstformRice() {
               onSubmit={handleSubmit}
               onReset={handleReset}
             >
+              <SelectInput
+                nameLable="เลือกภูมิภาค"
+                nameInput="mc"
+                inputSelect1="ภาคเหนือ"
+                inputSelect2="ภาคกลาง"
+                inputSelect3="ภาคตะวันออกเฉียงเหนือ"
+              />
               <InputForm
                 nameLable="ราคาแรกซื้อ"
                 nameInput="p"
