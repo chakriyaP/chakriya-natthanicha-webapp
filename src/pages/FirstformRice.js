@@ -51,8 +51,7 @@ function FirstformRice() {
           <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
-              <br></br>ในการใช้งาน
-              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              <br></br>ในการใช้งาน<samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
           <div className="card-body d-flex flex-column align-items-center row">
