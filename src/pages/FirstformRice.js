@@ -21,9 +21,6 @@ function FirstformRice() {
 
   let history = useHistory();
 
-  // useEffect(() => {
-  //   console.log("cat", cat);
-  // }, [cat]);
   const region = [
     { mc: 39.58, tsa: 25.99 },
     { mc: 30.88, tsa: 25.51 },
@@ -33,9 +30,7 @@ function FirstformRice() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     dispatch(riceAction.setRice1(rice1));
-
     history.push("/chakriya-natthanicha-webapp/rice2");
-
   };
 
   const handleChange = (e) => {
@@ -43,7 +38,6 @@ function FirstformRice() {
       ...rice1,
       [e.target.name]: +((e.target.value).replace(/,/g, '')),
     });
-
   };
 
   const selectSetRice = (selected) => {

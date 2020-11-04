@@ -49,7 +49,7 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/chakriya-natthanicha-webapp/cane"
+                to="/chakriya-natthanicha-webapp/caneProcess"
                 className="nav-link"
                 style={{ color: isCurrentPage("cane") }}
               >

@@ -16,7 +16,7 @@ const FormInput = (props) => {
           placeholder={placeholder}
           onChange={onChange}
           thousandSeparator={true}
-          required
+          // required
           // value={nameInput}
           // min={min}
           // max={max}
