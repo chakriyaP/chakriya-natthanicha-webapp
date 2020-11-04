@@ -15,8 +15,15 @@ function ProcessRice() {
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
 
-  console.log(`rece1 ${rice1} , rice2 ${rice2} , rice3 ${rice3}`);
+  console.log(`rice1 ${rice1} , rice2 ${rice2} , rice3 ${rice3}`);
 
+  // const {mc,p,s,y,i,tsa}=rice1
+  // console.log(mc);
+  // const {la,ja,fa,fc,oa,ol,oc,g,t,e}=rice2
+  // const d = (p-s)/y;
+  // const it = [(p-s)/2]*[i/100];
+  // const fixedCost = d+it+g+t+e;
+  // console.log(fixedCost);
 
   return ( 
     <div className="bg-process pb-">
