@@ -15,7 +15,12 @@ function ProcessRice() {
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
 
+
+  const { mc, tsa } = rice1
+  
   console.log(`rece1 ${rice1} , rice2 ${rice2} , rice3 ${rice3}`);
+  console.log('RICE1' , mc);
+  
 
 
   return ( 

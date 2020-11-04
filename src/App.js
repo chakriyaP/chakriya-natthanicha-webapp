@@ -13,6 +13,7 @@ import Staff from "./pages/Staff.js";
 import FirstFormCane from "./pages/FirstFormCane.js";
 import SecondFormCane from "./pages/SecondFormCane.js";
 import ThirdFormCane from "./pages/ThirdFormCane.js";
+import ProcessCane from "./pages/ProcessCane.js"
 
 import FirstformRice from "./pages/FirstformRice.js";
 import SecondFormRice from "./pages/SecondFormRice.js";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/cane" component={FirstFormCane} />
         <Route path="/chakriya-natthanicha-webapp/cane2" component={SecondFormCane} />
         <Route path="/chakriya-natthanicha-webapp/cane3" component={ThirdFormCane} />
+        <Route path="/chakriya-natthanicha-webapp/caneProcess"  component={ProcessCane} />
 
         <Route path="/chakriya-natthanicha-webapp/rice" component={FirstformRice} />
         <Route path="/chakriya-natthanicha-webapp/rice2" component={SecondFormRice}/>
