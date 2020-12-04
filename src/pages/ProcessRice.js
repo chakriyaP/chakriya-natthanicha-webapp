@@ -16,11 +16,33 @@ function ProcessRice() {
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
 
 
-  const { mc, tsa } = rice1
-  
-  console.log(`rece1 ${rice1} , rice2 ${rice2} , rice3 ${rice3}`);
-  console.log('RICE1' , mc);
-  
+  const { mc, tsa , p, s, y, i} = rice1
+  const {la, fa, fc, ja, oa, oc, ol, t, e, g} = rice2
+  const {af, wf, as, ws, w} = rice3
+
+  // console.log('RICE1' , mc);
+  //การประมวลผล
+  // 1.ค่าใช้จ่ายคงที่
+  const d = ((p-s)/y);
+  const it = (((p-s)/2)*(i/100));
+  const fixedCost = d + it + g + t+ e;
+  // 2.ค่าใช้จ่ายแปรผัน
+  const l = la * (af + as);
+  const j = ja * (af + as);
+  const f = fa * fc * (af + as);
+  const o = (ol/oa) * oc * (af + as);
+  const m = mc + (af + as);
+  const ts = tsa * (af + as)
+  const v = l + j + f + o + m + ts;
+   // 3.รายรับจากการรับจ้างเก็บเกี่ยว
+   let h = (af * wf) + (as * ws);
+   // 4.ระยะเวลาคืนทุน
+   let payBackPeriod = (p - s) / (h - it - g - t - e - v)
+
+
+  console.log("notconst", ((p-s)/y));
+  console.log("have", d);
+
 
 
   return ( 
@@ -35,7 +57,7 @@ function ProcessRice() {
           <CardProRice
             icon="0"
             nameCard="ค่าใช้จ่ายคงที่" 
-            priceProcess="18,000"
+            priceProcess={fixedCost}
            
           />
         </div>
@@ -45,7 +67,7 @@ function ProcessRice() {
           <CardProRice
             icon="1"
             nameCard="ค่าใช้จ่ายแปรผัน"
-            priceProcess="18,000"
+            priceProcess={v}
            
           />
         </div>
@@ -54,7 +76,7 @@ function ProcessRice() {
           <CardProRice
             icon="2"
             nameCard="รายรับจากการเก็บเกี่ยวข้าว"
-            priceProcess="18,000"
+            priceProcess={h}
            
           />
         </div>
@@ -63,7 +85,7 @@ function ProcessRice() {
           <CardProRice
             icon="3"
             nameCard="ระยะเวลาคืนทุน"
-            priceProcess="18,000"
+            priceProcess={payBackPeriod}
            
           />
         </div>

@@ -7,7 +7,7 @@ const Dropdown = (props) => {
     <div>
       <label>{nameLable}</label>
       <div className="input-group mb-3">
-      <select className="form-control" onChange={onSelected}>
+      <select className="form-control" onChange={onSelected} required>
         <option selected disabled> {optionLabal} </option>
         {options.map((option) => {
           return <option>{option}</option>;

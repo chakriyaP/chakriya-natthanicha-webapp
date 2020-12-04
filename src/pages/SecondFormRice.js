@@ -4,6 +4,9 @@ import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import {  useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
+import { riceAction } from "../redux/actions/rice-action";
+
+
 
 
 import "../assets/css/FirstFormCane.css";
@@ -16,8 +19,11 @@ function SecondFormRice() {
   let history = useHistory();
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    // คำนวณ ...
+    evt.preventDefault();  
+    dispatch(riceAction.setRice2(rice2));
+  
+
+    // คำนวณ ...\
 
      //เปลี่ยนไปหน้าถัดไป
     history.push("/chakriya-natthanicha-webapp/rice3");
@@ -27,7 +33,7 @@ function SecondFormRice() {
   const handleChange = (e) => {
     setRice2({
       ...rice2,
-      [e.target.name]: e.target.value,
+      [e.target.name]: +(e.target.value.replace(/,/g, '')),
     });
   };
 

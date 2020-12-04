@@ -9,5 +9,14 @@ export const riceAction = {
     setRice1: (value) => ({
         type: RICE_STATE.RICE1,
         value
+    }),
+    setRice2: (value) => ({
+        type: RICE_STATE.RICE2,
+        value
+    }),
+    setRice3: (value) => ({
+        type: RICE_STATE.RICE3,
+        value
     })
 }
+    

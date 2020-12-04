@@ -4,16 +4,21 @@ import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import { Link } from "react-router-dom";
 import {  useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
+import { riceAction } from "../redux/actions/rice-action";
 
 import "../assets/css/FirstFormCane.css";
 
 function ThirdFormRice() {
   const [rice3, setRice3] = useState({});
+  const dispatch = useDispatch()
 
   let history = useHistory();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    dispatch(riceAction.setRice3(rice3));
+
     // คำนวณ ...
 
      //เปลี่ยนไปหน้าถัดไป
@@ -24,7 +29,7 @@ function ThirdFormRice() {
   const handleChange = (e) => {
     setRice3({
       ...rice3,
-      [e.target.name]: e.target.value,
+      [e.target.name]: +(e.target.value.replace(/,/g, '')),
     });
   };
 
@@ -59,17 +64,23 @@ function ThirdFormRice() {
             <form className="col-10" onSubmit={handleSubmit} onReset={handleReset}>
               <InputForm
                 nameLable="พื้นที่เก็บเกี่ยวข้าวนาปี"
-                nameInput="la"
-  
+                nameInput="af"
                 placeholder="พื้นที่เก็บเกี่ยวข้าวนาปี"
                 unit="ไร่"
                 onChange={handleChange}
 
               />
+               <InputForm
+                nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
+                nameInput="wf"
+                placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
+                unit="บาท/ไร่"
+                onChange={handleChange}
+
+              />
               <InputForm
                 nameLable="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
-                nameInput="fa"
-        
+                nameInput="as"
                 placeholder="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
                 unit="ไร่"
                 onChange={handleChange}
@@ -77,32 +88,22 @@ function ThirdFormRice() {
               />
               <InputForm
                 nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
-                nameInput="fc"
-                
+                nameInput="ws"
                 placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
                 unit="บาท/ไร่"
                 onChange={handleChange}
 
               />
+             
               <InputForm
                 nameLable="ความสามารถในการทำงานของเครื่อง"
-                nameInput="ja"
-           
+                nameInput="w"
                 placeholder="ความสามารถในการทำงานของเครื่อง"
-                unit="ปี"
+                unit="ไร่/วัน"
                 onChange={handleChange}
 
               />
-              <InputForm
-                nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
-                nameInput="oa"
-              
-                placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
-                unit="บาท/ไร่"
-                onChange={handleChange}
-
-              />
-
+            
               <ButtonForForm
                 namePer="ย้อนกลับ"
                 nameNext="ประมวณผล"

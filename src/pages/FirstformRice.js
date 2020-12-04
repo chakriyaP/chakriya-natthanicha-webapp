@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import SecondFormRice from "../pages/SecondFormRice.js";
+// import SecondFormRice from "../pages/SecondFormRice.js";
 import { riceAction } from "../redux/actions/rice-action";
-import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
+// import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import Dropdown from "../components/Dropdown";
 
 import { useHistory } from "react-router-dom";
@@ -17,8 +17,6 @@ import "../assets/css/FirstformRice.css";
 function FirstformRice() {
   const [rice1, setRice1] = useState({});
   const dispatch = useDispatch();
-  const cat = useSelector(riceState(RICE_STATE.RICE1));
-
   let history = useHistory();
 
   const region = [
@@ -50,7 +48,7 @@ function FirstformRice() {
 
   const hendleSelected = (e) => {
     let selected = e.target.value.slice(3);
-    // console.log(selected);
+    
     if (selected === "เหนือ") {
       selectSetRice(0);
     } else if (selected === "กลาง") {
@@ -115,6 +113,7 @@ function FirstformRice() {
                 placeholder="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
                 unit="บาท"
                 onChange={handleChange}
+                required
               />
               <InputForm
                 nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
@@ -130,7 +129,6 @@ function FirstformRice() {
                 unit="%"
                 onChange={handleChange}
               />
-
               <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
             </form>
           </div>
