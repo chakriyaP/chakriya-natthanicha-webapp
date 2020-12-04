@@ -44,6 +44,13 @@ function ProcessRice() {
   console.log("have", d);
 
 
+  // const {mc,p,s,y,i,tsa}=rice1
+  // console.log(mc);
+  // const {la,ja,fa,fc,oa,ol,oc,g,t,e}=rice2
+  // const d = (p-s)/y;
+  // const it = [(p-s)/2]*[i/100];
+  // const fixedCost = d+it+g+t+e;
+  // console.log(fixedCost);
 
   return ( 
     <div className="bg-process pb-">
