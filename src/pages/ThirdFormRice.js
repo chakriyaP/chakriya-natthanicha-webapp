@@ -5,7 +5,7 @@ import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import { Link } from "react-router-dom";
 import {  useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux'
+
 import { riceAction } from "../redux/actions/rice-action";
 
 import "../assets/css/FirstFormCane.css";

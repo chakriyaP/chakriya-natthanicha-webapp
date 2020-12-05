@@ -1,0 +1,39 @@
+.multicolor-bar {
+   
+    /* margin: 20px 10%; */
+   background-color: aquamarine;
+    /* width: 150px; */
+}
+
+.bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.multicolor-bar .bars .bar {
+    /* transform: rotate(90deg); */
+	/* float: left; */
+    height: 20px;
+    display: inline-block;
+  
+    text-align: center;
+    
+    vertical-align: middle;
+    
+    
+}
+
+ .bars div.bar:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ .bars div.bar:last-of-type {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

@@ -10,7 +10,7 @@ const Dropdown = (props) => {
       <select className="form-control" onChange={onSelected} required>
         <option selected disabled> {optionLabal} </option>
         {options.map((option) => {
-          return <option>{option}</option>;
+          return <option value={option.value}> {option.name}</option>;
         })}
       </select>
       </div>

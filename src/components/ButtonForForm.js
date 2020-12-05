@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/ButtonForForm.css";
-import { Link } from "react-router-dom";
+
 
 function ButtonForForm({ namePer, nameNext }) {
 

@@ -10,11 +10,11 @@ function CardProRice({ icon, nameCard, priceProcess }) {
   return (
     <div className="card font card-external">
       <div className="card-header d-flex flex-row justify-content-center align-items-center  ">
-        {icon == "0" ? (
+        {icon === "0" ? (
           <RiMoneyDollarCircleFill size="35px" />
-        ) : icon == "1" ? (
+        ) : icon === "1" ? (
           <GiMoneyStack size="35px" />
-        ) : icon == "2" ? (
+        ) : icon === "2" ? (
           <GrMoney size="35px" />
         ) : (
           <GiFarmTractor size="35px" />

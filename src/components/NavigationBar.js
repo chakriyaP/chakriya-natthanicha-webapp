@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../assets/css/navigationBar.css";
 // import "../assets/css/common.css"
@@ -13,7 +13,7 @@ function Navbar() {
 
   const isCurrentPage = (page) => {
     // console.log((location.pathname.split("/")[2]).substring(0, page.length));
-    return location.pathname.split("/")[2] ?  (location.pathname.split("/")[2]).substring(0, page.length) == page ? "#B3B842" : "#353E3B" : "#353E3B";
+    return location.pathname.split("/")[2] ?  (location.pathname.split("/")[2]).substring(0, page.length) === page ? "#B3B842" : "#353E3B" : "#353E3B";
   };
 
   return (

@@ -18,7 +18,7 @@ app.get("/sugarcaneBurningArea/:region", (req, res) => {
     })
     .then((response) => {
       // const debug = {region , response}
-      return res.json({ response });
+      return res.json([response]);
       // console.log(debug);
     })
     .catch((err) => res.status(500).json({ err }));

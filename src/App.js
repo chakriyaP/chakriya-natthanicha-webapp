@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
 
-import HomePage from "./pages/Home.js";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
-import CaneCal from "./pages/CaneCal.js";
+
 import History from "./pages/History.js";
 import Staff from "./pages/Staff.js";
 
@@ -14,6 +13,7 @@ import FirstFormCane from "./pages/FirstFormCane.js";
 import SecondFormCane from "./pages/SecondFormCane.js";
 import ThirdFormCane from "./pages/ThirdFormCane.js";
 import ProcessCane from "./pages/ProcessCane.js"
+// import CustomProgressBar from "./components/CustomProgressBar"
 
 import FirstformRice from "./pages/FirstformRice.js";
 import SecondFormRice from "./pages/SecondFormRice.js";
