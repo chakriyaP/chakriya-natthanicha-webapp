@@ -26,49 +26,49 @@ function SecondFormCane() {
                   nameLable="ค่าคนขับและคนดูแลเครื่อง"
                   nameInput="la"
                   type="number"
-                  placeholder="400"
-                  unit="บาท/ไร่"
+                  placeholder="9.93"
+                  unit="บาท/ตัน"
                 />
                 <InputForm
                   nameLable="อัตราการใช้น้ำมันเชื้อเพลิง"
                   nameInput="fa"
                   type="number"
-                  placeholder="5"
-                  unit="ลิตร/ไร่"
+                  placeholder="2.28"
+                  unit="ลิตร/ตัน"
                 />
                 <InputForm
                   nameLable="ราคาน้ำมันเชื้อเพลิง"
                   nameInput="fc"
                   type="number"
                   placeholder="35.8"
-                  unit="ลิตร/ไร่"
+                  unit="ลิตร/ตัน"
                 />
                 <InputForm
                   nameLable="ค่านายหน้า"
                   nameInput="number"
                   type="ja"
-                  placeholder="30,500"
+                  placeholder="0"
                   unit="บาท/ปี"
                 />
                 <InputForm
                   nameLable="รอบการเปลี่ยนน้ำมันเครื่องทุกการใช้งานกี่ไร่"
                   nameInput="oa"
                   type="number"
-                  placeholder="2"
-                  unit="ไร่"
+                  placeholder="0"
+                  unit="ตัน"
                 />
                 <InputForm
                   nameLable="จำนวนน้ำมันเครื่องที่ต้องการเปลี่ยนในแต่ละครั้ง"
                   nameInput="ol"
                   type="number"
-                  placeholder="0.5"
+                  placeholder="0"
                   unit="ลิตร"
                 />
                 <InputForm
                   nameLable="ราคาน้ำมันเครื่อง"
                   nameInput="oc"
                   type="number"
-                  placeholder="125.78"
+                  placeholder="0"
                   unit="บาท/ลิตร"
                 />
                 <InputForm
@@ -82,14 +82,14 @@ function SecondFormCane() {
                   nameLable="ค่าภาษี/ประกัน"
                   nameInput="t"
                   type="number"
-                  placeholder="25,500"
+                  placeholder="40,865"
                   unit="บาท/ปี"
                 />
                 <InputForm
                   nameLable="ค่าใช้จ่ายอื่นๆ"
                   nameInput="e"
                   type="number"
-                  placeholder="30,000"
+                  placeholder="0"
                   unit="บาท/ปี"
                 />
                 <Link to="/chakriya-natthanicha-webapp/cane3">

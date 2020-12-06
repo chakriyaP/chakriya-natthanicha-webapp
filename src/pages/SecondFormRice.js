@@ -87,14 +87,14 @@ function SecondFormRice() {
                 nameLable="ราคาน้ำมันเชื้อเพลิง"
                 nameInput="fc"
                 placeholder="ราคาน้ำมันเชื้อเพลิง"
-                unit="ลิตร/ไร่"
+                unit="บาท/ลิตร"
                 onChange={handleChange}
               />
               <InputForm
                 nameLable="ค่านายหน้า"
                 nameInput="ja"
                 placeholder="ค่านายหน้า"
-                unit="บาท/ปี"
+                unit="บาท/ไร่"
                 onChange={handleChange}
               />
               <InputForm

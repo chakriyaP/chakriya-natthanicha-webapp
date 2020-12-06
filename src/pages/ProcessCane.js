@@ -57,7 +57,7 @@ const ProcessCane = () => {
     {
       
       value: 70,
-      color: "##4AEC7B",
+      color: "#4AEC7B",
     },
     {
       value: 20,
