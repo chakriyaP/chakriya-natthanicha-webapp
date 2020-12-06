@@ -3,7 +3,7 @@ import "../assets/css/navigationBar.css";
 import NumberFormat from "react-number-format";
 
 const FormInput = (props) => {
-  const { nameLable, nameInput, placeholder, unit,  onChange } = props;
+  const { nameLable, nameInput, placeholder, unit,  onChange, value } = props;
 
   return (
     <div className="form-group">
@@ -15,6 +15,7 @@ const FormInput = (props) => {
           className="form-control"
           placeholder={placeholder}
           onChange={onChange}
+          value={value}
           thousandSeparator={true}
           required
           

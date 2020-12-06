@@ -2,9 +2,24 @@ import React from 'react'
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 function ThirdFormCane() {
+   let history = useHistory();
+
+  var valueDeault = JSON.parse(sessionStorage.getItem("valueDeault"));
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    
+    history.push("/chakriya-natthanicha-webapp/caneProcess");
+  };
+
+  //ย้อนกลับ
+  const handleReset = () => {
+    history.push("/chakriya-natthanicha-webapp/cane2");
+  };
     return (
         <div className="bg-img d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
@@ -21,33 +36,31 @@ function ThirdFormCane() {
             <div className="mt-4 mb-3 border-bottom col-10">
             ข้อมูลการทำงานในรอบปี<br></br>(ประมาณการ)
             </div>
-            <form className="col-10">
+            <form className="col-10" onSubmit={handleSubmit}
+              onReset={handleReset}>
               <InputForm
                 nameLable="พื้นที่เก็บเกี่ยว"
-                nameInput="fc"
+                nameInput="FC"
                 type="number"
-                placeholder="1,206"
+                value={valueDeault["FC"]}
                 unit="ไร่"
               />
 
               <InputForm
                 nameLable="ค่าจ้างเก็บเกี่ยว"
-                nameInput="h"
+                nameInput="H"
                 type="number"
-                placeholder="200"
+                value={valueDeault["H"]}
                 unit="บาท/ไร่"
               />
                 <InputForm
                 nameLable="ความสามารถในการทำงานของเครื่อง"
-                nameInput="w"
+                nameInput="W"
                 type="number"
-                placeholder="12"
+                value={valueDeault["W"]}
                 unit="ปี"
               />
 
-              <Link to="/chakriya-natthanicha-webapp/riceProcess">
-                <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" />
-              </Link>
             </form>
           </div>
         </div>
