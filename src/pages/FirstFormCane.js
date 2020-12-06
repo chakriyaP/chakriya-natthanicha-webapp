@@ -28,7 +28,7 @@ function FirstFormCane() {
                 nameLable="ราคาแรกซื้อ"
                 nameInput="p"
                 type="number"
-                placeholder="20,000,000"
+                placeholder="2,000,000"
                 unit="บาท"
               />
               <InputForm
