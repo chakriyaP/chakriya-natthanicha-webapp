@@ -9,9 +9,13 @@ import {
   MultiColorProgressBarSmall,
 } from "../components/MultiColorProgressBar";
 import { CradProCane } from "../components/CradProCane";
+import { useHistory } from "react-router-dom";
+
 // import {MultiColorProgressBar} from "../components/CustomProgressBar"
 
 const ProcessCane = () => {
+  let history = useHistory();
+
   const [factory, setFactoryName] = useState([]);
   const [caneBurning, setCaneBurning] = useState();
   // value from slieder
@@ -20,6 +24,58 @@ const ProcessCane = () => {
   const [product, setProduct] = useState();
   const [wages, setWages] = useState();
   const [workload, setWorkload] = useState();
+
+  const P = 11722632; //ราคาคันรถ
+  const b = 1; //default สูตรสไลค์
+  const G = 0; //ค่าโรงเก็บเครื่อง 
+  const T = 40865; //ค่าภาษี/ประกัน 
+  const E = 0; //ค่าใช้จ่ายอื่นๆ
+  const J = 0;//ค่านายหน้า
+  const O = 0;//ค่าน้ำมันเครื่อง
+  const TS = 0;//ค่าขนย้ายเครื่อง 
+  const S = 1172263;//ค่าซากที่คิดว่าจะขายได้
+  const I = 2;//ดอกเบี้ย
+  const Y = 10;//อายุใช้งาน
+  const FA = 2.28;//อัตราสิ้นเปลืองน้ำมัน
+  const LA = 9.93;//ค่าคนขับเครื่อง
+  const M = 26.52;//ซ่อม
+  const FC = 21;//น้ำมันจริงๆต้องดึง api
+  const valueDeault = {P, G, T, E, J, O, TS, S, I , Y, FA, LA, M , FC}
+
+  sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
+
+
+  let widthArea = conversionLength * b;
+  let stone = barrier * b;
+  let YE = product * b;
+
+  let wagesWork = 190 * widthArea * stone * product;
+  let wagesWorkMax = wagesWork + wagesWork * 0.05;
+  let wagesWorkMin = wagesWork - wagesWork * 0.05;
+
+  let workSum = P / wagesWork;
+  let workSumMax = workSum + workSum * 0.1;
+  let workSumMin = workSum - workSum * 0.1;
+
+  let D =  (P - S)/ Y
+  let IT = [(P - S) / 2] * [I / 100];
+  let L = LA / (YE / 12)
+  let F = (FA / (YE / 12)) * FC * YE; 
+  let M1 = M/(YE/12)* YE;
+
+  let V = L + J + F + O + M + TS;
+
+  let expenses = D + IT + G + T + E + V; //รายจ่าย
+  let income = workSum * wagesWork; //รายได้
+  let years = P / income; //คุ้มทุน
+
+  // console.log(conversionLength);
+
+  let productRange = [
+    { value: 70, color: "#D6F8B8" }, //greee
+    { value: 20, color: "#eb4d4b" },
+    { value: 10, color: "#eb4d4b" },
+  ];
 
   const sugarcaneBurningArea = (region) => {
     fetch(
@@ -48,12 +104,6 @@ const ProcessCane = () => {
     let selected = e.target.value;
     setCaneBurning(selected);
   };
-
-  let productRange = [
-    { value: 70, color: "#D6F8B8" },
-    { value: 20, color: "#eb4d4b" },
-    { value: 10, color: "#eb4d4b" },
-  ];
 
   let readings = [
     {
@@ -84,6 +134,11 @@ const ProcessCane = () => {
       color: "#BFB7A5",
     },
   ];
+
+  const eiditValue = () => {
+    history.push("/chakriya-natthanicha-webapp/cane");
+
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center row font" >
@@ -138,8 +193,9 @@ const ProcessCane = () => {
                 />
               </div>
               <div className="d-flex flex-column-reverse col-6 mb-10">
+                
                 <p className="font second-cl">
-                  <ins>แก้ไข้ตัวแปร</ins>
+                  <ins><a onClick={eiditValue}>แก้ไข้ตัวแปร</a></ins>
                 </p>
               </div>
             </div>
@@ -164,7 +220,7 @@ const ProcessCane = () => {
                       readings={fixRange}
                       scale={2}
                       nameLable="ความยาวแปลง ( เมตร )"
-                      valueDefault={1.0}
+                      valueDefault={1.1}
                       maxValue="ใหญ่"
                       mdValue="กลาง"
                       minValue="เล็ก"
@@ -247,7 +303,7 @@ const ProcessCane = () => {
                     readings={readings}
                     scale={4}
                     nameLable="ปริมาณงาน"
-                    valueDefault={190}
+                    valueDefault={12.5}
                     maxValue="20 ตัน/ปี"
                     minValue="5 ตัน/ปี"
                     max="20"

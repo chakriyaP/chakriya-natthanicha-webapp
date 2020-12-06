@@ -113,7 +113,7 @@ function FirstformRice() {
                 placeholder="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
                 unit="บาท"
                 onChange={handleChange}
-                required
+                
               />
               <InputForm
                 nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
