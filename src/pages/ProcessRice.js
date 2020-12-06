@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { riceAction } from "../redux/actions/rice-action";
 import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
+import { useHistory } from "react-router-dom";
 
 import ButtonForForm from "../components/ButtonForForm";
 
 function ProcessRice() {
+  let history = useHistory();
+
   const rice1 = useSelector(riceState(RICE_STATE.RICE1));
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
@@ -36,18 +39,32 @@ function ProcessRice() {
   let h = af * wf + as * ws;
   // 4.ระยะเวลาคืนทุน
   let payBackPeriod = (p - s) / (h - it - g - t - e - v);
+  // เก็บค่าประมวณผล
+  // let {fixedCost, v, h, payBackPeriod} = procress
+  var procress = {fixedCost, v, h, payBackPeriod}; 
+  
+  // window.sessionStorage.setItem(`countProcrsee`,0);
 
-  console.log("notconst", (p - s) / y);
-  console.log("have", d);
 
-  // const {mc,p,s,y,i,tsa}=rice1
-  // console.log(mc);
-  // const {la,ja,fa,fc,oa,ol,oc,g,t,e}=rice2
-  // const d = (p-s)/y;
-  // const it = [(p-s)/2]*[i/100];
-  // const fixedCost = d+it+g+t+e;
-  // console.log(fixedCost);
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault(); 
+    let countProcrsee = sessionStorage.getItem('countProcrsee')
+    window.sessionStorage.setItem(`${countProcrsee}rice1`, JSON.stringify(rice1));
+    window.sessionStorage.setItem(`${countProcrsee}rice2`,  JSON.stringify(rice2));
+    window.sessionStorage.setItem(`${countProcrsee}rice3`,  JSON.stringify(rice3));
+    window.sessionStorage.setItem(`${countProcrsee}procress`, JSON.stringify(procress))
+    window.sessionStorage.setItem(`countProcrsee`, +countProcrsee+1);
+
+    history.push("/chakriya-natthanicha-webapp/HistoryRice");
+  };
+
+
+
+  //ย้อนกลับ
+  const handleReset = () => {
+    history.push("/chakriya-natthanicha-webapp/home");
+  };
   return (
     <div className="bg-process pb-">
       <div className="card-header text-center backGround col-sm-12  mb-4 mt-0">
@@ -60,7 +77,7 @@ function ProcessRice() {
             <CardProRice
               icon="0"
               nameCard="ค่าใช้จ่ายคงที่"
-              priceProcess={fixedCost}
+              priceProcess={fixedCost.toFixed(2)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -69,7 +86,7 @@ function ProcessRice() {
             <CardProRice
               icon="1"
               nameCard="ค่าใช้จ่ายแปรผัน"
-              priceProcess={v}
+              priceProcess={v.toFixed(2)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -77,7 +94,7 @@ function ProcessRice() {
             <CardProRice
               icon="2"
               nameCard="รายรับจากการเก็บเกี่ยวข้าว"
-              priceProcess={h}
+              priceProcess={h.toFixed(2)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -85,14 +102,13 @@ function ProcessRice() {
             <CardProRice
               icon="3"
               nameCard="ระยะเวลาคืนทุน"
-              priceProcess={payBackPeriod}
+              priceProcess={payBackPeriod.toFixed(2)}
               unitCard="ปี"
             />
           </div>
-          <Link to="/home">
-            {" "}
+          <form onSubmit={handleSubmit} onReset={handleReset}>
             <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกผลการคำนวณ" />
-          </Link>
+          </form>
         </div>
       </div>
     </div>

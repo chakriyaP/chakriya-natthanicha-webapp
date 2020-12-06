@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 
-import History from "./pages/History.js";
+import HistoryRice from "./pages/HistoryRice.js";
 import Staff from "./pages/Staff.js";
 
 import FirstFormCane from "./pages/FirstFormCane.js";
@@ -19,6 +19,8 @@ import FirstformRice from "./pages/FirstformRice.js";
 import SecondFormRice from "./pages/SecondFormRice.js";
 import ThirdFormRice from "./pages/ThirdFormRice.js";
 import ProcessRice from "./pages/ProcessRice.js"
+
+
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -45,7 +47,7 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/rice3" component={ThirdFormRice}/>
         <Route path="/chakriya-natthanicha-webapp/riceProcess" component={ProcessRice}/>
 
-        <Route path="/chakriya-natthanicha-webapp/history" component={History} />
+        <Route path="/chakriya-natthanicha-webapp/historyRice" component={HistoryRice} />
         <Route path="/chakriya-natthanicha-webapp/staff" component={Staff} />
       
         <Route path="/chakriya-natthanicha-webapp/home" component={Home} />

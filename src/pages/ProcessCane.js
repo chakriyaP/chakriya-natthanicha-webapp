@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/css/InputSlider.css";
+// import "../assets/css/InputSlider.css";
 import Dropdown from "../components/Dropdown";
 import InputForm, { FormInputDisabled } from "../components/FormInput.js";
 import ButtonForForm from "../components/ButtonForForm.js";
@@ -86,7 +86,7 @@ const ProcessCane = () => {
   ];
 
   return (
-    <div className="bg-img d-flex justify-content-center align-items-center row font" >
+    <div className="d-flex justify-content-center align-items-center row font" >
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
         <div
           className="card br-5 p-3"
@@ -306,7 +306,7 @@ const ProcessCane = () => {
             </div>
             <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
             <div>
-              <a><ins>ดูประวัติการคำนวณ >></ins> </a>
+              <a><ins>ดูประวัติการคำนวณ </ins> </a>
             </div>
           </div>
         </div>

@@ -96,7 +96,7 @@ function FirstformRice() {
               <Dropdown
                 nameLable="ภูมิภาค"
                 optionLabal="เลือกภูมิภาค"
-                options={["ภาคเหนือ", "ภาคกลาง", "ภาคตะวันออกเฉียงเหนือ"]}
+                options={[{name : "ภาคเหนือ"}, {name : "ภาคกลาง"}, {name : "ภาคตะวันออกเฉียงเหนือ"}]}
                 onSelected={hendleSelected}
               />
               <InputForm

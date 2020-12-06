@@ -3,7 +3,12 @@ import "../assets/css/CardHistoryRice.css";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/Home.css";
 
-function CardHistory({ titleCard }) {
+function CardHistory(props) {
+  const {titleCard, procressObject} = props
+
+  
+
+
   return (
     <div >
       <div
@@ -23,7 +28,7 @@ function CardHistory({ titleCard }) {
               <CardDetail
                 icon="0"
                 nameCard="ค่าใช้จ่ายคงที่"
-                outPutCard="dd"
+                outPutCard={procressObject["fixedCost"]}
                 unitCard="บาท/ปี"
                 backgroundColor="#eee"
                 titleColor = "#353E3B"
@@ -33,7 +38,7 @@ function CardHistory({ titleCard }) {
               <CardDetail
                 icon="1"
                 nameCard="ค่าใช้จ่ายแปรผัน"
-                outPutCard="dd"
+                outPutCard={procressObject["v"]}
                 unitCard="บาท/ปี"
                 backgroundColor="#eee"
                 titleColor = "#353E3B"
@@ -43,7 +48,7 @@ function CardHistory({ titleCard }) {
               <CardDetail
                 icon="2"
                 nameCard="รายรับจากการรับจ้างเก็บเกี่ยว"
-                outPutCard="dd"
+                outPutCard={procressObject["h"]}
                 unitCard="บาท/ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"
@@ -53,7 +58,7 @@ function CardHistory({ titleCard }) {
               <CardDetail
                 icon="3"
                 nameCard="ระยะเวลาคืนทุน"
-                outPutCard="dd"
+                outPutCard={procressObject["payBackPeriod"]}
                 unitCard="ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"
