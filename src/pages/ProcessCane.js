@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../assets/css/InputSlider.css";
 import Dropdown from "../components/Dropdown";
 import InputForm, { FormInputDisabled } from "../components/FormInput.js";
+import ButtonForForm from "../components/ButtonForForm.js";
+
 import {
   MultiColorProgressBar,
   MultiColorProgressBarSmall,
@@ -55,16 +57,14 @@ const ProcessCane = () => {
 
   let readings = [
     {
-      
       value: 70,
-      color: "##4AEC7B",
+      color: "#4AEC7B",
     },
     {
       value: 20,
       color: "#FFD571",
     },
     {
-     
       value: 10,
       color: "#FF5200",
     },
@@ -86,7 +86,7 @@ const ProcessCane = () => {
   ];
 
   return (
-    <div className="bg-img d-flex justify-content-center align-items-center row font">
+    <div className="bg-img d-flex justify-content-center align-items-center row font" >
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
         <div
           className="card br-5 p-3"
@@ -303,6 +303,10 @@ const ProcessCane = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
+            <div>
+              <a><ins>ดูประวัติการคำนวณ >></ins> </a>
             </div>
           </div>
         </div>
