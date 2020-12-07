@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/chakriya-natthanicha-webapp/static/css/main.e72d0fb5.chunk.css",
-    "main.js": "/chakriya-natthanicha-webapp/static/js/main.d82f06b5.chunk.js",
-    "main.js.map": "/chakriya-natthanicha-webapp/static/js/main.d82f06b5.chunk.js.map",
-    "runtime-main.js": "/chakriya-natthanicha-webapp/static/js/runtime-main.23789834.js",
-    "runtime-main.js.map": "/chakriya-natthanicha-webapp/static/js/runtime-main.23789834.js.map",
-    "static/js/2.60d17973.chunk.js": "/chakriya-natthanicha-webapp/static/js/2.60d17973.chunk.js",
-    "static/js/2.60d17973.chunk.js.map": "/chakriya-natthanicha-webapp/static/js/2.60d17973.chunk.js.map",
+    "main.css": "/chakriya-natthanicha-webapp/static/css/main.a9c3b088.chunk.css",
+    "main.js": "/chakriya-natthanicha-webapp/static/js/main.c64dba1f.chunk.js",
+    "main.js.map": "/chakriya-natthanicha-webapp/static/js/main.c64dba1f.chunk.js.map",
+    "runtime-main.js": "/chakriya-natthanicha-webapp/static/js/runtime-main.e517f161.js",
+    "runtime-main.js.map": "/chakriya-natthanicha-webapp/static/js/runtime-main.e517f161.js.map",
+    "static/css/2.7d97138c.chunk.css": "/chakriya-natthanicha-webapp/static/css/2.7d97138c.chunk.css",
+    "static/js/2.f04a7a8d.chunk.js": "/chakriya-natthanicha-webapp/static/js/2.f04a7a8d.chunk.js",
+    "static/js/2.f04a7a8d.chunk.js.map": "/chakriya-natthanicha-webapp/static/js/2.f04a7a8d.chunk.js.map",
     "index.html": "/chakriya-natthanicha-webapp/index.html",
-    "precache-manifest.54c5bc56755108381f06992d1f374439.js": "/chakriya-natthanicha-webapp/precache-manifest.54c5bc56755108381f06992d1f374439.js",
-    "service-worker.js": "/chakriya-natthanicha-webapp/service-worker.js",
-    "static/css/main.e72d0fb5.chunk.css.map": "/chakriya-natthanicha-webapp/static/css/main.e72d0fb5.chunk.css.map",
-    "static/js/2.60d17973.chunk.js.LICENSE.txt": "/chakriya-natthanicha-webapp/static/js/2.60d17973.chunk.js.LICENSE.txt"
+    "static/css/2.7d97138c.chunk.css.map": "/chakriya-natthanicha-webapp/static/css/2.7d97138c.chunk.css.map",
+    "static/css/main.a9c3b088.chunk.css.map": "/chakriya-natthanicha-webapp/static/css/main.a9c3b088.chunk.css.map",
+    "static/js/2.f04a7a8d.chunk.js.LICENSE.txt": "/chakriya-natthanicha-webapp/static/js/2.f04a7a8d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.23789834.js",
-    "static/js/2.60d17973.chunk.js",
-    "static/css/main.e72d0fb5.chunk.css",
-    "static/js/main.d82f06b5.chunk.js"
+    "static/js/runtime-main.e517f161.js",
+    "static/css/2.7d97138c.chunk.css",
+    "static/js/2.f04a7a8d.chunk.js",
+    "static/css/main.a9c3b088.chunk.css",
+    "static/js/main.c64dba1f.chunk.js"
   ]
 }
