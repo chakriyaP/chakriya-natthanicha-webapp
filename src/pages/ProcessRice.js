@@ -43,18 +43,17 @@ function ProcessRice() {
   // let {fixedCost, v, h, payBackPeriod} = procress
   var procress = {fixedCost, v, h, payBackPeriod}; 
   
-  // window.sessionStorage.setItem(`countProcrsee`,0);
 
 
 
   const handleSubmit = (evt) => {
     evt.preventDefault(); 
-    let countProcrsee = sessionStorage.getItem('countProcrsee')
-    window.sessionStorage.setItem(`${countProcrsee}rice1`, JSON.stringify(rice1));
-    window.sessionStorage.setItem(`${countProcrsee}rice2`,  JSON.stringify(rice2));
-    window.sessionStorage.setItem(`${countProcrsee}rice3`,  JSON.stringify(rice3));
-    window.sessionStorage.setItem(`${countProcrsee}procress`, JSON.stringify(procress))
-    window.sessionStorage.setItem(`countProcrsee`, +countProcrsee+1);
+    let countProcrsee = localStorage.getItem('countProcrsee')
+    window.localStorage.setItem(`${countProcrsee}rice1`, JSON.stringify(rice1));
+    window.localStorage.setItem(`${countProcrsee}rice2`,  JSON.stringify(rice2));
+    window.localStorage.setItem(`${countProcrsee}rice3`,  JSON.stringify(rice3));
+    window.localStorage.setItem(`${countProcrsee}procress`, JSON.stringify(procress))
+    window.localStorage.setItem(`countProcrsee`, +countProcrsee+1);
 
     history.push("/chakriya-natthanicha-webapp/HistoryRice");
   };

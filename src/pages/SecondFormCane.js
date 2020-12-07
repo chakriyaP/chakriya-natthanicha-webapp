@@ -58,32 +58,14 @@ function SecondFormCane() {
                   value={valueDeault["FC"]}
                   unit="ลิตร/ตัน"
                 />
-                <InputForm
-                  nameLable="ค่านายหน้า"
-                  nameInput="number"
-                  type="JA"
-                  value={valueDeault["JA"]}
-                  unit="บาท/ปี"
-                />
-                <InputForm
-                  nameLable="รอบการเปลี่ยนน้ำมันเครื่องทุกการใช้งานกี่ไร่"
-                  nameInput="OA"
-                  type="number"
-                  value={valueDeault["OA"]}
-                  unit="ตัน"
-                />
-                <InputForm
-                  nameLable="จำนวนน้ำมันเครื่องที่ต้องการเปลี่ยนในแต่ละครั้ง"
-                  nameInput="OL"
-                  type="number"
-                  value={valueDeault["OL"]}
-                  unit="ลิตร"
-                />
+              
+              
                 <InputForm
                   nameLable="ราคาน้ำมันเครื่อง"
                   nameInput="OC"
                   type="number"
                   value={valueDeault["OC"]}
+                  value={21}
                   unit="บาท/ลิตร"
                 />
                 <InputForm

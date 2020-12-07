@@ -2,30 +2,49 @@ import React, { useState, useEffect } from "react";
 import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
-import {  useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { riceAction } from "../redux/actions/rice-action";
-
-
-
 
 import "../assets/css/FirstFormCane.css";
 
 function SecondFormRice() {
   const [rice2, setRice2] = useState({});
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
+  const [disel, setDisel] = useState(0)
 
   let history = useHistory();
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();  
-    dispatch(riceAction.setRice2(rice2));
+  const getOilPrice = () => {
+    fetch(`https://www.bangchak.co.th/api/oilprice`)
+      .then((response) => response.text())
+      .then((str) => {
+        var parseString = require("xml2js").parseString;
+        parseString(str, function (err, result) {
+          result.header.item.forEach(element => {
+            if (element.type == "HI DIESEL B20 S"){
+              setDisel(element.today)
+            }
+          });
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   
+
+  useEffect(() => {
+    getOilPrice();  
+  }, [])
+
+  
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    dispatch(riceAction.setRice2(rice2));
 
     // คำนวณ ...\
 
-     //เปลี่ยนไปหน้าถัดไป
+    //เปลี่ยนไปหน้าถัดไป
     history.push("/chakriya-natthanicha-webapp/rice3");
   };
 
@@ -33,7 +52,7 @@ function SecondFormRice() {
   const handleChange = (e) => {
     setRice2({
       ...rice2,
-      [e.target.name]: +(e.target.value.replace(/,/g, '')),
+      [e.target.name]: +e.target.value.replace(/,/g, ""),
     });
   };
 
@@ -43,9 +62,9 @@ function SecondFormRice() {
   };
 
   // log ดูค่าที่ได้จากการเก็บเเฉยๆ เวลาค่ามันเปลี่ยน
-  useEffect(() => {
-    console.log("rice2", rice2);
-  }, [rice2]);
+  // useEffect(() => {
+  //   console.log("rice2", rice2);
+  // }, [rice2]);
 
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font">
@@ -81,13 +100,15 @@ function SecondFormRice() {
                 nameInput="fa"
                 placeholder="อัตราการใช้น้ำมันเชื้อเพลิง"
                 unit="ลิตร/ไร่"
+              
                 onChange={handleChange}
               />
               <InputForm
-                nameLable="ราคาน้ำมันเชื้อเพลิง"
+                nameLable="ราคาน้ำมันเชื้อเพลิง ( ราคาน้ำมันขายปลีก HI DIESEL B20 S จากบางจาก)"
                 nameInput="fc"
                 placeholder="ราคาน้ำมันเชื้อเพลิง"
                 unit="บาท/ลิตร"
+                value={+disel}
                 onChange={handleChange}
               />
               <InputForm

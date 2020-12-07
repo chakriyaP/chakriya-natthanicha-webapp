@@ -8,13 +8,13 @@ import "../assets/css/CardHistoryRice.css";
 export default function history() {
   
   const randerProcess = () => {
-    console.log(sessionStorage.getItem('countProcrsee'));
+    console.log(localStorage.getItem('countProcrsee'));
     let CardHistoryRiceTmp = []
-    for (let i = 0; i < sessionStorage.getItem('countProcrsee'); i++) {
+    for (let i = 0; i < localStorage.getItem('countProcrsee'); i++) {
       let titleCardTmp = `ประมวลผลครั้งที่ ${i+1}`
       console.log(i);
     
-      CardHistoryRiceTmp.push(<CardHistoryRice titleCard={titleCardTmp} procressObject={JSON.parse(sessionStorage.getItem(`${i}procress`))}/>)
+      CardHistoryRiceTmp.push(<CardHistoryRice titleCard={titleCardTmp} procressObject={JSON.parse(localStorage.getItem(`${i}procress`))}/>)
 
     } 
     return CardHistoryRiceTmp

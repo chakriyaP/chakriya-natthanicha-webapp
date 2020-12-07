@@ -153,7 +153,7 @@ export const MultiColorProgressBarSmall = (props) => {
         max={max}
         step={step}
         orient="vertical"
-        className="slider1 shadow-lg"
+        className="slider1"
         style={{
           position: "absolute",
           top: 110,

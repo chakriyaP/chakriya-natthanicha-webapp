@@ -3,7 +3,9 @@ import "../assets/css/CardHistoryRice.css";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/Home.css";
 
-function CardHistoryCane({ titleCard }) {
+function CardHistoryCane(props) {
+  const {titleCard, procressObject} = props
+
   return (
     <div >
       <div
@@ -23,7 +25,7 @@ function CardHistoryCane({ titleCard }) {
               <CardDetail
                 icon="1"
                 nameCard="รายจ่าย"
-                outPutCard="dddddddd"
+                outPutCard={procressObject["expenses"].toFixed(2)}
                 unitCard="บาท/ปี"
                 backgroundColor="#FFD571"
                 titleColor = "#353E3B"
@@ -33,7 +35,7 @@ function CardHistoryCane({ titleCard }) {
               <CardDetail
                 icon="2"
                 nameCard="รายได้"
-                outPutCard="ddddddd"
+                outPutCard={procressObject["income"].toFixed(2)}
                 unitCard="บาท/ปี"
                 backgroundColor="#D6F8B8"
                 titleColor = "#353E3B"
@@ -43,23 +45,14 @@ function CardHistoryCane({ titleCard }) {
               <CardDetail
                 icon="3"
                 nameCard="คุ้มทุน"
-                outPutCard="ddddd"
+                outPutCard={procressObject["years"].toFixed(2)}
                 unitCard="ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"
                 unitColor = "#eee"
                 iconColor="#eee"
               />
-              <CardDetail
-                icon="3"
-                nameCard="คุ้มทุน"
-                outPutCard="ddddd"
-                unitCard="ปี"
-                backgroundColor="#353E3B"
-                titleColor = "#eee"
-                unitColor = "#eee"
-                iconColor="#eee"
-              />
+           
               
             </div>
           </div>

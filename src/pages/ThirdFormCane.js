@@ -60,6 +60,7 @@ function ThirdFormCane() {
                 value={valueDeault["W"]}
                 unit="ปี"
               />
+                <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป"/>
 
             </form>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "../assets/css/InputSlider.css";
+import "../assets/css/ProcessCane.css";
 import Dropdown from "../components/Dropdown";
 import InputForm, { FormInputDisabled } from "../components/FormInput.js";
 import ButtonForForm from "../components/ButtonForForm.js";
@@ -19,55 +19,97 @@ const ProcessCane = () => {
   const [factory, setFactoryName] = useState([]);
   const [caneBurning, setCaneBurning] = useState();
   // value from slieder
-  const [conversionLength, setConversionLength] = useState();
-  const [barrier, setBarrier] = useState();
-  const [product, setProduct] = useState();
-  const [wages, setWages] = useState();
-  const [workload, setWorkload] = useState();
+  const [conversionLength, setConversionLength] = useState(); //ความยาวแปรง 
+  const [barrier, setBarrier] = useState(); //หิน
+  const [product, setProduct] = useState(); //ผลผลิต
+  const [wages, setWages] = useState();  //ค่าจ่าง
+  const [workload, setWorkload] = useState(); //ปริมาณ
+  // const P = 11722632; //ราคาคันรถ
+  // const b = 1; //default สูตรสไลค์
+  // const G = 0; //ค่าโรงเก็บเครื่อง
+  // const T = 40865; //ค่าภาษี/ประกัน
+  // const E = 0; //ค่าใช้จ่ายอื่นๆ
+  // const J = 0; //ค่านายหน้า
+  // const O = 0; //ค่าน้ำมันเครื่อง
+  // const TS = 0; //ค่าขนย้ายเครื่อง
+  // const S = 1172263; //ค่าซากที่คิดว่าจะขายได้
+  // const I = 2; //ดอกเบี้ย
+  // const Y = 10; //อายุใช้งาน
+  // const FA = 2.28; //อัตราสิ้นเปลืองน้ำมัน
+  // const LA = 9.93; //ค่าคนขับเครื่อง
+  // const M = 26.52; //ซ่อม
+  // const FC = 21; //น้ำมันจริงๆต้องดึง api
+  // const valueDeault = { P, b, G, T, E, J, O, TS, S, I, Y, FA, LA, M, FC };
+ 
 
-  const P = 11722632; //ราคาคันรถ
-  const b = 1; //default สูตรสไลค์
-  const G = 0; //ค่าโรงเก็บเครื่อง 
-  const T = 40865; //ค่าภาษี/ประกัน 
-  const E = 0; //ค่าใช้จ่ายอื่นๆ
-  const J = 0;//ค่านายหน้า
-  const O = 0;//ค่าน้ำมันเครื่อง
-  const TS = 0;//ค่าขนย้ายเครื่อง 
-  const S = 1172263;//ค่าซากที่คิดว่าจะขายได้
-  const I = 2;//ดอกเบี้ย
-  const Y = 10;//อายุใช้งาน
-  const FA = 2.28;//อัตราสิ้นเปลืองน้ำมัน
-  const LA = 9.93;//ค่าคนขับเครื่อง
-  const M = 26.52;//ซ่อม
-  const FC = 21;//น้ำมันจริงๆต้องดึง api
-  const valueDeault = {P, G, T, E, J, O, TS, S, I , Y, FA, LA, M , FC}
-
-  sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
+ 
 
 
-  let widthArea = conversionLength * b;
-  let stone = barrier * b;
-  let YE = product * b;
+  const test = () => {
+    var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
 
-  let wagesWork = 190 * widthArea * stone * product;
-  let wagesWorkMax = wagesWork + wagesWork * 0.05;
-  let wagesWorkMin = wagesWork - wagesWork * 0.05;
+    let widthArea = conversionLength * valueDefault["b"];
+    let stone = barrier * valueDefault["b"];
+    let YE = product * valueDefault["b"];
 
-  let workSum = P / wagesWork;
-  let workSumMax = workSum + workSum * 0.1;
-  let workSumMin = workSum - workSum * 0.1;
+    let wagesWork = 190 * widthArea * stone * product;
+    let wagesWorkMax = wagesWork + wagesWork * 0.05;
+    let wagesWorkMin = wagesWork - wagesWork * 0.05;
 
-  let D =  (P - S)/ Y
-  let IT = [(P - S) / 2] * [I / 100];
-  let L = LA / (YE / 12)
-  let F = (FA / (YE / 12)) * FC * YE; 
-  let M1 = M/(YE/12)* YE;
+    let workSum = valueDefault["P"] / wagesWork;
+    let workSumMax = workSum + workSum * 0.1;
+    let workSumMin = workSum - workSum * 0.1;
+setWorkload( valueDefault["P"] /wagesWork)
+    let D = ( valueDefault["P"]  -  valueDefault["S"] ) /  valueDefault["Y"] ;
+    let IT = [( valueDefault["P"]  -  valueDefault["S"] ) / 2] * [ valueDefault["I"]  / 100];
+    let L =  valueDefault["LA"]  / (YE / 12);
+    let F = ( valueDefault["FA"]  / (YE / 12)) *  valueDefault["FC"]  * YE;
+    let M1 = ( valueDefault["M"]  / (YE / 12)) * YE;
 
-  let V = L + J + F + O + M + TS;
+    let V = L +  valueDefault["J"]  + F +  valueDefault["O"]  +  valueDefault["M"]  +  valueDefault["TS"];
 
-  let expenses = D + IT + G + T + E + V; //รายจ่าย
-  let income = workSum * wagesWork; //รายได้
-  let years = P / income; //คุ้มทุน
+    setExpenses(D + IT +  valueDefault["G"]  +  valueDefault["T"]  +  valueDefault["E"]  + V);
+    setIncome((workload * wages));
+    setYears( valueDefault["P"]  / income);
+  };
+
+  // sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
+
+  // console.log("conversionLength", conversionLength);
+  // console.log("barrier", barrier);
+  // console.log("product", product);
+  // console.log("wages", wages);
+  // console.log("workload", workload);
+
+  
+  // let YE = product * b;
+
+  // let wagesWorkMean = 190 * conversionLength * barrier * product; 
+  // let wagesWorkMax = wagesWork + wagesWorkMean * 0.05;
+  // let wagesWorkMin = wagesWork - wagesWork * 0.05;
+
+  // let workSum = P / wagesWork;
+  // let workSumMax = workSum + workSum * 0.1;
+  // let workSumMin = workSum - workSum * 0.1;
+
+  // let D = (P - S) / Y;
+  // let IT = [(P - S) / 2] * [I / 100];
+  // let L = LA / (YE / 12);
+  // let F = (FA / (YE / 12)) * FC * YE;
+  // let M1 = (M / (YE / 12)) * YE;
+
+  // let V = L + J + F + O + M + TS;
+
+  // let expenses = D + IT + G + T + E + V; //รายจ่าย
+  // let income = workSum * wagesWork; //รายได้
+  // let years = P / income; //คุ้มทุน
+
+  const [expenses, setExpenses] = useState(0);
+  const [income, setIncome] =useState(0)
+  const [years, setYears] = useState(0)
+  // setExpenses(D + IT + G + T + E + V);
+  // setIncome(workSum * wagesWork);
+  // setYears(P / income)
 
   // console.log(conversionLength);
 
@@ -137,11 +179,29 @@ const ProcessCane = () => {
 
   const eiditValue = () => {
     history.push("/chakriya-natthanicha-webapp/cane");
+  };
 
-  }
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    let procress = {expenses, income, years}
+    let countProcrseeCane = localStorage.getItem('countProcrseeCane');
+    window.localStorage.setItem(`${countProcrseeCane}procress`, JSON.stringify(procress))
+
+
+    window.localStorage.setItem(`countProcrseeCane`, + countProcrseeCane+1);
+    history.push("/chakriya-natthanicha-webapp/histotyCane");
+  };
+
+  //ย้อนกลับ
+  const handleReset = () => {
+    history.push("/chakriya-natthanicha-webapp/home");
+  };
+
+  
 
   return (
-    <div className="d-flex justify-content-center align-items-center row font" >
+    <div className="bg d-flex justify-content-center align-items-center row font">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
         <div
           className="card br-5 p-3"
@@ -154,7 +214,7 @@ const ProcessCane = () => {
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
               <br></br>ในการใช้งาน
-              <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
+              <samp className="font second-cl ml-1">เครื่องตัดอ้อย</samp>
             </h3>
           </div>
           <div
@@ -193,9 +253,10 @@ const ProcessCane = () => {
                 />
               </div>
               <div className="d-flex flex-column-reverse col-6 mb-10">
-                
                 <p className="font second-cl">
-                  <ins><a onClick={eiditValue}>แก้ไข้ตัวแปร</a></ins>
+                  <ins>
+                    <a onClick={eiditValue}>แก้ไข้ตัวแปร</a>
+                  </ins>
                 </p>
               </div>
             </div>
@@ -286,10 +347,10 @@ const ProcessCane = () => {
                   <MultiColorProgressBar
                     readings={readings}
                     scale={4}
-                    nameLable="ค่าจ้าง"
+                    nameLable="ค่าจ้าง "
                     valueDefault={190}
-                    maxValue="240 บาท/ไร่"
-                    minValue="170 บาท/ไร่"
+                    maxValue="240 บาท/ตัน"
+                    minValue="170 บาท/ตัน"
                     max="240"
                     min="170"
                     onSliderChange={(value) => {
@@ -303,11 +364,11 @@ const ProcessCane = () => {
                     readings={readings}
                     scale={4}
                     nameLable="ปริมาณงาน"
-                    valueDefault={12.5}
-                    maxValue="20 ตัน/ปี"
-                    minValue="5 ตัน/ปี"
-                    max="20"
-                    min="5"
+                    valueDefault={12}
+                    maxValue="16200 ตัน/ปี"
+                    minValue="10800 ตัน/ปี"
+                    max="16200"
+                    min="10800"
                     onSliderChange={(value) => {
                       setWorkload(value);
                     }}
@@ -335,7 +396,7 @@ const ProcessCane = () => {
                       nameLable="รายจ่าย"
                       fristColor="#FFBA71"
                       seconeColor="#FFCC96"
-                      valuePro={"1500"}
+                      valuePro={expenses.toFixed(2)}
                       unit={"บาท/ปี"}
                     />
                   </div>
@@ -344,7 +405,7 @@ const ProcessCane = () => {
                       nameLable="รายได้"
                       fristColor="#BEF091"
                       seconeColor="#D6F8B8"
-                      valuePro={"15,000"}
+                      valuePro={income.toFixed(2)}
                       unit={"บาท/ปี"}
                     />
                   </div>
@@ -353,17 +414,23 @@ const ProcessCane = () => {
                       nameLable="คุ้มทุน"
                       fristColor="#858585"
                       seconeColor="#B7B6B7"
-                      valuePro={"5"}
+                      valuePro={years.toFixed(0)}
                       unit={"ปี"}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
+            <button className="mt-5" onClick={test}>ประมวลผล</button>
+            <form onSubmit={handleSubmit} onReset={handleReset}>
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
+            </form>
             <div>
-              <a><ins>ดูประวัติการคำนวณ </ins> </a>
+              <a>
+                <ins>ดูประวัติการคำนวณ </ins>{" "}
+              </a>
             </div>
+           
           </div>
         </div>
       </div>
@@ -372,3 +439,5 @@ const ProcessCane = () => {
 };
 
 export default ProcessCane;
+
+

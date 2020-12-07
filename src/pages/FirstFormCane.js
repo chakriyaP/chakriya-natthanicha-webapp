@@ -79,48 +79,7 @@ function FirstFormCane() {
           </div>
         </div>
       </div>
-      {/* <div className="container row bg-light mt-5 mb-5 d-flex flex-column align-items-center ">
-        <div className="col-12 bg-info">
-            <div className="col-12">
-               <h3>
-            โปรแกรมประมาณการความคุ้มค่า
-            <br></br>ในการใช้งาน<samp>รถตัดอ้อย</samp>
-          </h3>   
-            </div>
-        
-        </div>
-        <StatusBar />
-        <form className="col-10">
-          <InputForm
-            nameLable="ราคาแรกซื้อ"
-            nameInput="fristBuy"
-            type="text"
-            placeholder="20,000"
-            unit="บาท/ปี"
-          />
-          <InputForm
-            nameLable="ราคาแรกซื้อ"
-            nameInput="fristBuy"
-            type="text"
-            placeholder="20,000"
-            unit="บาท/ปี"
-          />
-          <InputForm
-            nameLable="ราคาแรกซื้อ"
-            nameInput="fristBuy"
-            type="text"
-            placeholder="20,000"
-            unit="บาท/ปี"
-          />
-          <InputForm
-            nameLable="ราคาแรกซื้อ"
-            nameInput="fristBuy"
-            type="text"
-            placeholder="20,000"
-            unit="บาท/ปี"
-          />
-        </form>
-      </div> */}
+      
     </div>
   );
 }

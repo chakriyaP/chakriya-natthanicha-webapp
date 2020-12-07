@@ -7,7 +7,9 @@ import Navbar from "./components/NavigationBar.js";
 import Home from "./pages/Home.js";
 
 import HistoryRice from "./pages/HistoryRice.js";
+import HistotyCane from "./pages/HistotyCane.js"
 import Staff from "./pages/Staff.js";
+import staffEditValueDefaule from "./pages/staffEditValueDefaule"
 
 import FirstFormCane from "./pages/FirstFormCane.js";
 import SecondFormCane from "./pages/SecondFormCane.js";
@@ -48,7 +50,9 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/riceProcess" component={ProcessRice}/>
 
         <Route path="/chakriya-natthanicha-webapp/historyRice" component={HistoryRice} />
+        <Route path="/chakriya-natthanicha-webapp/histotyCane" component={HistotyCane} />
         <Route path="/chakriya-natthanicha-webapp/staff" component={Staff} />
+        <Route path="/chakriya-natthanicha-webapp/staffEditValueDefaule" component={staffEditValueDefaule} />
       
         <Route path="/chakriya-natthanicha-webapp/home" component={Home} />
       
