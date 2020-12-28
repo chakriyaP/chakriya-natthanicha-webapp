@@ -12,6 +12,7 @@ export const MultiColorProgressBar = (props) => {
     max,
     min,
     onSliderChange,
+    step
   } = props;
   const [value, setValue] = useState(valueDefault);
 
@@ -46,7 +47,7 @@ export const MultiColorProgressBar = (props) => {
     <div className="row">
       <div className="col-12">
         <p className="font-weight-bold">
-          {nameLable}  = {value}
+          {nameLable}  = {(+value).toFixed(1)}
         </p>
       </div>
       <div className="row col-12">
@@ -65,6 +66,8 @@ export const MultiColorProgressBar = (props) => {
         type="range"
         min={min}
         max={max}
+        step={step}
+        value={value}
         orient="vertical"
         className="slider shadow-lg"
         style={{
@@ -93,6 +96,7 @@ export const MultiColorProgressBarSmall = (props) => {
     min,
     step,
   } = props;
+
   const [value, setValue] = useState(valueDefault);
 
   let sliderHeight = 0;
@@ -126,7 +130,7 @@ export const MultiColorProgressBarSmall = (props) => {
     <div className="row">
       <div className="col-12">
         <p className="font-weight-bold" style={{ fontSize: "0.9em" }}>
-          {nameLable} = {value}
+          {nameLable} = {(+value).toFixed(1)}
         </p>
       </div>
       <div className="row col-12  ">
@@ -147,18 +151,20 @@ export const MultiColorProgressBarSmall = (props) => {
         </div>
       </div>
 
-      <input
+      <input  
         type="range"
         min={min}
         max={max}
+        value={value}
         step={step}
         orient="vertical"
         className="slider1"
         style={{
           position: "absolute",
-          top: 110,
+          top: 88 ,
           left: 11,
           width: sliderHeight,
+          // backgroundColor: "black"
         }}
         onChange={onValueChang}
       />

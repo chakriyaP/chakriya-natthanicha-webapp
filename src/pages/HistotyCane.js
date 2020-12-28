@@ -3,6 +3,7 @@ import React from 'react'
 import CardHistoryCane from "../components/CardHistoryCane";
 import "../assets/css/CardHistoryRice.css";
 import Footer from "../components/Footer";
+import {NumberFormat} from "../utils/Function"
 
 
 

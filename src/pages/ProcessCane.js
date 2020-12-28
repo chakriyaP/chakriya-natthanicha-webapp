@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/css/ProcessCane.css";
 import Dropdown from "../components/Dropdown";
 import InputForm, { FormInputDisabled } from "../components/FormInput.js";
@@ -10,6 +10,7 @@ import {
 } from "../components/MultiColorProgressBar";
 import { CradProCane } from "../components/CradProCane";
 import { useHistory } from "react-router-dom";
+import { NumberFormat } from "../utils/Function";
 
 // import {MultiColorProgressBar} from "../components/CustomProgressBar"
 
@@ -19,11 +20,42 @@ const ProcessCane = () => {
   const [factory, setFactoryName] = useState([]);
   const [caneBurning, setCaneBurning] = useState();
   // value from slieder
-  const [conversionLength, setConversionLength] = useState(); //ความยาวแปรง 
-  const [barrier, setBarrier] = useState(); //หิน
-  const [product, setProduct] = useState(); //ผลผลิต
-  const [wages, setWages] = useState();  //ค่าจ่าง
-  const [workload, setWorkload] = useState(); //ปริมาณ
+  const [conversionLength, setConversionLength] = useState(1); //ความยาวแปรง
+  const [barrier, setBarrier] = useState(1); //หิน
+  const [product, setProduct] = useState(12.5); //ผลผลิต
+  const [wages, setWages] = useState(190); //ค่าจ่าง
+  const [workload, setWorkload] = useState(12000); //ปริมาณ
+
+  const [wagesReadings, setWagesReadings] = useState([
+    {
+      value: 33.33,
+      color: "#4AEC7B",
+    },
+    {
+      value: 33.33,
+      color: "#FFD571",
+    },
+    {
+      value: 33.33,
+      color: "#FF5200",
+    },
+  ]);
+
+  const [workloadReadings, setWorkloadReadings] = useState([
+    {
+      value: 33.33,
+      color: "#4AEC7B",
+    },
+    {
+      value: 33.33,
+      color: "#FFD571",
+    },
+    {
+      value: 33.33,
+      color: "#FF5200",
+    },
+  ]);
+
   // const P = 11722632; //ราคาคันรถ
   // const b = 1; //default สูตรสไลค์
   // const G = 0; //ค่าโรงเก็บเครื่อง
@@ -40,10 +72,10 @@ const ProcessCane = () => {
   // const M = 26.52; //ซ่อม
   // const FC = 21; //น้ำมันจริงๆต้องดึง api
   // const valueDeault = { P, b, G, T, E, J, O, TS, S, I, Y, FA, LA, M, FC };
- 
 
- 
-
+  // useEffect(() => {
+  //   //คำนวณ
+  // }, [conversionLength, barrier, product, wages, workload])
 
   const test = () => {
     var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
@@ -59,18 +91,27 @@ const ProcessCane = () => {
     let workSum = valueDefault["P"] / wagesWork;
     let workSumMax = workSum + workSum * 0.1;
     let workSumMin = workSum - workSum * 0.1;
-setWorkload( valueDefault["P"] /wagesWork)
-    let D = ( valueDefault["P"]  -  valueDefault["S"] ) /  valueDefault["Y"] ;
-    let IT = [( valueDefault["P"]  -  valueDefault["S"] ) / 2] * [ valueDefault["I"]  / 100];
-    let L =  valueDefault["LA"]  / (YE / 12);
-    let F = ( valueDefault["FA"]  / (YE / 12)) *  valueDefault["FC"]  * YE;
-    let M1 = ( valueDefault["M"]  / (YE / 12)) * YE;
+    setWorkload(valueDefault["P"] / wagesWork);
+    let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
+    let IT =
+      [(valueDefault["P"] - valueDefault["S"]) / 2] * [valueDefault["I"] / 100];
+    let L = valueDefault["LA"] / (YE / 12);
+    let F = (valueDefault["FA"] / (YE / 12)) * valueDefault["FC"] * YE;
+    let M1 = (valueDefault["M"] / (YE / 12)) * YE;
 
-    let V = L +  valueDefault["J"]  + F +  valueDefault["O"]  +  valueDefault["M"]  +  valueDefault["TS"];
+    let V =
+      L +
+      valueDefault["J"] +
+      F +
+      valueDefault["O"] +
+      valueDefault["M"] +
+      valueDefault["TS"];
 
-    setExpenses(D + IT +  valueDefault["G"]  +  valueDefault["T"]  +  valueDefault["E"]  + V);
-    setIncome((workload * wages));
-    setYears( valueDefault["P"]  / income);
+    setExpenses(
+      D + IT + valueDefault["G"] + valueDefault["T"] + valueDefault["E"] + V
+    );
+    setIncome(workload * wages);
+    setYears(valueDefault["P"] / income);
   };
 
   // sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
@@ -81,10 +122,9 @@ setWorkload( valueDefault["P"] /wagesWork)
   // console.log("wages", wages);
   // console.log("workload", workload);
 
-  
   // let YE = product * b;
 
-  // let wagesWorkMean = 190 * conversionLength * barrier * product; 
+  // let wagesWorkMean = 190 * conversionLength * barrier * product;
   // let wagesWorkMax = wagesWork + wagesWorkMean * 0.05;
   // let wagesWorkMin = wagesWork - wagesWork * 0.05;
 
@@ -103,21 +143,6 @@ setWorkload( valueDefault["P"] /wagesWork)
   // let expenses = D + IT + G + T + E + V; //รายจ่าย
   // let income = workSum * wagesWork; //รายได้
   // let years = P / income; //คุ้มทุน
-
-  const [expenses, setExpenses] = useState(0);
-  const [income, setIncome] =useState(0)
-  const [years, setYears] = useState(0)
-  // setExpenses(D + IT + G + T + E + V);
-  // setIncome(workSum * wagesWork);
-  // setYears(P / income)
-
-  // console.log(conversionLength);
-
-  let productRange = [
-    { value: 70, color: "#D6F8B8" }, //greee
-    { value: 20, color: "#eb4d4b" },
-    { value: 10, color: "#eb4d4b" },
-  ];
 
   const sugarcaneBurningArea = (region) => {
     fetch(
@@ -147,21 +172,6 @@ setWorkload( valueDefault["P"] /wagesWork)
     setCaneBurning(selected);
   };
 
-  let readings = [
-    {
-      value: 70,
-      color: "#4AEC7B",
-    },
-    {
-      value: 20,
-      color: "#FFD571",
-    },
-    {
-      value: 10,
-      color: "#FF5200",
-    },
-  ];
-
   let fixRange = [
     {
       value: 33.33,
@@ -177,19 +187,103 @@ setWorkload( valueDefault["P"] /wagesWork)
     },
   ];
 
+  let produceReadings = [
+    {
+      value: 33.33,
+      color: "#413D35",
+    },
+    {
+      value: 33.33,
+      color: "#847D6D",
+    },
+    {
+      value: 33.33,
+      color: "#BFB7A5",
+    },
+  ];
+
+  // let meanWages = 0;
+  const [meanWages, setMeanWages] = useState(190);
+
+  useEffect(() => {
+    setMeanWages(190 * conversionLength * barrier * (product / 12.5));
+    setWagesReadings([
+      {
+        value: (275 - meanWages * 1.05) * 0.8,
+        color: "#4AEC7B",
+      },
+      {
+        value: (meanWages * 1.05 - meanWages * 0.95) * 0.8,
+        color: "#FFD571",
+      },
+      {
+        value: (meanWages * 0.95 - 150) * 0.8,
+        color: "#FF5200",
+      },
+    ]);
+  }, [conversionLength, barrier, product, meanWages]);
+
+  const [work, setWork] = useState(12000);
+  useEffect(() => {
+    setWork(2280000 / wages);
+    setWorkloadReadings([
+      {
+        value: ((15200 - work * 1.1) * 100) / 6910,
+        color: "#4AEC7B",
+      },
+      {
+        value: ((work * 1.1 - work * 0.9) * 100) / 6910,
+        color: "#FFD571",
+      },
+      {
+        value: ((work * 0.9 - 8290) * 100) / 6910,
+        color: "#FF5200",
+      },
+    ]);
+    console.log("WorkloadReadings", workloadReadings);
+  }, [wages]);
+
+  const [expenses, setExpenses] = useState(1202307.92);
+  const [income, setIncome] = useState(2280000.00);
+  const [years, setYears] = useState(0);
+
+  useEffect(() => {
+    var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
+    let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
+    let IT =
+      [(valueDefault["P"] - valueDefault["S"]) / 2] * [valueDefault["I"] / 100];
+    let L = valueDefault["LA"] / (product / 12);
+    let F =
+      (valueDefault["FA"] / (product / 12)) * valueDefault["FC"] * product;
+    let M = (valueDefault["M"] / (product / 12)) * product;
+
+    let V =
+      L + valueDefault["J"] + F + valueDefault["O"] + M + valueDefault["TS"];
+
+    setExpenses(
+      D + IT + valueDefault["G"] + valueDefault["T"] + valueDefault["E"] + V
+    );
+    setIncome(workload * wages);
+
+    setYears((valueDefault["P"] - valueDefault["S"]) / (income - expenses))
+
+    // - IT - valueDefault["G"] - valueDefault["T"] - valueDefault["E"] - V
+  }, [conversionLength, barrier, product, wages,workload,meanWages]);
+
   const eiditValue = () => {
     history.push("/chakriya-natthanicha-webapp/cane");
   };
 
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    let procress = {expenses, income, years}
-    let countProcrseeCane = localStorage.getItem('countProcrseeCane');
-    window.localStorage.setItem(`${countProcrseeCane}procress`, JSON.stringify(procress))
+    let procress = { expenses, income, years };
+    let countProcrseeCane = localStorage.getItem("countProcrseeCane");
+    window.localStorage.setItem(
+      `${countProcrseeCane}procress`,
+      JSON.stringify(procress)
+    );
 
-
-    window.localStorage.setItem(`countProcrseeCane`, + countProcrseeCane+1);
+    window.localStorage.setItem(`countProcrseeCane`, +countProcrseeCane + 1);
     history.push("/chakriya-natthanicha-webapp/histotyCane");
   };
 
@@ -197,8 +291,6 @@ setWorkload( valueDefault["P"] /wagesWork)
   const handleReset = () => {
     history.push("/chakriya-natthanicha-webapp/home");
   };
-
-  
 
   return (
     <div className="bg d-flex justify-content-center align-items-center row font">
@@ -280,14 +372,14 @@ setWorkload( valueDefault["P"] /wagesWork)
                     <MultiColorProgressBarSmall
                       readings={fixRange}
                       scale={2}
-                      nameLable="ความยาวแปลง ( เมตร )"
-                      valueDefault={1.1}
-                      maxValue="ใหญ่"
+                      nameLable="ความยาวแปลง(เมตร)"
+                      valueDefault={1}
+                      maxValue="เล็ก"
                       mdValue="กลาง"
-                      minValue="เล็ก"
+                      minValue="ใหญ่"
                       max="1.1"
                       min="0.9"
-                      step={0.01}
+                      step={0.1}
                       onSliderChange={(value) => {
                         setConversionLength(value);
                       }}
@@ -297,14 +389,14 @@ setWorkload( valueDefault["P"] /wagesWork)
                     <MultiColorProgressBarSmall
                       readings={fixRange}
                       scale={2}
-                      nameLable="   ปริมาณของ หิน / ตอไม้ "
-                      valueDefault={1.1}
+                      nameLable="     ปริมาณของ หิน/ตอไม้ "
+                      valueDefault={1}
                       maxValue="มาก"
                       mdValue="กลาง"
                       minValue="น้อย"
                       max="1.2"
-                      min="0.1"
-                      step={0.01}
+                      min="1.0"
+                      step={0.1}
                       onSliderChange={(value) => {
                         setBarrier(value);
                       }}
@@ -314,14 +406,15 @@ setWorkload( valueDefault["P"] /wagesWork)
 
                 <div className="col-5 mt-3">
                   <MultiColorProgressBar
-                    readings={readings}
+                    readings={produceReadings}
                     scale={4}
                     nameLable="ผลผลิต"
-                    valueDefault={190}
-                    maxValue="20 ตัน/ปี"
-                    minValue="5 ตัน/ปี"
+                    valueDefault={12.5}
+                    maxValue="5 ตัน/ปี"
+                    minValue="20 ตัน/ปี"
                     max="20"
                     min="5"
+                    step={0.5}
                     onSliderChange={(value) => {
                       setProduct(value);
                     }}
@@ -345,14 +438,14 @@ setWorkload( valueDefault["P"] /wagesWork)
                 </div>
                 <div className="col-6 mt-3">
                   <MultiColorProgressBar
-                    readings={readings}
+                    readings={wagesReadings}
                     scale={4}
                     nameLable="ค่าจ้าง "
                     valueDefault={190}
-                    maxValue="240 บาท/ตัน"
-                    minValue="170 บาท/ตัน"
-                    max="240"
-                    min="170"
+                    maxValue="275 บาท/ตัน"
+                    minValue="150 บาท/ตัน"
+                    max="275"
+                    min="150"
                     onSliderChange={(value) => {
                       setWages(value);
                     }}
@@ -361,14 +454,14 @@ setWorkload( valueDefault["P"] /wagesWork)
 
                 <div className="col-6 mt-3">
                   <MultiColorProgressBar
-                    readings={readings}
+                    readings={workloadReadings}
                     scale={4}
                     nameLable="ปริมาณงาน"
-                    valueDefault={12}
-                    maxValue="16200 ตัน/ปี"
-                    minValue="10800 ตัน/ปี"
-                    max="16200"
-                    min="10800"
+                    valueDefault={12000}
+                    maxValue="15,200 ตัน/ปี"
+                    minValue="8,290 ตัน/ปี"
+                    max="15200"
+                    min="8290"
                     onSliderChange={(value) => {
                       setWorkload(value);
                     }}
@@ -396,7 +489,7 @@ setWorkload( valueDefault["P"] /wagesWork)
                       nameLable="รายจ่าย"
                       fristColor="#FFBA71"
                       seconeColor="#FFCC96"
-                      valuePro={expenses.toFixed(2)}
+                      valuePro={NumberFormat(expenses)}
                       unit={"บาท/ปี"}
                     />
                   </div>
@@ -405,7 +498,7 @@ setWorkload( valueDefault["P"] /wagesWork)
                       nameLable="รายได้"
                       fristColor="#BEF091"
                       seconeColor="#D6F8B8"
-                      valuePro={income.toFixed(2)}
+                      valuePro={NumberFormat(income)}
                       unit={"บาท/ปี"}
                     />
                   </div>
@@ -414,14 +507,16 @@ setWorkload( valueDefault["P"] /wagesWork)
                       nameLable="คุ้มทุน"
                       fristColor="#858585"
                       seconeColor="#B7B6B7"
-                      valuePro={years.toFixed(0)}
+                      valuePro={NumberFormat(years)}
                       unit={"ปี"}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <button className="mt-5" onClick={test}>ประมวลผล</button>
+            <button className="mt-5" onClick={test}>
+              ประมวลผล
+            </button>
             <form onSubmit={handleSubmit} onReset={handleReset}>
               <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
             </form>
@@ -430,7 +525,6 @@ setWorkload( valueDefault["P"] /wagesWork)
                 <ins>ดูประวัติการคำนวณ </ins>{" "}
               </a>
             </div>
-           
           </div>
         </div>
       </div>
@@ -439,5 +533,3 @@ setWorkload( valueDefault["P"] /wagesWork)
 };
 
 export default ProcessCane;
-
-

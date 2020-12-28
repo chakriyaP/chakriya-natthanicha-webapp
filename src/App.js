@@ -54,7 +54,7 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/staff" component={Staff} />
         <Route path="/chakriya-natthanicha-webapp/staffEditValueDefaule" component={staffEditValueDefaule} />
       
-        <Route path="/chakriya-natthanicha-webapp/home" component={Home} />
+        <Route path="/chakriya-natthanicha-webapp" component={Home} />
       
       </Switch>
       {/* </ScrollToTop> */}

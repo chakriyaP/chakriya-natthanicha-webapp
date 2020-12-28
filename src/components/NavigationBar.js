@@ -10,13 +10,14 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const location = useLocation();
 
+
   const isCurrentPage = (page) => {
-    // console.log((location.pathname.split("/")[2]).substring(0, page.length));
+    // console.log(location.pathname.split("/")[2].substring(0, page.length) === page);
     return location.pathname.split("/")[2]
-      ? location.pathname.split("/")[2].substring(0, page.length) === page
+      ? (location.pathname.split("/")[2].substring(0, page.length) === page)
         ? "#B3B842"
         : "#353E3B"
-      : "#353E3B";
+      : location.pathname.split("/")[1] === page ?"#B3B842" : "#353E3B";
   };
 
   return (
@@ -42,9 +43,9 @@ function Navbar() {
           <ul className="navbar-nav ml-auto primary-bg">
             <li className="nav-item">
               <Link
-                to="/chakriya-natthanicha-webapp/home"
+                to="/chakriya-natthanicha-webapp"
                 className="nav-link active"
-                style={{ color: isCurrentPage("home") }}
+                style={{ color: isCurrentPage("chakriya-natthanicha-webapp") }}
               >
                 หน้าหลัก
               </Link>

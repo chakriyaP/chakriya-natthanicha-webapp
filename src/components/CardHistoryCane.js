@@ -2,7 +2,8 @@ import React from "react";
 import "../assets/css/CardHistoryRice.css";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/Home.css";
-
+import {NumberFormat} from "../utils/Function"
+ 
 function CardHistoryCane(props) {
   const {titleCard, procressObject} = props
 
@@ -25,7 +26,7 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="1"
                 nameCard="รายจ่าย"
-                outPutCard={procressObject["expenses"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["expenses"])}
                 unitCard="บาท/ปี"
                 backgroundColor="#FFD571"
                 titleColor = "#353E3B"
@@ -35,7 +36,7 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="2"
                 nameCard="รายได้"
-                outPutCard={procressObject["income"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["income"])}
                 unitCard="บาท/ปี"
                 backgroundColor="#D6F8B8"
                 titleColor = "#353E3B"
@@ -45,7 +46,7 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="3"
                 nameCard="คุ้มทุน"
-                outPutCard={procressObject["years"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["years"])}
                 unitCard="ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"

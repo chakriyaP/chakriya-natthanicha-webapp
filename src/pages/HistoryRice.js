@@ -4,6 +4,7 @@ import CardHistoryCane from "../components/CardHistoryCane";
 import Footer from "../components/Footer";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/CardHistoryRice.css";
+import { NumberFormat } from "../utils/Function"
 
 export default function history() {
   

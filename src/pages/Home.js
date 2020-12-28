@@ -13,23 +13,26 @@ function Home() {
   
   window.localStorage.setItem(`countProcrsee`,0);
   window.localStorage.setItem(`countProcrseeCane`,0);
-  const P = 11722632; //ราคาคันรถ
-  const b = 1; //default สูตรสไลค์
-  const G = 0; //ค่าโรงเก็บเครื่อง
-  const T = 40865; //ค่าภาษี/ประกัน
-  const E = 0; //ค่าใช้จ่ายอื่นๆ
-  const J = 0; //ค่านายหน้า
-  const O = 0; //ค่าน้ำมันเครื่อง
-  const TS = 0; //ค่าขนย้ายเครื่อง
-  const S = 1172263; //ค่าซากที่คิดว่าจะขายได้
-  const I = 2; //ดอกเบี้ย
-  const Y = 10; //อายุใช้งาน
-  const FA = 2.28; //อัตราสิ้นเปลืองน้ำมัน
-  const LA = 9.93; //ค่าคนขับเครื่อง
-  const M = 26.52; //ซ่อม
-  const FC = 21; //น้ำมันจริงๆต้องดึง api
-  const valueDeault = { P, b, G, T, E, J, O, TS, S, I, Y, FA, LA, M, FC };
+
+  const P = 11722632; //ราคาคันรถอ้อย
+  const S = 1172263; //มูลค่าซาก
+  const Y = 10 //อายุการใช้งาน
+  const I = 2 //ดอกเบี้ยพิเศษ
+  const T = 40865 //ประกันภาษี
+  const G = 0 //ค่าโรงเก็บเครื่อง
+  const E = 0 // ค่าอื่นๆ
+  const LA = 9.93 //แรงงานขับรถ
+  const M = 26.52 // ค่าซ่อมบำรุง
+  const FA = 2.28 //อัตราการสิ้นเปลืองน้ำมัน
+  const TS = 0 //ค่าค้นย้ายเครื่อง
+  const O = 0 //ค่าน้ำมันเครื่อง
+  const J = 0 //ค่านายหน้า
+  const FC = 20.94 //น้ำมัน api เปลี่ยนน้ำมันใหม้ B10
+
+  const valueDeault = { P, S, Y , I , T ,G, E, LA, M, FA, TS, O , J , FC };
   sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
+
+  
 
   const nextRice = () => {
     history.push("/chakriya-natthanicha-webapp/rice");

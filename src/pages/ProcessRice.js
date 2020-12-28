@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { riceAction } from "../redux/actions/rice-action";
 import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import { useHistory } from "react-router-dom";
+import { NumberFormat } from "../utils/Function"
 
 import ButtonForForm from "../components/ButtonForForm";
 
@@ -76,7 +77,7 @@ function ProcessRice() {
             <CardProRice
               icon="0"
               nameCard="ค่าใช้จ่ายคงที่"
-              priceProcess={fixedCost.toFixed(2)}
+              priceProcess={NumberFormat(fixedCost)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -85,7 +86,7 @@ function ProcessRice() {
             <CardProRice
               icon="1"
               nameCard="ค่าใช้จ่ายแปรผัน"
-              priceProcess={v.toFixed(2)}
+              priceProcess={NumberFormat(v)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -93,7 +94,7 @@ function ProcessRice() {
             <CardProRice
               icon="2"
               nameCard="รายรับจากการเก็บเกี่ยวข้าว"
-              priceProcess={h.toFixed(2)}
+              priceProcess={NumberFormat(h)}
               unitCard="บาท/ปี"
             />
           </div>
@@ -101,7 +102,7 @@ function ProcessRice() {
             <CardProRice
               icon="3"
               nameCard="ระยะเวลาคืนทุน"
-              priceProcess={payBackPeriod.toFixed(2)}
+              priceProcess={NumberFormat(payBackPeriod)}
               unitCard="ปี"
             />
           </div>

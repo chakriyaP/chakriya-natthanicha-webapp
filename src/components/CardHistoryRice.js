@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/css/CardHistoryRice.css";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/Home.css";
+import { NumberFormat } from "../utils/Function"
 
 function CardHistory(props) {
   const {titleCard, procressObject} = props
@@ -28,7 +29,7 @@ function CardHistory(props) {
               <CardDetail
                 icon="0"
                 nameCard="ค่าใช้จ่ายคงที่"
-                outPutCard={procressObject["fixedCost"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["fixedCost"])}
                 unitCard="บาท/ปี"
                 backgroundColor="#eee"
                 titleColor = "#353E3B"
@@ -38,7 +39,7 @@ function CardHistory(props) {
               <CardDetail
                 icon="1"
                 nameCard="ค่าใช้จ่ายแปรผัน"
-                outPutCard={procressObject["v"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["v"])}
                 unitCard="บาท/ปี"
                 backgroundColor="#eee"
                 titleColor = "#353E3B"
@@ -48,7 +49,7 @@ function CardHistory(props) {
               <CardDetail
                 icon="2"
                 nameCard="รายรับจากการรับจ้างเก็บเกี่ยว"
-                outPutCard={procressObject["h"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["h"])}
                 unitCard="บาท/ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"
@@ -58,7 +59,7 @@ function CardHistory(props) {
               <CardDetail
                 icon="3"
                 nameCard="ระยะเวลาคืนทุน"
-                outPutCard={procressObject["payBackPeriod"].toFixed(2)}
+                outPutCard={NumberFormat(procressObject["payBackPeriod"])}
                 unitCard="ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"
