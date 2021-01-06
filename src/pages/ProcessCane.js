@@ -10,6 +10,7 @@ import {
 } from "../components/MultiColorProgressBar";
 import { CradProCane } from "../components/CradProCane";
 import { useHistory } from "react-router-dom";
+import { RiSave3Fill } from "react-icons/ri";
 
 // import {MultiColorProgressBar} from "../components/CustomProgressBar"
 
@@ -25,14 +26,14 @@ const ProcessCane = () => {
   const [wages, setWages] = useState();  //ค่าจ่าง
   const [workload, setWorkload] = useState(); //ปริมาณ
   // const P = 11722632; //ราคาคันรถ
-  // const b = 1; //default สูตรสไลค์
+  // const b = 1; //default สูตรสไลค์  
   // const G = 0; //ค่าโรงเก็บเครื่อง
   // const T = 40865; //ค่าภาษี/ประกัน
   // const E = 0; //ค่าใช้จ่ายอื่นๆ
   // const J = 0; //ค่านายหน้า
   // const O = 0; //ค่าน้ำมันเครื่อง
   // const TS = 0; //ค่าขนย้ายเครื่อง
-  // const S = 1172263; //ค่าซากที่คิดว่าจะขายได้
+  // const S = 1172263; //ค่าซากที่คิดว่าจะขายได้/
   // const I = 2; //ดอกเบี้ย
   // const Y = 10; //อายุใช้งาน
   // const FA = 2.28; //อัตราสิ้นเปลืองน้ำมัน
@@ -423,7 +424,7 @@ setWorkload( valueDefault["P"] /wagesWork)
             </div>
             <button className="mt-5" onClick={test}>ประมวลผล</button>
             <form onSubmit={handleSubmit} onReset={handleReset}>
-              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
             </form>
             <div>
               <a>
