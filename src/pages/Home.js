@@ -27,6 +27,7 @@ function Home() {
   const TS = 0 //ค่าค้นย้ายเครื่อง
   const O = 0 //ค่าน้ำมันเครื่อง
   const J = 0 //ค่านายหน้า
+  
   const FC = 20.94 //น้ำมัน api เปลี่ยนน้ำมันใหม้ B10
 
   const valueDeault = { P, S, Y , I , T ,G, E, LA, M, FA, TS, O , J , FC };
@@ -100,3 +101,5 @@ function Home() {
 }
 
 export default Home;
+
+

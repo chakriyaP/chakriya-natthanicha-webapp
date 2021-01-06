@@ -24,3 +24,20 @@ app.get("/sugarcaneBurningArea/:region", (req, res) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
+
+// default_values_cane
+
+app.get("/valuesDefault/", (req, res) => {
+  const doc = db.doc(`/default_values_cane/value`);
+  doc
+    .get()
+    .then((data) => {
+      return data.data();
+    })
+    .then((response) => {
+      return res.json([response]);
+    })
+    .catch((err) => res.status(500).json({ err }));
+});
+
+

@@ -56,93 +56,42 @@ const ProcessCane = () => {
     },
   ]);
 
-  // const P = 11722632; //ราคาคันรถ
-  // const b = 1; //default สูตรสไลค์
-  // const G = 0; //ค่าโรงเก็บเครื่อง
-  // const T = 40865; //ค่าภาษี/ประกัน
-  // const E = 0; //ค่าใช้จ่ายอื่นๆ
-  // const J = 0; //ค่านายหน้า
-  // const O = 0; //ค่าน้ำมันเครื่อง
-  // const TS = 0; //ค่าขนย้ายเครื่อง
-  // const S = 1172263; //ค่าซากที่คิดว่าจะขายได้
-  // const I = 2; //ดอกเบี้ย
-  // const Y = 10; //อายุใช้งาน
-  // const FA = 2.28; //อัตราสิ้นเปลืองน้ำมัน
-  // const LA = 9.93; //ค่าคนขับเครื่อง
-  // const M = 26.52; //ซ่อม
-  // const FC = 21; //น้ำมันจริงๆต้องดึง api
-  // const valueDeault = { P, b, G, T, E, J, O, TS, S, I, Y, FA, LA, M, FC };
+  // const test = () => {
+  //   var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
 
-  // useEffect(() => {
-  //   //คำนวณ
-  // }, [conversionLength, barrier, product, wages, workload])
+  //   let widthArea = conversionLength * valueDefault["b"];
+  //   let stone = barrier * valueDefault["b"];
+  //   let YE = product * valueDefault["b"];
 
-  const test = () => {
-    var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
+  //   let wagesWork = 190 * widthArea * stone * product;
+  //   let wagesWorkMax = wagesWork + wagesWork * 0.05;
+  //   let wagesWorkMin = wagesWork - wagesWork * 0.05;
 
-    let widthArea = conversionLength * valueDefault["b"];
-    let stone = barrier * valueDefault["b"];
-    let YE = product * valueDefault["b"];
+  //   let workSum = valueDefault["P"] / wagesWork;
+  //   let workSumMax = workSum + workSum * 0.1;
+  //   let workSumMin = workSum - workSum * 0.1;
+  //   setWorkload(valueDefault["P"] / wagesWork);
+  //   let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
+  //   let IT =
+  //     [(valueDefault["P"] - valueDefault["S"]) / 2] * [valueDefault["I"] / 100];
+  //   let L = valueDefault["LA"] / (YE / 12);
+  //   let F = (valueDefault["FA"] / (YE / 12)) * valueDefault["FC"] * YE;
+  //   let M1 = (valueDefault["M"] / (YE / 12)) * YE;
 
-    let wagesWork = 190 * widthArea * stone * product;
-    let wagesWorkMax = wagesWork + wagesWork * 0.05;
-    let wagesWorkMin = wagesWork - wagesWork * 0.05;
+  //   let V =
+  //     L +
+  //     valueDefault["J"] +
+  //     F +
+  //     valueDefault["O"] +
+  //     valueDefault["M"] +
+  //     valueDefault["TS"];
 
-    let workSum = valueDefault["P"] / wagesWork;
-    let workSumMax = workSum + workSum * 0.1;
-    let workSumMin = workSum - workSum * 0.1;
-    setWorkload(valueDefault["P"] / wagesWork);
-    let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
-    let IT =
-      [(valueDefault["P"] - valueDefault["S"]) / 2] * [valueDefault["I"] / 100];
-    let L = valueDefault["LA"] / (YE / 12);
-    let F = (valueDefault["FA"] / (YE / 12)) * valueDefault["FC"] * YE;
-    let M1 = (valueDefault["M"] / (YE / 12)) * YE;
-
-    let V =
-      L +
-      valueDefault["J"] +
-      F +
-      valueDefault["O"] +
-      valueDefault["M"] +
-      valueDefault["TS"];
-
-    setExpenses(
-      D + IT + valueDefault["G"] + valueDefault["T"] + valueDefault["E"] + V
-    );
-    setIncome(workload * wages);
-    setYears(valueDefault["P"] / income);
-  };
-
-  // sessionStorage.setItem("valueDeault", JSON.stringify(valueDeault));
-
-  // console.log("conversionLength", conversionLength);
-  // console.log("barrier", barrier);
-  // console.log("product", product);
-  // console.log("wages", wages);
-  // console.log("workload", workload);
-
-  // let YE = product * b;
-
-  // let wagesWorkMean = 190 * conversionLength * barrier * product;
-  // let wagesWorkMax = wagesWork + wagesWorkMean * 0.05;
-  // let wagesWorkMin = wagesWork - wagesWork * 0.05;
-
-  // let workSum = P / wagesWork;
-  // let workSumMax = workSum + workSum * 0.1;
-  // let workSumMin = workSum - workSum * 0.1;
-
-  // let D = (P - S) / Y;
-  // let IT = [(P - S) / 2] * [I / 100];
-  // let L = LA / (YE / 12);
-  // let F = (FA / (YE / 12)) * FC * YE;
-  // let M1 = (M / (YE / 12)) * YE;
-
-  // let V = L + J + F + O + M + TS;
-
-  // let expenses = D + IT + G + T + E + V; //รายจ่าย
-  // let income = workSum * wagesWork; //รายได้
-  // let years = P / income; //คุ้มทุน
+  //   setExpenses(
+  //     D + IT + valueDefault["G"] + valueDefault["T"] + valueDefault["E"] + V
+  //   );
+  //   setIncome(workload * wages);
+  //   setYears(valueDefault["P"] / income);
+  // };
 
   const sugarcaneBurningArea = (region) => {
     fetch(
@@ -204,50 +153,80 @@ const ProcessCane = () => {
 
   // let meanWages = 0;
   const [meanWages, setMeanWages] = useState(190);
+  const [highMeanWages, setHighMeanWages] = useState(48.32);
+  const [mediumMeanWages, setMediumMeanWages] = useState(15.2);
+  const [lowMeanWages, setLowMeanWages] = useState(24.4);
+  const [sumMeanWages, setSumMeanWages] = useState(0);
+
+  // const check
 
   useEffect(() => {
     setMeanWages(190 * conversionLength * barrier * (product / 12.5));
+
+    setHighMeanWages(Math.abs((275 - meanWages * 1.05) * 0.8)); //48.32
+    setMediumMeanWages(Math.abs((meanWages * 1.05 - meanWages * 0.95) * 0.8)); //15.2
+    setLowMeanWages(Math.abs((meanWages * 0.95 - 150) * 0.8)); //24.4
+    setSumMeanWages(highMeanWages + mediumMeanWages + lowMeanWages); //87.92
+
     setWagesReadings([
       {
-        value: (275 - meanWages * 1.05) * 0.8,
-        color: "#4AEC7B",
+        value: (100 * highMeanWages) / sumMeanWages,
+        color: "#4AEC7B", //เขียว
       },
       {
-        value: (meanWages * 1.05 - meanWages * 0.95) * 0.8,
-        color: "#FFD571",
+        value: (100 * mediumMeanWages) / sumMeanWages,
+        color: "#FFD571", //เหลือง
       },
       {
-        value: (meanWages * 0.95 - 150) * 0.8,
-        color: "#FF5200",
+        value: (100 * lowMeanWages) / sumMeanWages,
+        color: "#FF5200", //แดง
       },
     ]);
   }, [conversionLength, barrier, product, meanWages]);
 
   const [work, setWork] = useState(12000);
+  const [highWork, setHighWork] = useState(28.94356006);
+  const [mediumWork, setMediumWork] = useState(34.73227207);
+  const [lowWork, setLowWork] = useState(24.4);
+  const [sumWork, setSumWork] = useState(0);
+
   useEffect(() => {
     setWork(2280000 / wages);
+
+    setHighWork(Math.abs(((15200 - work * 1.1) * 100) / 6910));
+    setMediumWork(Math.abs(((work * 1.1 - work * 0.9) * 100) / 6910));
+    setLowWork(Math.abs(((work * 0.9 - 8290) * 100) / 6910));
+    setSumWork(highWork + mediumWork + lowWork);   
+  
     setWorkloadReadings([
       {
-        value: ((15200 - work * 1.1) * 100) / 6910,
+        value:(100 * highWork) / sumWork,
         color: "#4AEC7B",
       },
       {
-        value: ((work * 1.1 - work * 0.9) * 100) / 6910,
+        value: (100 * mediumWork ) / sumWork,
         color: "#FFD571",
       },
       {
-        value: ((work * 0.9 - 8290) * 100) / 6910,
+        value: (100 * lowWork) / sumWork,
         color: "#FF5200",
       },
     ]);
-    console.log("WorkloadReadings", workloadReadings);
   }, [wages]);
 
   const [expenses, setExpenses] = useState(1202307.92);
-  const [income, setIncome] = useState(2280000.00);
+  const [income, setIncome] = useState(2280000.0);
   const [years, setYears] = useState(0);
 
   useEffect(() => {
+  //    fetch(
+  //   `https://asia-east2-webapp-project-78b5f.cloudfunctions.net/api/valuesDefault`
+  // )
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     // console.log(data);
+  //   })
+  //   .catch((err) => console.log(err));
     var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
     let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
     let IT =
@@ -265,10 +244,10 @@ const ProcessCane = () => {
     );
     setIncome(workload * wages);
 
-    setYears((valueDefault["P"] - valueDefault["S"]) / (income - expenses))
+    setYears((valueDefault["P"] - valueDefault["S"]) / (income - expenses));
 
     // - IT - valueDefault["G"] - valueDefault["T"] - valueDefault["E"] - V
-  }, [conversionLength, barrier, product, wages,workload,meanWages]);
+  }, [conversionLength, barrier, product, wages, workload, meanWages]);
 
   const eiditValue = () => {
     history.push("/chakriya-natthanicha-webapp/cane");
@@ -514,9 +493,6 @@ const ProcessCane = () => {
                 </div>
               </div>
             </div>
-            <button className="mt-5" onClick={test}>
-              ประมวลผล
-            </button>
             <form onSubmit={handleSubmit} onReset={handleReset}>
               <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
             </form>
