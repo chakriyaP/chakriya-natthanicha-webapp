@@ -2,13 +2,13 @@ import React from "react";
 import "../assets/css/Footer.css";
 import { FaPagelines } from "react-icons/fa";
 
-function footer() {
+function Footer() {
   return (
     <footer  style={{ backgroundColor: "#eee" }}>
       <div
-        class=" row d-flex text-center justify-content-center"
+        class=" row d-flex text-center justify-content-center ml-0 mr-0"
       >
-        <div class="col-md-8 col-12 mt-5">
+        <div class=" mt-5">
           <FaPagelines size="35px" style={{ color: "#B3B842" }} />
 
           <h6 class="font-weight-bold p-2">
@@ -30,4 +30,4 @@ function footer() {
   );
 }
 
-export default footer;
+export default Footer;

@@ -494,7 +494,7 @@ const ProcessCane = () => {
               </div>
             </div>
             <form onSubmit={handleSubmit} onReset={handleReset}>
-              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกการประมวลผล" />
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
             </form>
             <div>
               <a>

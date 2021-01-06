@@ -25,9 +25,9 @@ function FirstFormCane() {
   };
 
   return (
-    <div className="bg-img d-flex justify-content-center align-items-center row font">
+    <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div className="card br-5">
+        <div className="card " style={{borderRadius: "40px"}}>
           <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
