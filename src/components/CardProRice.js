@@ -8,6 +8,8 @@ import { IoIosArrowForward } from "react-icons/io";
 // import { FaCoins } from "react-icons/fa";
 import { FaCoins,FaCommentsDollar,FaTractor } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
+import { NumberFormat } from "../utils/Function";
+
 
 function CardProRice({ icon, nameCard, priceProcess, unitCard }) {
   return (
@@ -30,7 +32,7 @@ function CardProRice({ icon, nameCard, priceProcess, unitCard }) {
         <samp>บาท/ปี</samp></p> */}
 
         <p className="text-center">
-          <samp className="h3">{priceProcess} </samp>
+          <samp className="h3">{NumberFormat(priceProcess)} </samp>
           <br></br>
           {unitCard}
         </p>
