@@ -18,7 +18,6 @@ const FormInput = (props) => {
           value={value}
           thousandSeparator={true}
           required
-          
         />
         <div className="input-group-append">
           <span className="input-group-text primary-bg">{unit}</span>

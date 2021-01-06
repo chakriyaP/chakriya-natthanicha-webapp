@@ -97,7 +97,7 @@ function FirstformRice() {
                 nameLable="ภูมิภาค"
                 optionLabal="เลือกภูมิภาค"
                 options={[{name : "ภาคเหนือ"}, {name : "ภาคกลาง"}, {name : "ภาคตะวันออกเฉียงเหนือ"}]}
-                onSelected={hendleSelected}
+                onChange={hendleSelected}
               />
               <InputForm
                 nameLable="ราคาแรกซื้อ"

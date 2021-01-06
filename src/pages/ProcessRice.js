@@ -7,13 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { riceAction } from "../redux/actions/rice-action";
 import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import { useHistory } from "react-router-dom";
-import { NumberFormat } from "../utils/Function"
+import { NumberFormat } from "../utils/Function";
 
 import ButtonForForm from "../components/ButtonForForm";
+import userEvent from "@testing-library/user-event";
 
 function ProcessRice() {
   let history = useHistory();
-
+  let procress, fixedCost, v, h, payBackPeriod;
   const rice1 = useSelector(riceState(RICE_STATE.RICE1));
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
@@ -22,44 +23,44 @@ function ProcessRice() {
   const { la, fa, fc, ja, oa, oc, ol, t, e, g } = rice2;
   const { af, wf, as, ws, w } = rice3;
 
-  // console.log('RICE1' , mc);
-  //การประมวลผล
-  // 1.ค่าใช้จ่ายคงที่
-  const d = (p - s) / y;
-  const it = ((p - s) / 2) * (i / 100);
-  const fixedCost = d + it + g + t + e;
-  // 2.ค่าใช้จ่ายแปรผัน
-  const l = la * (af + as);
-  const j = ja * (af + as);
-  const f = fa * fc * (af + as);
-  const o = (ol / oa) * oc * (af + as);
-  const m = mc * (af + as);
-  const ts = tsa * (af + as);
-  const v = l + j + f + o + m + ts;
-  // 3.รายรับจากการรับจ้างเก็บเกี่ยว
-  let h = af * wf + as * ws;
-  // 4.ระยะเวลาคืนทุน
-  let payBackPeriod = (p - s) / (h - it - g - t - e - v);
-  // เก็บค่าประมวณผล
-  // let {fixedCost, v, h, payBackPeriod} = procress
-  var procress = {fixedCost, v, h, payBackPeriod}; 
-  
-
-
+  useEffect(() => {
+    // console.log('RICE1' , mc);
+    //การประมวลผล
+    // 1.ค่าใช้จ่ายคงที่
+    const d = (p - s) / y;
+    const it = ((p - s) / 2) * (i / 100);
+     fixedCost = d + it + g + t + e;
+    // 2.ค่าใช้จ่ายแปรผัน
+    const l = la * (af + as);
+    const j = ja * (af + as);
+    const f = fa * fc * (af + as);
+    const o = (ol / oa) * oc * (af + as);
+    const m = mc * (af + as);
+    const ts = tsa * (af + as);
+     v = l + j + f + o + m + ts;
+    // 3.รายรับจากการรับจ้างเก็บเกี่ยว
+     h = (af * wf) + (as * ws);
+    // 4.ระยะเวลาคืนทุน
+     payBackPeriod = (p - s) / (h - it - g - t - e - v);
+    // เก็บค่าประมวณผล
+    // let {fixedCost, v, h, payBackPeriod} = procress
+    procress = { fixedCost, v, h, payBackPeriod };
+  }, []);
 
   const handleSubmit = (evt) => {
-    evt.preventDefault(); 
-    let countProcrsee = localStorage.getItem('countProcrsee')
+    evt.preventDefault();
+    let countProcrsee = localStorage.getItem("countProcrsee");
     window.localStorage.setItem(`${countProcrsee}rice1`, JSON.stringify(rice1));
-    window.localStorage.setItem(`${countProcrsee}rice2`,  JSON.stringify(rice2));
-    window.localStorage.setItem(`${countProcrsee}rice3`,  JSON.stringify(rice3));
-    window.localStorage.setItem(`${countProcrsee}procress`, JSON.stringify(procress))
-    window.localStorage.setItem(`countProcrsee`, +countProcrsee+1);
+    window.localStorage.setItem(`${countProcrsee}rice2`, JSON.stringify(rice2));
+    window.localStorage.setItem(`${countProcrsee}rice3`, JSON.stringify(rice3));
+    window.localStorage.setItem(
+      `${countProcrsee}procress`,
+      JSON.stringify(procress)
+    );
+    window.localStorage.setItem(`countProcrsee`, +countProcrsee + 1);
 
     history.push("/chakriya-natthanicha-webapp/HistoryRice");
   };
-
-
 
   //ย้อนกลับ
   const handleReset = () => {
@@ -77,7 +78,8 @@ function ProcessRice() {
             <CardProRice
               icon="0"
               nameCard="ค่าใช้จ่ายคงที่"
-              priceProcess={NumberFormat(fixedCost)}
+              // priceProcess={NumberFormat(fixedCost)}
+              priceProcess={fixedCost}
               unitCard="บาท/ปี"
             />
           </div>
@@ -86,7 +88,7 @@ function ProcessRice() {
             <CardProRice
               icon="1"
               nameCard="ค่าใช้จ่ายแปรผัน"
-              priceProcess={NumberFormat(v)}
+              priceProcess={v}
               unitCard="บาท/ปี"
             />
           </div>
@@ -94,7 +96,7 @@ function ProcessRice() {
             <CardProRice
               icon="2"
               nameCard="รายรับจากการเก็บเกี่ยวข้าว"
-              priceProcess={NumberFormat(h)}
+              priceProcess={h}
               unitCard="บาท/ปี"
             />
           </div>
@@ -102,7 +104,7 @@ function ProcessRice() {
             <CardProRice
               icon="3"
               nameCard="ระยะเวลาคืนทุน"
-              priceProcess={NumberFormat(payBackPeriod)}
+              priceProcess={payBackPeriod}
               unitCard="ปี"
             />
           </div>

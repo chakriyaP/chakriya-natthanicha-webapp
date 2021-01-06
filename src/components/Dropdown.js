@@ -1,13 +1,20 @@
 import React from "react";
+// import Select from 'react-select'
 
 const Dropdown = (props) => {
-  const { nameLable, optionLabal,options ,onSelected} = props;
+  const { nameLable, optionLabal,options ,onChange} = props;
 
   return (
-    <div>
+    <div className="form-group">
       <label>{nameLable}</label>
       <div className="input-group mb-3">
-      <select className="form-control" onChange={onSelected} required>
+      {/* <Select options={options} /> */}
+      <select 
+      required
+      className="form-control" 
+      onChange={onChange}
+      value={undefined}
+      >
         <option selected disabled> {optionLabal} </option>
         {options.map((option) => {
           return <option value={option.value}> {option.name}</option>;

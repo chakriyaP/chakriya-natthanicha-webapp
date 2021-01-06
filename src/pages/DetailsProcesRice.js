@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const DetailsProcesRice = () => {
+function DetailsProcesRice() {
     return (
         <div>
             
         </div>
     )
 }
+
+export default DetailsProcesRice

@@ -21,6 +21,8 @@ import FirstformRice from "./pages/FirstformRice.js";
 import SecondFormRice from "./pages/SecondFormRice.js";
 import ThirdFormRice from "./pages/ThirdFormRice.js";
 import ProcessRice from "./pages/ProcessRice.js"
+import DetailsProcesRice from "./pages/DetailsProcesRice.js"
+
 
 
 
@@ -48,6 +50,7 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/rice2" component={SecondFormRice}/>
         <Route path="/chakriya-natthanicha-webapp/rice3" component={ThirdFormRice}/>
         <Route path="/chakriya-natthanicha-webapp/riceProcess" component={ProcessRice}/>
+        <Route path="/chakriya-natthanicha-webapp/detailsProcess" component={DetailsProcesRice}/>
 
         <Route path="/chakriya-natthanicha-webapp/historyRice" component={HistoryRice} />
         <Route path="/chakriya-natthanicha-webapp/histotyCane" component={HistotyCane} />
