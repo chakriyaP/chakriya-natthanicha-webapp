@@ -71,9 +71,9 @@ function FirstformRice() {
 
   return (
     // <Router>
-    <div className="bg-img d-flex justify-content-center align-items-center row font">
+    <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
       <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div className="card br-5">
+        <div className="card "style={{borderRadius: "40px"}}>
           <div className="card-header text-center">
             <h3>
               โปรแกรมประมาณการความคุ้มค่า
@@ -81,14 +81,14 @@ function FirstformRice() {
               <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
             </h3>
           </div>
-          <div className="card-body d-flex flex-column align-items-center row">
+          <div className="card-body d-flex flex-column align-items-center ">
             <StatusBar status="1" />
             <div className="mt-4 mb-3  col-10">
               <h5 className="text-center">ข้อมูลทั่วไป</h5>
             </div>
 
             <form
-              className="col-10"
+              className="col-lg-10 col-sm-12 col-md-6  mr-0 ml-0"
               id="firstFormRice"
               onSubmit={handleSubmit}
               onReset={handleReset}

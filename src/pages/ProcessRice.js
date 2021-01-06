@@ -108,9 +108,13 @@ function ProcessRice() {
               unitCard="ปี"
             />
           </div>
+          <div>
+          <button type="button col-lg-12 col-md-12" class="btn btn-link">ดูรายละเอียดเพิ่มเติม</button>
+          </div>
           <form onSubmit={handleSubmit} onReset={handleReset}>
-            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึกผลการคำนวณ" />
+            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
           </form>
+
         </div>
       </div>
     </div>
