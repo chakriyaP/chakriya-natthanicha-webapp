@@ -18,7 +18,7 @@ function Staff() {
           <h5 class="card-title text-center h5">Staff login</h5>
           <form onSubmit={editValueDefalt}>
             <div class="form-group">
-              <label for="username">Username</label>
+              <label >Username</label>
               <input
                 class="form-control"
                 id="username"
@@ -26,7 +26,7 @@ function Staff() {
               />
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label >Password</label>
               <input
                 type="password"
                 class="form-control"

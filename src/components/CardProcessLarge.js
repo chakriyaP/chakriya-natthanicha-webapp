@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CardProcessLarge(this.props.) {
+function CardProcessLarge(props) {
     return (
         <div className="card font" style={{borderRadius:"25px"}}>
         <div class="card-header">ค่าใช้จ่ายคงที่</div>

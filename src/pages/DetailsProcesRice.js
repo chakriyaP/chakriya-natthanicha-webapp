@@ -1,8 +1,44 @@
-import React from "react";
+import React ,{ useState, useEffect }from "react";
 import "../assets/css/ProcessRice.css";
 import CardProRice from "../components/CardProRice.js";
+import Chart from "react-apexcharts";
 
 function DetailsProcesRice() {
+   
+    const [option, setOption] = useState({
+        chart: {
+          id: "basic-bar"
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        }
+      })
+    const [series, setSeries] = useState([
+        {
+          name: "series-1",
+          data: [30, 40, 45, 50, 49, 60, 70, 91]
+        }
+      ])
+    useEffect(() => {
+        setOption({
+            chart: {
+              id: "basic-bar",
+              background: '#fff',
+             
+            },
+            xaxis: {
+              categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1999]
+            }
+          })
+    
+          setSeries([
+            {
+              name: "series-1",
+              data: [30, 40, 45, 50, 49, 60, 70, 91]
+            }
+          ])
+    }, [])
+    
   return (
     <div className="bg-process pb- ">
       <div className="card-header text-center backGround col-sm-12  mb-4 mt-0">
@@ -13,11 +49,17 @@ function DetailsProcesRice() {
       </div>
       <div className="container-fluid d-flex flex-roww justify-content-around align-items-center">
         <div className="col-5 ">
-          <img
+          {/* <img
             src="https://sites.google.com/site/5855400298suphansaamowech/_/rsrc/1447478450853/bunny-firming-cream/%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F.png"
             class="img-fluid"
             alt="graph process"
-          ></img>
+          ></img> */}
+          <Chart
+            options={option}
+            series={series}
+            type="line"
+            width="500"
+          />
         </div>
 
         <div className="col-6 row">

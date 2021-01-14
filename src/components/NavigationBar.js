@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../assets/css/navigationBar.css";
 // import "../assets/css/common.css"
@@ -10,15 +10,21 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const location = useLocation();
 
-
   const isCurrentPage = (page) => {
     // console.log(location.pathname.split("/")[2].substring(0, page.length) === page);
     return location.pathname.split("/")[2]
-      ? (location.pathname.split("/")[2].substring(0, page.length) === page)
+      ? location.pathname.split("/")[2].substring(0, page.length) === page
         ? "#B3B842"
         : "#353E3B"
-      : location.pathname.split("/")[1] === page ?"#B3B842" : "#353E3B";
+      : location.pathname.split("/")[1] === page
+      ? "#B3B842"
+      : "#353E3B";
   };
+
+  useEffect(() => {
+    console.log(location.pathname.split("/")[1]);
+    console.log(location.pathname.split("/")[2]);
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
@@ -44,7 +50,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 to="/chakriya-natthanicha-webapp"
-                className="nav-link active"
+                className="nav-link active nav-font"
                 style={{ color: isCurrentPage("chakriya-natthanicha-webapp") }}
               >
                 หน้าหลัก
@@ -53,7 +59,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 to="/chakriya-natthanicha-webapp/caneProcess"
-                className="nav-link"
+                className="nav-link nav-font"
                 style={{ color: isCurrentPage("cane") }}
               >
                 รถตัดอ้อย
@@ -62,7 +68,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 to="/chakriya-natthanicha-webapp/rice"
-                className="nav-link"
+                className="nav-link nav-font"
                 style={{ color: isCurrentPage("rice") }}
               >
                 เครื่องเกี่ยวนวดข้าว
@@ -74,7 +80,7 @@ function Navbar() {
                 style={{ color: isCurrentPage("history") }}
               >
                 <a
-                  class="btn btn-secondary dropdown-toggle"
+                  class="btn btn-secondary dropdown-toggle nav-font"
                   role="button"
                   id="dropdownMenuLink"
                   data-toggle="dropdown"
@@ -117,13 +123,38 @@ function Navbar() {
                 ประวัติ
               </Link> */}
             </li>
+            {/* {location.pathname.split("/")[2] === "staff" ? (
+              <li className="nav-item">
+                <Link
+                  to="/chakriya-natthanicha-webapp/staff"
+                  className="nav-link nav-font"
+                  style={{ color: isCurrentPage("staff") }}
+                >
+                  <FaLock /> ผู้ดูแล
+                </Link>
+              </li>
+            ) :  <li>{location.pathname.split("/")[1]}</li>
+            location.pathname.split("/")[1] ===
+              "chakriya-natthanicha-webapp" ? (
+              <li className="nav-item">
+                <Link
+                  to="/chakriya-natthanicha-webapp/staff"
+                  className="nav-link nav-font"
+                  style={{ color: isCurrentPage("staff") }}
+                >
+                  <FaLock /> ผู้ดูแล
+                </Link>
+              </li>
+            ) : 
+            } */}
+
             <li className="nav-item">
               <Link
                 to="/chakriya-natthanicha-webapp/staff"
-                className="nav-link"
+                className="nav-link nav-font"
                 style={{ color: isCurrentPage("staff") }}
               >
-                <FaLock /> staff
+                <FaLock /> ผู้ดูแล
               </Link>
             </li>
           </ul>
