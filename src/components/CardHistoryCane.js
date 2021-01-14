@@ -10,16 +10,16 @@ function CardHistoryCane(props) {
   return (
     <div >
       <div
-        class="card mb-3 backGround "
+        class="card mb-3 col-lg-9 col-md-12 col-sm-12 backGround "
         style={{ maxWidth: "1200px", borderRadius: "25px" }}>
         <div class="row no-gutters">
           <div
-            class="col-md-2 d-flex justify-content-center align-items-center bg-card-history "
+            class="col-sm-6 col-lg-2 col-md-2 d-flex justify-content-center align-items-center bg-card-history "
             style={{
               borderTopLeftRadius: "25px",
               borderBottomLeftRadius: "25px",
             }}> 
-            <h5 class="card-title p-4 "style={{textAlign:"center"}}>{titleCard}</h5>
+            <h4 class="font card-title p-4 "style={{textAlign:"center"}}>{titleCard}</h4>
           </div>
           <div className="col-md-10 ">
             <div className="card-body d-flex flex-row justify-content-center align-items-center" style={{textAlign:"center"}}>

@@ -3,12 +3,12 @@ import "../assets/css/navigationBar.css";
 import NumberFormat from "react-number-format";
 
 const FormInput = (props) => {
-  const { nameLable, nameInput, placeholder, unit,  onChange, value } = props;
+  const { nameLable, nameInput, placeholder, unit,  onChange, value ,background} = props;
 
   return (
-    <div className="form-group">
+    <div className=" pl-5 pr-5 p-3" style={{backgroundColor:background}}>
       <label htmlFor={nameInput}>{nameLable}</label>
-      <div className="input-group mb-3">
+      <div className="input-group ">
         <NumberFormat
           id={nameInput}
           name={nameInput}
@@ -31,9 +31,9 @@ export const FormInputDisabled = (props) => {
   const { nameLable, nameInput, placeholder, unit,  onChange, value } = props;
 
   return (
-    <div className="form-group">
+    <div className="form-group" >
       <label htmlFor={nameInput}>{nameLable}</label>
-      <div className="input-group mb-3">
+      <div className="input-group ">
         <NumberFormat
           id={nameInput}
           name={nameInput}

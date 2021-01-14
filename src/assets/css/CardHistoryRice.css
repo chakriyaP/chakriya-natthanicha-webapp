@@ -2,6 +2,22 @@
   background-color: #353E3B;
 }
 
+.bg-form {
+  background-color: #f2f2f2;
+}
+
+.second-bg {
+  background-color: #B3B842;
+}
+
+.primary-cl {
+  color: #eee;
+}
+
+.font-fam {
+  font-family: "Kanit", sans-serif;
+}
+
 .historyPage {
   background-image: url(https://images.unsplash.com/photo-1465765407776-61e63b99d10c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80);
 }

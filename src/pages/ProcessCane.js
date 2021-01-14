@@ -492,17 +492,24 @@ const ProcessCane = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <form onSubmit={handleSubmit} onReset={handleReset}>
-              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
-            </form>
-            <div>
+            {/* </div>
+        
+            <div> */}
               <a>
                 <ins>ดูประวัติการคำนวณ </ins>{" "}
               </a>
+
             </div>
+            
           </div>
+          <div className="text-center col-lg-10">
+          <form onSubmit={handleSubmit} onReset={handleReset}>
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
+            </form>
+          </div>
+          
         </div>
+        
       </div>
     </div>
   );
