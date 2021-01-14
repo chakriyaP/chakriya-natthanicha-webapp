@@ -4,15 +4,16 @@ import InputForm from "../components/FormInput.js";
 import StatusBar from "../components/StatusBar.js";
 import ButtonForForm from "../components/ButtonForForm.js";
 import { Link } from "react-router-dom";
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
+import Footer from "../components/Footer";
 import { riceAction } from "../redux/actions/rice-action";
 
 import "../assets/css/FirstFormCane.css";
 
 function ThirdFormRice() {
   const [rice3, setRice3] = useState({});
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   let history = useHistory();
 
@@ -22,7 +23,7 @@ function ThirdFormRice() {
 
     // คำนวณ ...
 
-     //เปลี่ยนไปหน้าถัดไป
+    //เปลี่ยนไปหน้าถัดไป
     history.push("/chakriya-natthanicha-webapp/riceProcess");
   };
 
@@ -30,7 +31,7 @@ function ThirdFormRice() {
   const handleChange = (e) => {
     setRice3({
       ...rice3,
-      [e.target.name]: +(e.target.value.replace(/,/g, '')),
+      [e.target.name]: +e.target.value.replace(/,/g, ""),
     });
   };
 
@@ -43,75 +44,76 @@ function ThirdFormRice() {
   useEffect(() => {
     console.log("rice3", rice3);
   }, [rice3]);
-  
+
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
-      <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div className="card " style={{borderRadius: "40px"}}>
-          <div className="card-header text-center">
-            <h3>
+      <div className="col-xs-12 col-sm-12 col-md-11 col-lg-8 mt-5 mb-5">
+        <div className="card primary-bg" style={{ borderRadius: "40px" }}>
+          <div className="bg-form card-header text-center p-4 " style={{ borderTopLeftRadius: "40px",borderTopRightRadius:"40px" }}>
+            <h2>
               โปรแกรมประมาณการความคุ้มค่า
               <br></br>ในการใช้งาน
               <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
-            </h3>
+            </h2>
           </div>
-          <div className="card-body d-flex flex-column align-items-center row">
+          <div className="card-body d-flex flex-column align-items-center ">
             <StatusBar status="3" />
-            <div className="mt-4 mb-3 col-10">
-              <h5 className="text-center">
+            <div className="mt-4 ">
+              <h4 className="text-center">
                 ข้อมูลการทำงานในรอบปี<br></br>(ประมาณการ)
-              </h5>
+              </h4>
             </div>
-            <form className="col-10" onSubmit={handleSubmit} onReset={handleReset}>
-              <InputForm
-                nameLable="พื้นที่เก็บเกี่ยวข้าวนาปี"
-                nameInput="af"
-                placeholder="พื้นที่เก็บเกี่ยวข้าวนาปี"
-                unit="ไร่"
-                onChange={handleChange}
-
-              />
-               <InputForm
-                nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
-                nameInput="wf"
-                placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
-                unit="บาท/ไร่"
-                onChange={handleChange}
-
-              />
-              <InputForm
-                nameLable="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
-                nameInput="as"
-                placeholder="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
-                unit="ไร่"
-                onChange={handleChange}
-
-              />
-              <InputForm
-                nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
-                nameInput="ws"
-                placeholder="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
-                unit="บาท/ไร่"
-                onChange={handleChange}
-
-              />
-             
-              <InputForm
-                nameLable="ความสามารถในการทำงานของเครื่อง"
-                nameInput="w"
-                placeholder="ความสามารถในการทำงานของเครื่อง"
-                unit="ไร่/วัน"
-                onChange={handleChange}
-
-              />
-            
-              <ButtonForForm
-                namePer="ย้อนกลับ"
-                nameNext="ประมวณผล"
-        
-              />
-            </form>
           </div>
+          <form
+            className="mr-0 ml-0"
+            onSubmit={handleSubmit}
+            onReset={handleReset}
+          >
+            <InputForm
+              nameLable="พื้นที่เก็บเกี่ยวข้าวนาปี"
+              nameInput="af"
+              placeholder="200"
+              unit="ไร่"
+              onChange={handleChange}
+              // background="#f2f2f2"
+            />
+            <InputForm
+              nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปี"
+              nameInput="wf"
+              placeholder="100"
+              unit="บาท/ไร่"
+              onChange={handleChange}
+            />
+            <InputForm
+              nameLable="พื้นที่เก็บเกี่ยวข้าวนาปรัง"
+              nameInput="as"
+              placeholder="200"
+              unit="ไร่"
+              onChange={handleChange}
+              // background="#f2f2f2"
+            />
+            <InputForm
+              nameLable="ค่าจ้างเก็บเกี่ยวข้าวนาปรัง"
+              nameInput="ws"
+              placeholder="100"
+              unit="บาท/ไร่"
+              onChange={handleChange}
+            />
+
+            <InputForm
+              nameLable="ความสามารถในการทำงานของเครื่อง"
+              nameInput="w"
+              placeholder="10"
+              unit="ไร่/วัน"
+              onChange={handleChange}
+              // background="#f2f2f2"
+            />
+            <div className="card-body d-flex flex-column align-items-center ">
+              <div className="col-lg-8 col-md-8 col-sm-10">
+                <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" />
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

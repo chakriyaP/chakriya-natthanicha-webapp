@@ -2,10 +2,26 @@
   background-color: #353E3B;
 }
 
+.bg-form {
+  background-color: #f2f2f2;
+}
+
+.second-bg {
+  background-color: #B3B842;
+}
+
+.primary-cl {
+  color: #eee;
+}
+
+.font-fam {
+  font-family: "Kanit", sans-serif;
+}
+
 .bt-rice-next {
   background-color: #B3B842;
   border: 0;
-  color: white;
+  color: #ffffff;
   margin: 3%;
 }
 

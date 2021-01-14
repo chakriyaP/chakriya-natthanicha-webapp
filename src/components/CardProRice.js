@@ -11,8 +11,8 @@ import { MdAttachMoney } from "react-icons/md";
 
 function CardProRice({ icon, nameCard, priceProcess, unitCard }) {
   return (
-    <div className="card font " style={{borderRadius: "25px"}}>
-      <div className="card-header d-flex flex-row justify-content-center align-items-center  ">
+    <div className="card font  " style={{borderRadius: "25px"}}>
+      <div className="card-header d-flex flex-row justify-content-center align-items-center ">
         {icon == "0" ? (
           <MdAttachMoney size="35px" />
         ) : icon == "1" ? (

@@ -1,12 +1,12 @@
 import React from "react";
 
 const Dropdown = (props) => {
-  const { nameLable, optionLabal,options ,onSelected} = props;
+  const { nameLable, optionLabal,options ,onSelected,background} = props;
 
   return (
-    <div>
+    <div className="p-3  pl-5 pr-5" style={{backgroundColor:background}}>
       <label>{nameLable}</label>
-      <div className="input-group mb-3">
+      <div className="input-group ">
       <select className="form-control" onChange={onSelected} required>
         <option selected disabled> {optionLabal} </option>
         {options.map((option) => {

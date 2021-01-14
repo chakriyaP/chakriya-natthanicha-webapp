@@ -8,6 +8,7 @@ import ButtonForForm from "../components/ButtonForForm.js";
 import { riceAction } from "../redux/actions/rice-action";
 // import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import Dropdown from "../components/Dropdown";
+import Footer from "../components/Footer.js";
 
 import { useHistory } from "react-router-dom";
 
@@ -34,7 +35,7 @@ function FirstformRice() {
   const handleChange = (e) => {
     setRice1({
       ...rice1,
-      [e.target.name]: +((e.target.value).replace(/,/g, '')),
+      [e.target.name]: +e.target.value.replace(/,/g, ""),
     });
   };
 
@@ -48,7 +49,7 @@ function FirstformRice() {
 
   const hendleSelected = (e) => {
     let selected = e.target.value.slice(3);
-    
+
     if (selected === "เหนือ") {
       selectSetRice(0);
     } else if (selected === "กลาง") {
@@ -56,7 +57,6 @@ function FirstformRice() {
     } else {
       selectSetRice(2);
     }
-
   };
 
   //ย้อนกลับ
@@ -71,70 +71,80 @@ function FirstformRice() {
 
   return (
     // <Router>
-    <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
-      <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 mb-5">
-        <div className="card "style={{borderRadius: "40px"}}>
-          <div className="card-header text-center">
-            <h3>
+    <div className="bg-img d-flex justify-content-center align-items-center  row font  ml-0 mr-0">
+      <div className="col-xs-12 col-sm-12 col-md-11 col-lg-8 mt-5 mb-5 ">
+        <div className="card primary-bg " style={{ borderRadius: "40px" }}>
+          <div className="bg-form card-header text-center p-4 " style={{ borderTopLeftRadius: "40px",borderTopRightRadius:"40px" }}>
+            <h2>
               โปรแกรมประมาณการความคุ้มค่า
               <br></br>ในการใช้งาน
               <samp className="font second-cl ml-1">เครื่องเกี่ยวนวดข้าว</samp>
-            </h3>
+            </h2>
           </div>
           <div className="card-body d-flex flex-column align-items-center ">
             <StatusBar status="1" />
-            <div className="mt-4 mb-3  col-10">
-              <h5 className="text-center">ข้อมูลทั่วไป</h5>
+            <div className="mt-4 ">
+              <h4 className="text-center">ข้อมูลทั่วไป</h4>
             </div>
-
-            <form
-              className="col-lg-10 col-sm-12 col-md-6  mr-0 ml-0"
-              id="firstFormRice"
-              onSubmit={handleSubmit}
-              onReset={handleReset}
-            >
-              <Dropdown
-                nameLable="ภูมิภาค"
-                optionLabal="เลือกภูมิภาค"
-                options={[{name : "ภาคเหนือ"}, {name : "ภาคกลาง"}, {name : "ภาคตะวันออกเฉียงเหนือ"}]}
-                onSelected={hendleSelected}
-              />
-              <InputForm
-                nameLable="ราคาแรกซื้อ"
-                nameInput="p"
-                placeholder="ราคาแรกซื้อ"
-                unit="บาท"
-                onChange={handleChange}
-              />
-
-              <InputForm
-                nameLable="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
-                nameInput="s"
-                placeholder="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
-                unit="บาท"
-                onChange={handleChange}
-                
-              />
-              <InputForm
-                nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
-                nameInput="y"
-                placeholder="คาดว่าจะใช้งานเครื่องกี่ปี"
-                unit="ปี"
-                onChange={handleChange}
-              />
-              <InputForm
-                nameLable="อัตราดอกเบื้ย(ร้อยละ)"
-                nameInput="i"
-                placeholder="อัตราดอกเบื้ย(ร้อยละ)"
-                unit="%"
-                onChange={handleChange}
-              />
-              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
-            </form>
           </div>
+          <form
+            className="mr-0 ml-0"
+            id="firstFormRice"
+            onSubmit={handleSubmit}
+            onReset={handleReset}
+          >
+            <Dropdown
+              nameLable="ภูมิภาค"
+              optionLabal="เลือกภูมิภาค"
+              options={[
+                { name: "ภาคเหนือ" },
+                { name: "ภาคกลาง" },
+                { name: "ภาคตะวันออกเฉียงเหนือ" },
+              ]}
+              onSelected={hendleSelected}
+              // background="#f2f2f2"
+            />
+            <InputForm
+              nameLable="ราคาแรกซื้อ"
+              nameInput="p"
+              placeholder="3,000,000"
+              unit="บาท"
+              onChange={handleChange}
+            />
+
+            <InputForm
+              nameLable="ราคาที่คิดว่าจะขายได้เมื่อเลิกใช้งาน"
+              nameInput="s"
+              placeholder="300,000"
+              unit="บาท"
+              onChange={handleChange}
+              // background="#f2f2f2"
+            />
+            <InputForm
+              nameLable="คาดว่าจะใช้งานเครื่องกี่ปี"
+              nameInput="y"
+              placeholder="8"
+              unit="ปี"
+              onChange={handleChange}
+            />
+            <InputForm
+              nameLable="อัตราดอกเบื้ย(ร้อยละ)"
+              nameInput="i"
+              placeholder="2.9"
+              unit="%"
+              onChange={handleChange}
+              // background="#f2f2f2"
+            />
+            <div className="card-body d-flex flex-column align-items-center ">
+              <div className="col-lg-8 col-md-8 col-sm-10">
+                <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+
     /* <Switch>
       <Route path="/rice/las" component={SecondFormRice}/>
     </Switch>

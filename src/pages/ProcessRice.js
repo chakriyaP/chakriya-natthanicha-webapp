@@ -66,23 +66,23 @@ function ProcessRice() {
     history.push("/chakriya-natthanicha-webapp/home");
   };
   return (
-    <div className="bg-process pb-">
+    <div className="bg-process  ">
       <div className="card-header text-center backGround col-sm-12  mb-4 mt-0">
         <h3 className="font ml-1 ">การประมวณผลความคุ้มค่าในการใช้งาน</h3>
         <h3 className="font second-cl ml-1 ">เครื่องเกี่ยวนวดข้าว</h3>
       </div>
-      <div className="d-flex flex-colum justify-content-center align-items-center bodyCard ">
+      <div className=" bodyCard ">
         <div className="container-fluid row d-flex align-items-center justify-content-around ">
-          <div className="col-sm-10 col-lg-3 mb-2 ">
+          <div className="col-sm-10 col-lg-4 mb-4">
             <CardProRice
               icon="0"
               nameCard="ค่าใช้จ่ายคงที่"
               priceProcess={NumberFormat(fixedCost)}
               unitCard="บาท/ปี"
             />
-          </div>
+          </div>  
 
-          <div className="col-sm-10 col-lg-3 mb-2">
+          <div className="col-sm-10 col-lg-4 mb-2">
             <CardProRice
               icon="1"
               nameCard="ค่าใช้จ่ายแปรผัน"
@@ -90,7 +90,16 @@ function ProcessRice() {
               unitCard="บาท/ปี"
             />
           </div>
-          <div className="col-sm-10 col-lg-3 mb-2">
+          
+
+          <form onSubmit={handleSubmit} onReset={handleReset} className = "col-lg-6 col-md-8 col-sm-12">
+            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
+        </form>  
+        
+          
+        </div>
+        <div className="container-fluid row d-flex align-items-center justify-content-around ">
+        <div className="col-sm-10 col-lg-4 mb-2">
             <CardProRice
               icon="2"
               nameCard="รายรับจากการเก็บเกี่ยวข้าว"
@@ -98,7 +107,7 @@ function ProcessRice() {
               unitCard="บาท/ปี"
             />
           </div>
-          <div className="col-sm-10 col-lg-3 mb-2">
+          <div className="col-sm-10 col-lg-4 mb-2">
             <CardProRice
               icon="3"
               nameCard="ระยะเวลาคืนทุน"
@@ -106,14 +115,9 @@ function ProcessRice() {
               unitCard="ปี"
             />
           </div>
-          <div>
-          <button type="button col-lg-12 col-md-12" class="btn btn-link">ดูรายละเอียดเพิ่มเติม</button>
           </div>
-          <form onSubmit={handleSubmit} onReset={handleReset}>
-            <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
-          </form>
-
-        </div>
+          
+          <button type="button col-lg-12 col-md-12  " class="btn btn-link ">ดูรายละเอียดเพิ่มเติม</button>
       </div>
     </div>
 
