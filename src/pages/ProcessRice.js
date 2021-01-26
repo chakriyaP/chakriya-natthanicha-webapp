@@ -56,7 +56,7 @@ function ProcessRice() {
     // console.log("v", v);
     // console.log("h", h);
     // console.log("payBackPeriod", payBackPeriod);
-  }, []);
+  }, [ fixedCost, v, h, payBackPeriod]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
