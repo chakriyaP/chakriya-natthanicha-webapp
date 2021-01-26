@@ -14,19 +14,25 @@
   color: #eee;
 }
 
+.primary-bg {
+  background-color: #eee;
+}
+
 .font-fam {
   font-family: "Kanit", sans-serif;
+}
+
+.primary-cl {
+  color: #eee;
 }
 
 .bt-rice-next {
   background-color: #B3B842;
   border: 0;
   color: #ffffff;
-  margin: 3%;
 }
 
 .bt-rice-back {
   background-color: #c2c2c2;
   border: 0;
-  margin: 3%;
 }

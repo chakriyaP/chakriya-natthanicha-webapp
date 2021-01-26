@@ -136,7 +136,7 @@ function FirstformRice() {
               // background="#f2f2f2"
             />
             <div className="card-body d-flex flex-column align-items-center ">
-              <div className="col-lg-8 col-md-8 col-sm-10">
+              <div className="col-lg-12 col-md-12 col-sm-12">
                 <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
               </div>
             </div>

@@ -14,8 +14,16 @@
   color: #eee;
 }
 
+.primary-bg {
+  background-color: #eee;
+}
+
 .font-fam {
   font-family: "Kanit", sans-serif;
+}
+
+.primary-cl {
+  color: #eee;
 }
 
 .homePage {
