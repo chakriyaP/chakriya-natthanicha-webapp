@@ -27,9 +27,9 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light primary-bg font sticky-top">
+    <nav className="navbar navbar-expand-md navbar-light primary-bg font sticky-top shadow">
       <div className="container-fluid row">
-        <Link to="/chakriya-natthanicha-webapp/home" className="navbar-brand">
+        <Link to="/chakriya-natthanicha-webapp" className="navbar-brand">
           <FaPagelines className="mb-4 second-cl" size="36px" />
           <samp className="h1">AG</samp>
           <samp className="second-cl h2">calculator</samp>
@@ -51,7 +51,10 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp"
                 className="nav-link active nav-font"
-                style={{ color: isCurrentPage("chakriya-natthanicha-webapp"), fontSize:"1.25em" }}
+                style={{
+                  color: isCurrentPage("chakriya-natthanicha-webapp"),
+                  fontSize: "1.25em",
+                }}
               >
                 หน้าหลัก
               </Link>
@@ -60,7 +63,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/caneProcess"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("cane") , fontSize:"1.25em"}}
+                style={{ color: isCurrentPage("cane"), fontSize: "1.25em" }}
               >
                 รถตัดอ้อย
               </Link>
@@ -69,7 +72,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/rice"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("rice"), fontSize:"1.25em" }}
+                style={{ color: isCurrentPage("rice"), fontSize: "1.25em" }}
               >
                 เครื่องเกี่ยวนวดข้าว
               </Link>
@@ -77,7 +80,7 @@ function Navbar() {
             <li className="nav-item">
               <div
                 class="dropdown mt-1"
-                style={{ color: isCurrentPage("history") , fontSize:"1.25em"}}
+                style={{ color: isCurrentPage("history"), fontSize: "1.25em" }}
               >
                 <a
                   class="btn btn-secondary dropdown-toggle nav-font"
@@ -89,8 +92,12 @@ function Navbar() {
                   style={{
                     backgroundColor: "transparent",
                     border: "none",
-                    color: isCurrentPage("history"),
-                    fontSize:"0.9em"
+                    color:
+                      location.pathname.split("/")[2] == "historyRice" ||
+                      location.pathname.split("/")[2] == "histotyCane"
+                        ? "#B3B842"
+                        : "#353E3B",
+                    fontSize: "0.9em",
                   }}
                 >
                   ประวัติ
@@ -101,20 +108,20 @@ function Navbar() {
                     style={{
                       textDecoration: "none",
                       color: isCurrentPage("historyRice"),
-                      fontSize:"0.9em"
+                      fontSize: "0.9em",
                     }}
                   >
-                    <a class="dropdown-item">ประวัติการประมวลผลข้าว</a>
+                    <a class="dropdown-item">เครื่องเกี่ยวนวดข้าว</a>
                   </Link>
                   <Link
                     to="/chakriya-natthanicha-webapp/histotyCane"
                     style={{
                       textDecoration: "none",
                       color: isCurrentPage("histotyCane"),
-                      fontSize:"0.9em"
+                      fontSize: "0.9em",
                     }}
                   >
-                    <a class="dropdown-item">ประวัติการประมวลผลอ้อย</a>
+                    <a class="dropdown-item">รถตัดอ้อย</a>
                   </Link>
                 </div>
               </div>
@@ -155,7 +162,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/staff"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("staff"), fontSize:"1.2em" }}
+                style={{ color: isCurrentPage("staff"), fontSize: "1.2em" }}
               >
                 <FaLock /> ผู้ดูแล
               </Link>
