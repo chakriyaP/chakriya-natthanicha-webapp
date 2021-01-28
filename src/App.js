@@ -50,7 +50,7 @@ function App() {
         <Route path="/chakriya-natthanicha-webapp/rice2" component={SecondFormRice}/>
         <Route path="/chakriya-natthanicha-webapp/rice3" component={ThirdFormRice}/>
         <Route path="/chakriya-natthanicha-webapp/riceProcess" component={ProcessRice}/>
-        <Route path="/chakriya-natthanicha-webapp/detailsProcess" component={DetailsProcesRice}/>
+        <Route path="/chakriya-natthanicha-webapp/riceDetailsProcess" component={DetailsProcesRice}/>
 
         <Route path="/chakriya-natthanicha-webapp/historyRice" component={HistoryRice} />
         <Route path="/chakriya-natthanicha-webapp/histotyCane" component={HistotyCane} />

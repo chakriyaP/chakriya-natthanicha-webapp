@@ -7,6 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { riceAction } from "../redux/actions/rice-action";
 import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import { useHistory } from "react-router-dom";
+import {FaArrowRight} from "react-icons/fa";
+
+
+
 
 import ButtonForForm from "../components/ButtonForForm";
 import userEvent from "@testing-library/user-event";
@@ -85,15 +89,15 @@ function ProcessRice() {
   const detailsProces = () => {
     dispatch(riceAction.setProcessRice({ fixedCost, v, h, payBackPeriod }));
 
-    history.push("/chakriya-natthanicha-webapp/detailsProcess");
+    history.push("/chakriya-natthanicha-webapp/riceDetailsProcess");
   };
   return (
-    <div className="bg-process  ">
-      <div className="card-header text-center backGround col-sm-12  mb-4 mt-0">
+    <div className="bg-process ">
+      <div className="card-header text-center backGround col-12 col-sm-12  mb-4 mt-0">
         <h3 className="font ml-1 ">การประมวณผลความคุ้มค่าในการใช้งาน</h3>
         <h3 className="font second-cl ml-1 ">เครื่องเกี่ยวนวดข้าว</h3>
       </div>
-      <div className=" bodyCard ">
+      <div className="container col-10">
         <div className="container-fluid row d-flex align-items-center justify-content-around ">
           <div className="col-sm-10 col-lg-4 mb-4">
             <CardProRice
@@ -135,23 +139,24 @@ function ProcessRice() {
             />
           </div>
         </div>
-
+        <div className="d-flex flex-row-reverse bd-highlight">
+          <button
+            type="button col-lg-12 col-md-12 text-right "
+            class="btn  btn-light"
+            onClick={detailsProces}
+          
+          >
+            ดูรายละเอียดเพิ่มเติม <FaArrowRight/>
+          </button>
+        </div>
+        
         <form
           onSubmit={handleSubmit}
           onReset={handleReset}
-          className="col-lg-6 col-md-8 col-sm-12"
+          className="col-lg-12 col-md-12 col-sm-12 pb-5 d-flex align-items-center justify-content-center "
         >
           <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
         </form>
-        <div> 
-          <button
-            type="button col-lg-12 col-md-12 text-right"
-            class="btn btn-link"
-            onClick={detailsProces}
-          >
-            ดูรายละเอียดเพิ่มเติม
-          </button>
-        </div>
       </div>
     </div>
   );
