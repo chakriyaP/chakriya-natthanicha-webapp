@@ -46,7 +46,7 @@ function ProcessRice() {
     setFixedCost(d + it + g + t + e);
     // 2.ค่าใช้จ่ายแปรผัน
     const l = la * (af + as);
-    const j = ja * (af + as);
+    const j = ja * (af + as); 
     const f = fa * fc * (af + as);
     const o = (ol / oa) * oc * (af + as);
     const m = mc * (af + as);

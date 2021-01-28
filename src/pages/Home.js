@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Nav from "../components/NavigationBar.js";
 import "../assets/css/Home.css";
 import { Start } from "../components/StartButton.js";
@@ -10,14 +10,12 @@ import { useHistory } from "react-router-dom";
 
 function Home() {
   let history = useHistory();
-  // console.log(localStorage.getItem("countProcrsee"));
-  // (localStorage.getItem("countProcrsee")) == 0 ? (
-  //   window.localStorage.setItem(`countProcrsee`,0)
-  //   window.localStorage.setItem(`countProcrseeCane`,0)
-  // ) : null
-   
+
+  
+  // (localStorage.getItem(`countProcrsee`) > 0 ? null : window.localStorage.setItem(`countProcrsee`,0))
   window.localStorage.setItem(`countProcrsee`,0)
   window.localStorage.setItem(`countProcrseeCane`,0)
+ 
   
   
 

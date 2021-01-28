@@ -133,27 +133,32 @@ function DetailsProcesRice() {
       </div>
       <div className="container-fluid d-flex flex-roww justify-content-around align-items-center row pb-4 mt-5">
         <div className="col-5">
-          <div className="card font" style={{ borderRadius: "25px" }}>
-            <div class="card-header">ค่าใช้จ่ายคงที่</div>
+          <div className="card font" >
+            <div class="card-header shadow text-white" style={{backgroundColor: "#B3B842"}} >ค่าใช้จ่ายคงที่</div>
             <div class="card-body row">
+            <div className="col-6" style={{fontWeight:"bold"}}>ชื่อ</div>
+            <div className="col-6 text-right" style={{fontWeight:"bold"}}>บาท/ปี</div>
+
               <div className="col-6">ค่าเสื่อม</div>
-              <div className="col-6 text-right">{NumberFormat((p-s)/y)} บาท/ปี</div>
+              <div className="col-6 text-right">{NumberFormat((p-s)/y)} </div>
               <div className="col-6">ค่าดอกเบื้ย</div>
-              <div className="col-6 text-right">{NumberFormat(((p-s)/2)*(i/100))}  บาท/ปี</div>
+              <div className="col-6 text-right">{NumberFormat(((p-s)/2)*(i/100))}  </div>
               <div className="col-6">ค่าโรงเก็บเครื่อง</div>
-              <div className="col-6 text-right">{NumberFormat(g)}  บาท/ปี</div>
+              <div className="col-6 text-right">{NumberFormat(g)}  </div>
               <div className="col-6">ค่าภาษี/ประกัน</div>
-              <div className="col-6 text-right">{NumberFormat(t)}  บาท/ปี</div>
+              <div className="col-6 text-right">{NumberFormat(t)}  </div>
               <div className="col-6">ค่าใช้จ่านอื่นๆ</div>
-              <div className="col-6 text-right">{NumberFormat(e)}  บาท/ปี</div>
+              <div className="col-6 text-right">{NumberFormat(e)}  </div>
             </div>
           </div>
         </div>
         <div className="col-5">
           {" "}
-          <div className="card font" style={{ borderRadius: "25px" }}>
-            <div class="card-header">ค่าใช้จ่ายแปรผัน</div>
+          <div className="card font" >
+            <div class="card-header text-white" style={{backgroundColor: "#B3B842"}}>ค่าใช้จ่ายแปรผัน</div>
             <div class="card-body row">
+            <div className="col-6" style={{fontWeight:"bold"}}>ชื่อ</div>
+            <div className="col-6 text-right" style={{fontWeight:"bold"}}>บาท/ปี</div>
               <div className="col-6">ค่าคนขับและดูแลเครื่อง</div>
               <div className="col-6 text-right">{NumberFormat(la*(af+as))}  บาท/ปี</div>
               <div className="col-6">ค่านายหน้า</div>

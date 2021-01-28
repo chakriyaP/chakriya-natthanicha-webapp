@@ -35,6 +35,10 @@ function SecondFormRice() {
     getOilPrice();
   }, []);
 
+  useEffect(() => {
+    setRice2({ ...rice2, fc: +disel });
+  }, [disel]);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     dispatch(riceAction.setRice2(rice2));
@@ -47,9 +51,12 @@ function SecondFormRice() {
 
   // เอาค่าที่ได้จาก form ไปเก็บไว้
   const handleChange = (e) => {
+    if (e.target.name == 'fc'){
+      setDisel(+e.target.value.replace(/,/g, ""))
+    }
     setRice2({
       ...rice2,
-      [e.target.name]: +e.target.value.replace(/,/g, ""),
+      [e.target.name]: +e.target.value.replace(/,/g, "")
     });
   };
 
@@ -67,7 +74,13 @@ function SecondFormRice() {
     <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
       <div className="col-xs-12 col-sm-12 col-md-11 col-lg-8 mt-5 mb-5">
         <div className="card primary-bg " style={{ borderRadius: "40px" }}>
-          <div className="bg-form card-header text-center p-4 " style={{ borderTopLeftRadius: "40px",borderTopRightRadius:"40px" }}>
+          <div
+            className="bg-form card-header text-center p-4 "
+            style={{
+              borderTopLeftRadius: "40px",
+              borderTopRightRadius: "40px",
+            }}
+          >
             <h2>
               โปรแกรมประมาณการความคุ้มค่า
               <br></br>ในการใช้งาน
@@ -162,9 +175,9 @@ function SecondFormRice() {
               unit="บาท/ปี"
               onChange={handleChange}
             />
-              <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
-                <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
-              </div>
+            <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
+            </div>
           </form>
         </div>
       </div>
