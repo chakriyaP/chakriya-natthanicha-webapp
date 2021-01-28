@@ -23,7 +23,7 @@ function ProcessRice() {
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
 
-  const [ processRice, setProcessRice] = useState({});
+  const [processRice, setProcessRice] = useState({});
   const dispatch = useDispatch();
 
   const { mc, tsa, p, s, y, i } = rice1;
@@ -60,7 +60,7 @@ function ProcessRice() {
     // console.log("h", h);
     // console.log("payBackPeriod", payBackPeriod);
     // setProcessRice({})
-  }, [ fixedCost, v, h, payBackPeriod]);
+  }, [fixedCost, v, h, payBackPeriod]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -74,7 +74,7 @@ function ProcessRice() {
     );
     window.localStorage.setItem(`countProcrsee`, +countProcrsee + 1);
 
-    history.push("/chakriya-natthanicha-webapp/HistoryRice");
+    history.push("/chakriya-natthanicha-webapp/historyRice");
   };
 
   //ย้อนกลับ
@@ -83,7 +83,7 @@ function ProcessRice() {
   };
 
   const detailsProces = () => {
-    dispatch(riceAction.setProcessRice({fixedCost, v, h, payBackPeriod}));
+    dispatch(riceAction.setProcessRice({ fixedCost, v, h, payBackPeriod }));
 
     history.push("/chakriya-natthanicha-webapp/detailsProcess");
   };
@@ -114,14 +114,6 @@ function ProcessRice() {
               unitCard="บาท/ปี"
             />
           </div>
-
-          <form
-            onSubmit={handleSubmit}
-            onReset={handleReset}
-            className="col-lg-6 col-md-8 col-sm-12"
-          >
-           <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
-          </form>
         </div>
         <div className="container-fluid row d-flex align-items-center justify-content-around ">
           <div className="col-sm-10 col-lg-4 mb-2">
@@ -142,18 +134,24 @@ function ProcessRice() {
               unitCard="ปี"
             />
           </div>
-            
-          </div>
-          <div>
-            <button
-              type="button col-lg-12 col-md-12 text-right"
-              class="btn btn-link"
-              onClick={detailsProces}
-            >
-              ดูรายละเอียดเพิ่มเติม
-            </button>
         </div>
-        
+
+        <form
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+          className="col-lg-6 col-md-8 col-sm-12"
+        >
+          <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
+        </form>
+        <div> 
+          <button
+            type="button col-lg-12 col-md-12 text-right"
+            class="btn btn-link"
+            onClick={detailsProces}
+          >
+            ดูรายละเอียดเพิ่มเติม
+          </button>
+        </div>
       </div>
     </div>
   );
