@@ -23,6 +23,9 @@ function ProcessRice() {
   const rice2 = useSelector(riceState(RICE_STATE.RICE2));
   const rice3 = useSelector(riceState(RICE_STATE.RICE3));
 
+  const [ processRice, setProcessRice] = useState({});
+  const dispatch = useDispatch();
+
   const { mc, tsa, p, s, y, i } = rice1;
   const { la, fa, fc, ja, oa, oc, ol, t, e, g } = rice2;
   const { af, wf, as, ws, w } = rice3;
@@ -56,6 +59,7 @@ function ProcessRice() {
     // console.log("v", v);
     // console.log("h", h);
     // console.log("payBackPeriod", payBackPeriod);
+    // setProcessRice({})
   }, [ fixedCost, v, h, payBackPeriod]);
 
   const handleSubmit = (evt) => {
@@ -79,6 +83,8 @@ function ProcessRice() {
   };
 
   const detailsProces = () => {
+    dispatch(riceAction.setProcessRice({fixedCost, v, h, payBackPeriod}));
+
     history.push("/chakriya-natthanicha-webapp/detailsProcess");
   };
   return (

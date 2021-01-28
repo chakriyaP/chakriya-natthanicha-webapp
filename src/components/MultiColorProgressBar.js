@@ -129,7 +129,7 @@ export const MultiColorProgressBarSmall = (props) => {
   return (
     <div className="row">
       <div className="col-12">
-        <p className="font-weight-bold" style={{ fontSize: "0.9em" }}>
+        <p className="font-weight-bold fs-6">
           {nameLable} = {(+value).toFixed(1)}
         </p>
       </div>

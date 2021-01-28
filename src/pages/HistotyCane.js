@@ -35,7 +35,7 @@ function HistotyCane() {
         </div>
 
 
-        {localStorage.getItem("countProcrsee") == 0 ? (
+        {localStorage.getItem("countProcrseeCane") == 0 ? (
         <div className="container-fluid  d-flex justify-content-center align-items-center row p-4">
           {" "}
           <div

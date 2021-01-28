@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import CardDetail from "../components/CardDetail";
 import "../assets/css/CardHistoryRice.css";
 import { NumberFormat } from "../utils/Function";
-
+  
 export default function history() {
   const randerProcess = () => {
     console.log(localStorage.getItem("countProcrsee"));

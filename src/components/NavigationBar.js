@@ -51,7 +51,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp"
                 className="nav-link active nav-font"
-                style={{ color: isCurrentPage("chakriya-natthanicha-webapp") }}
+                style={{ color: isCurrentPage("chakriya-natthanicha-webapp"), fontSize:"1.25em" }}
               >
                 หน้าหลัก
               </Link>
@@ -60,7 +60,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/caneProcess"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("cane") }}
+                style={{ color: isCurrentPage("cane") , fontSize:"1.25em"}}
               >
                 รถตัดอ้อย
               </Link>
@@ -69,7 +69,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/rice"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("rice") }}
+                style={{ color: isCurrentPage("rice"), fontSize:"1.25em" }}
               >
                 เครื่องเกี่ยวนวดข้าว
               </Link>
@@ -77,7 +77,7 @@ function Navbar() {
             <li className="nav-item">
               <div
                 class="dropdown mt-1"
-                style={{ color: isCurrentPage("history") }}
+                style={{ color: isCurrentPage("history") , fontSize:"1.25em"}}
               >
                 <a
                   class="btn btn-secondary dropdown-toggle nav-font"
@@ -90,6 +90,7 @@ function Navbar() {
                     backgroundColor: "transparent",
                     border: "none",
                     color: isCurrentPage("history"),
+                    fontSize:"0.9em"
                   }}
                 >
                   ประวัติ
@@ -100,6 +101,7 @@ function Navbar() {
                     style={{
                       textDecoration: "none",
                       color: isCurrentPage("historyRice"),
+                      fontSize:"0.9em"
                     }}
                   >
                     <a class="dropdown-item">ประวัติการประมวลผลข้าว</a>
@@ -109,6 +111,7 @@ function Navbar() {
                     style={{
                       textDecoration: "none",
                       color: isCurrentPage("histotyCane"),
+                      fontSize:"0.9em"
                     }}
                   >
                     <a class="dropdown-item">ประวัติการประมวลผลอ้อย</a>
@@ -152,7 +155,7 @@ function Navbar() {
               <Link
                 to="/chakriya-natthanicha-webapp/staff"
                 className="nav-link nav-font"
-                style={{ color: isCurrentPage("staff") }}
+                style={{ color: isCurrentPage("staff"), fontSize:"1.2em" }}
               >
                 <FaLock /> ผู้ดูแล
               </Link>

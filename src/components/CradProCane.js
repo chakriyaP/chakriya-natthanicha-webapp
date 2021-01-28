@@ -10,7 +10,7 @@ export const CradProCane = (props) => {
         class="card-body"
         style={{ backgroundColor: seconeColor, border: "none", borderBottomLeftRadius:"15px",borderBottomRightRadius: "15px" }}
       >
-        <p class="card-text font-weight-bold" style={{ fontSize: "1.25em", border:"none" }}>
+        <p class="card-text font-weight-bold fs-5" style={{  border:"none" }}> 
           {valuePro}
         </p>
         <p class="card-text ml-5">{unit}</p>
@@ -18,3 +18,6 @@ export const CradProCane = (props) => {
     </div>
   );
 };
+
+
+//fontSize: "1.25em"

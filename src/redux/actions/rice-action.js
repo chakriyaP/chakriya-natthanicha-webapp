@@ -17,6 +17,13 @@ export const riceAction = {
     setRice3: (value) => ({
         type: RICE_STATE.RICE3,
         value
+    }),
+    setProcessRice: (value) => ({
+        type: RICE_STATE.PROCESSRICE,
+        value
     })
 }
     
+
+
+   

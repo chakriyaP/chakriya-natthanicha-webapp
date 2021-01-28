@@ -10,9 +10,16 @@ import { useHistory } from "react-router-dom";
 
 function Home() {
   let history = useHistory();
+  // console.log(localStorage.getItem("countProcrsee"));
+  // (localStorage.getItem("countProcrsee")) == 0 ? (
+  //   window.localStorage.setItem(`countProcrsee`,0)
+  //   window.localStorage.setItem(`countProcrseeCane`,0)
+  // ) : null
+   
+  window.localStorage.setItem(`countProcrsee`,0)
+  window.localStorage.setItem(`countProcrseeCane`,0)
   
-  window.localStorage.setItem(`countProcrsee`,0);
-  window.localStorage.setItem(`countProcrseeCane`,0);
+  
 
   const P = 11722632; //ราคาคันรถอ้อย
   const S = 1172263; //มูลค่าซาก
