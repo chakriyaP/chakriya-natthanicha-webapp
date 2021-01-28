@@ -114,7 +114,7 @@ function ProcessRice() {
             onReset={handleReset}
             className="col-lg-6 col-md-8 col-sm-12"
           >
-           
+           <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
           </form>
         </div>
         <div className="container-fluid row d-flex align-items-center justify-content-around ">
@@ -147,7 +147,7 @@ function ProcessRice() {
               ดูรายละเอียดเพิ่มเติม
             </button>
         </div>
-        <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
+        
       </div>
     </div>
   );
