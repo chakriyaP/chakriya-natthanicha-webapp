@@ -8,6 +8,7 @@ import { riceAction } from "../redux/actions/rice-action";
 import { RICE_STATE, riceState } from "../redux/reducers/valueRiceReducer";
 import { useHistory } from "react-router-dom";
 import {FaArrowRight} from "react-icons/fa";
+import Footer from "../components/Footer"
 
 
 
@@ -158,6 +159,7 @@ function ProcessRice() {
           <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
         </form>
       </div>
+      <Footer/>
     </div>
   );
 }

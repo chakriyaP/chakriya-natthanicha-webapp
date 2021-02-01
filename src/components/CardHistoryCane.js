@@ -26,7 +26,9 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="1"
                 nameCard="รายจ่าย"
-                outPutCard={NumberFormat(procressObject["expenses"])}
+                // outPutCard={NumberFormat(procressObject["expenses"])}
+                outPutCard={procressObject["expenses"]}
+
                 unitCard="บาท/ปี"
                 backgroundColor="#FFD571"
                 titleColor = "#353E3B"
@@ -36,7 +38,9 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="2"
                 nameCard="รายได้"
-                outPutCard={NumberFormat(procressObject["income"])}
+                // outPutCard={NumberFormat(procressObject["income"])}
+                outPutCard={procressObject["income"]}
+
                 unitCard="บาท/ปี"
                 backgroundColor="#D6F8B8"
                 titleColor = "#353E3B"
@@ -46,7 +50,9 @@ function CardHistoryCane(props) {
               <CardDetail
                 icon="3"
                 nameCard="คุ้มทุน"
-                outPutCard={NumberFormat(procressObject["years"])}
+                // outPutCard={NumberFormat(procressObject["years"])}
+                outPutCard={procressObject["years"]}
+
                 unitCard="ปี"
                 backgroundColor="#353E3B"
                 titleColor = "#eee"

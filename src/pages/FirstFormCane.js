@@ -78,11 +78,10 @@ function FirstFormCane() {
               unit="%"
             />
 
-            <div className="card-body d-flex flex-column align-items-center ">
-              <div className="col-lg-8 col-md-8 col-sm-10">
+<div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
                 <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
               </div>
-            </div>
+       
           </form>
         </div>
       </div>

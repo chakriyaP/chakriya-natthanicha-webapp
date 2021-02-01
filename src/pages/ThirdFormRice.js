@@ -41,9 +41,9 @@ function ThirdFormRice() {
   };
 
   // log ดูค่าที่ได้จากการเก็บเเฉยๆ เวลาค่ามันเปลี่ยน
-  // useEffect(() => {
-  //   console.log("rice3", rice3);
-  // }, [rice3]);
+  useEffect(() => {
+    console.log("rice3", rice3);
+  }, [rice3]);
 
   return (
     <div className="bg-img d-flex justify-content-center align-items-center row font  ml-0 mr-0">
@@ -108,9 +108,10 @@ function ThirdFormRice() {
               onChange={handleChange}
               // background="#f2f2f2"
             />
-              <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
-                <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
-              </div>
+           
+            <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
+              <ButtonForForm namePer="ย้อนกลับ" nameNext="ประมวลผล" />
+            </div>
           </form>
         </div>
       </div>

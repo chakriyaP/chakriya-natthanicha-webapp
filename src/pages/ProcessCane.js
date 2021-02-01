@@ -196,15 +196,15 @@ const ProcessCane = () => {
     setHighWork(Math.abs(((15200 - work * 1.1) * 100) / 6910));
     setMediumWork(Math.abs(((work * 1.1 - work * 0.9) * 100) / 6910));
     setLowWork(Math.abs(((work * 0.9 - 8290) * 100) / 6910));
-    setSumWork(highWork + mediumWork + lowWork);   
-  
+    setSumWork(highWork + mediumWork + lowWork);
+
     setWorkloadReadings([
       {
-        value:(100 * highWork) / sumWork,
+        value: (100 * highWork) / sumWork,
         color: "#4AEC7B",
       },
       {
-        value: (100 * mediumWork ) / sumWork,
+        value: (100 * mediumWork) / sumWork,
         color: "#FFD571",
       },
       {
@@ -219,14 +219,14 @@ const ProcessCane = () => {
   const [years, setYears] = useState(0);
 
   useEffect(() => {
-  //    fetch(
-  //   `https://asia-east2-webapp-project-78b5f.cloudfunctions.net/api/valuesDefault`
-  // )
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     // console.log(data);
-  //   })
-  //   .catch((err) => console.log(err));
+    //    fetch(
+    //   `https://asia-east2-webapp-project-78b5f.cloudfunctions.net/api/valuesDefault`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     // console.log(data);
+    //   })
+    //   .catch((err) => console.log(err));
     var valueDefault = JSON.parse(sessionStorage.getItem("valueDeault"));
     let D = (valueDefault["P"] - valueDefault["S"]) / valueDefault["Y"];
     let IT =
@@ -492,24 +492,22 @@ const ProcessCane = () => {
                   </div>
                 </div>
               </div>
-            {/* </div>
-        
-            <div> */}
-              <a>
+              
+              {/* <a>
                 <ins>ดูประวัติการคำนวณ </ins>{" "}
-              </a>
-
+              </a> */}
             </div>
-            
           </div>
-          <div className="text-center col-lg-10">
-          <form onSubmit={handleSubmit} onReset={handleReset}>
+          <div className=" col-12  d-flex align-items-center justify-content-center mb-4">
+            <form className="col-12 d-flex align-items-center justify-content-center" onSubmit={handleSubmit} onReset={handleReset} >
               <ButtonForForm namePer="ย้อนกลับ" nameNext="บันทึก" />
             </form>
           </div>
-          
+
+          {/* <div className="col-lg-12 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-center mb-5">
+                <ButtonForForm namePer="ย้อนกลับ" nameNext="ถัดไป" />
+              </div> */}
         </div>
-        
       </div>
     </div>
   );
