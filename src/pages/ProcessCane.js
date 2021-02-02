@@ -364,7 +364,7 @@ const ProcessCane = () => {
                       }}
                     />
                   </div>
-                  <div className="col-12 mt-2">
+                  {/* <div className="col-12 mt-2">
                     <MultiColorProgressBarSmall
                       readings={fixRange}
                       scale={2}
@@ -380,10 +380,10 @@ const ProcessCane = () => {
                         setBarrier(value);
                       }}
                     />
-                  </div>
+                  </div> */}
                 </div>
 
-                <div className="col-5 mt-3">
+                {/* <div className="col-5 mt-3">
                   <MultiColorProgressBar
                     readings={produceReadings}
                     scale={4}
@@ -398,7 +398,7 @@ const ProcessCane = () => {
                       setProduct(value);
                     }}
                   />
-                </div>
+                </div> */}
               </div>
 
               <div
@@ -416,7 +416,7 @@ const ProcessCane = () => {
                   ข้อมูลรายได้
                 </div>
                 <div className="col-6 mt-3">
-                  <MultiColorProgressBar
+                  {/* <MultiColorProgressBar
                     readings={wagesReadings}
                     scale={4}
                     nameLable="ค่าจ้าง "
@@ -428,11 +428,11 @@ const ProcessCane = () => {
                     onSliderChange={(value) => {
                       setWages(value);
                     }}
-                  />
+                  /> */}
                 </div>
 
                 <div className="col-6 mt-3">
-                  <MultiColorProgressBar
+                  {/* <MultiColorProgressBar
                     readings={workloadReadings}
                     scale={4}
                     nameLable="ปริมาณงาน"
@@ -444,7 +444,7 @@ const ProcessCane = () => {
                     onSliderChange={(value) => {
                       setWorkload(value);
                     }}
-                  />
+                  /> */}
                 </div>
               </div>
 
