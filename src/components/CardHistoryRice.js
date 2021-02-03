@@ -11,21 +11,22 @@ function CardHistory(props) {
 
 
   return (
-    <div >
+    <div className="col-lg-11" >
       <div
-        class="card mb-3  backGround row  "
-        style={{ maxWidth: "1200px", borderRadius: "25px" }}>
+        class="card mb-3  backGround   "
+        style={{ borderRadius: "25px" }}>
         <div class="row no-gutters ">
           <div
-            class="col-md-2 d-flex justify-content-center align-items-center bg-card-history "
+            class="rounded-sm col-lg-2 col-md-2 d-flex justify-content-center align-items-center bg-card-history "
             style={{
               borderTopLeftRadius: "25px",
               borderBottomLeftRadius: "25px",
+              
             }}> 
-            <h5 class="card-title p-4 "style={{textAlign:"center"}}>{titleCard}</h5>
+            <h5 class=" font card-title p-4 "style={{textAlign:"center"}}>{titleCard}</h5>
           </div>
-          <div className="col-md-10">
-            <div className="card-body d-flex flex-row justify-content-center align-items-center" style={{textAlign:"center"}}>
+          <div className="col-lg-10 col-md-10 col-sm-12">
+            <div className="row p-2 d-flex flex-row  justify-content-center align-items-center" style={{textAlign:"center"}}>
               <CardDetail
                 icon="0"
                 nameCard="ค่าใช้จ่ายคงที่"
