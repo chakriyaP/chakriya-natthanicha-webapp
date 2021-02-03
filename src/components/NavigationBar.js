@@ -59,15 +59,7 @@ function Navbar() {
                 หน้าหลัก
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/chakriya-natthanicha-webapp/caneProcess"
-                className="nav-link nav-font"
-                style={{ color: isCurrentPage("cane"), fontSize: "1.25em" }}
-              >
-                รถตัดอ้อย
-              </Link>
-            </li>
+            
             <li className="nav-item">
               <Link
                 to="/chakriya-natthanicha-webapp/rice"
@@ -75,6 +67,15 @@ function Navbar() {
                 style={{ color: isCurrentPage("rice"), fontSize: "1.25em" }}
               >
                 เครื่องเกี่ยวนวดข้าว
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/chakriya-natthanicha-webapp/caneProcess"
+                className="nav-link nav-font"
+                style={{ color: isCurrentPage("cane"), fontSize: "1.25em" }}
+              >
+                เครื่องตัดอ้อย
               </Link>
             </li>
             <li className="nav-item">

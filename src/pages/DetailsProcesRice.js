@@ -19,59 +19,100 @@ function DetailsProcesRice() {
   const { af, wf, as, ws, w } = rice3;
   const { fixedCost, h, v, payBackPeriod } = processRice;
 
- 
-
   const [option, setOption] = useState({
     chart: {
       id: "basic-bar",
     },
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      categories: [
+        "0",
+        "500",
+        "1,000",
+        "1,500",
+        "2,000",
+        "2,500",
+        "3,000",
+        "3,500",
+      ],
     },
     title: {
-      text: 'ความสัมพันธ์ระหว่างรายรับจากการเก็บเกี่ยวข้าวและระยะเวลาคืนทุน',
-      align: 'left'
+      text: "ความสัมพันธ์ระหว่างรายรับจากการเก็บเกี่ยวข้าวและระยะเวลาคืนทุน",
+      align: "left",
     },
     yaxis: {
       title: {
-        text: 'ระยะเวลาคืนทุน'
+        text: "ค่าใช่จ่าย (บาท/ปี)",
       },
     },
     xaxis: {
       title: {
-        text: 'รายรับจากการเก็บเกี่ยวข้าว'
+        text: "พื้นที่เก็บเกี่ยว (ไร่/ปี)",
       },
     },
   });
+
   const [series, setSeries] = useState([
     {
       name: "ราคาเวลาคืนทุน",
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
-      
+      data: ["200,000", "300,000", "400,000", "500,000", "600,000", "700,000", "800,000", "900,000"],
     },
   ]);
 
   useEffect(() => {
+    const A = [
+      "0",
+      "500",
+      "1,000",
+      "1,500",
+      "2,000",
+      "2,500",
+      "3,000",
+      "3,500",
+    ];
+    // const [datas, setDatas] = useState(["200,000", "300,000", "400,000", "500,000", "600,000", "700,000", "800,000", "900,000", "1,000,000" ])
+    // var  datas = [];
+    // for (i = 0; i < A.length; i++) {
+    //   datas[i] = `"${
+    //     ((p - s) / y + i + g) * p +
+    //     (la * (af + as) +
+    //       ja * (af + as) +
+    //       fa * fc * (af + as) +
+    //       (ol / oa) * oc * (af + as) +
+    //       mc * (af * as)) *
+    //       A[i]
+    //   }"`;
+    // }
+
     setOption({
       chart: {
         id: "basic-bar",
         background: "#fff",
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1999],
+        categories: [
+          "0",
+          "500",
+          "1,000",
+          "1,500",
+          "2,000",
+          "2,500",
+          "3,000",
+          "3,500",
+        ],
       },
     });
 
     setSeries([
       {
         name: "ราคาเวลาคืนทุน",
-        data: [30, 40, 45, 50, 49, 60, 70, 91],
+        data: ["200,000", "300,000", "400,000", "500,000", "600,000", "700,000", "800,000", "900,000" ],
+
         title: {
-          text: 'Price'
-        }
+          text: "Price",
+        },
       },
     ]);
-  }, []);
+  }, [series, option]);
 
   return (
     <div className="bg-process pb- ">
@@ -133,44 +174,78 @@ function DetailsProcesRice() {
       </div>
       <div className="container-fluid d-flex flex-roww justify-content-around align-items-center row pb-4 mt-5">
         <div className="col-5">
-          <div className="card font" >
-            <div class="card-header shadow text-white" style={{backgroundColor: "#B3B842"}} >ค่าใช้จ่ายคงที่</div>
+          <div className="card font">
+            <div
+              class="card-header shadow text-white"
+              style={{ backgroundColor: "#B3B842" }}
+            >
+              ค่าใช้จ่ายคงที่
+            </div>
             <div class="card-body row">
-            <div className="col-6" style={{fontWeight:"bold"}}>ชื่อ</div>
-            <div className="col-6 text-right" style={{fontWeight:"bold"}}>บาท/ปี</div>
+              <div className="col-6" style={{ fontWeight: "bold" }}>
+                ชื่อ
+              </div>
+              <div className="col-6 text-right" style={{ fontWeight: "bold" }}>
+                บาท/ปี
+              </div>
 
               <div className="col-6">ค่าเสื่อม</div>
-              <div className="col-6 text-right">{NumberFormat((p-s)/y)} </div>
+              <div className="col-6 text-right">
+                {NumberFormat((p - s) / y)}{" "}
+              </div>
               <div className="col-6">ค่าดอกเบื้ย</div>
-              <div className="col-6 text-right">{NumberFormat(((p-s)/2)*(i/100))}  </div>
+              <div className="col-6 text-right">
+                {NumberFormat(((p - s) / 2) * (i / 100))}{" "}
+              </div>
               <div className="col-6">ค่าโรงเก็บเครื่อง</div>
-              <div className="col-6 text-right">{NumberFormat(g)}  </div>
+              <div className="col-6 text-right">{NumberFormat(g)} </div>
               <div className="col-6">ค่าภาษี/ประกัน</div>
-              <div className="col-6 text-right">{NumberFormat(t)}  </div>
+              <div className="col-6 text-right">{NumberFormat(t)} </div>
               <div className="col-6">ค่าใช้จ่านอื่นๆ</div>
-              <div className="col-6 text-right">{NumberFormat(e)}  </div>
+              <div className="col-6 text-right">{NumberFormat(e)} </div>
             </div>
           </div>
         </div>
         <div className="col-5">
           {" "}
-          <div className="card font" >
-            <div class="card-header text-white" style={{backgroundColor: "#B3B842"}}>ค่าใช้จ่ายแปรผัน</div>
+          <div className="card font">
+            <div
+              class="card-header text-white"
+              style={{ backgroundColor: "#B3B842" }}
+            >
+              ค่าใช้จ่ายแปรผัน
+            </div>
             <div class="card-body row">
-            <div className="col-6" style={{fontWeight:"bold"}}>ชื่อ</div>
-            <div className="col-6 text-right" style={{fontWeight:"bold"}}>บาท/ปี</div>
+              <div className="col-6" style={{ fontWeight: "bold" }}>
+                ชื่อ
+              </div>
+              <div className="col-6 text-right" style={{ fontWeight: "bold" }}>
+                บาท/ปี
+              </div>
               <div className="col-6">ค่าคนขับและดูแลเครื่อง</div>
-              <div className="col-6 text-right">{NumberFormat(la*(af+as))}  บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat(la * (af + as))}{" "}
+              </div>
               <div className="col-6">ค่านายหน้า</div>
-              <div className="col-6 text-right">{NumberFormat(ja*(af+as))} บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat(ja * (af + as))}
+              </div>
               <div className="col-6">ค่าน้ำมันเชื้อเพลิง</div>
-              <div className="col-6 text-right">{NumberFormat(fa*fc*(af+as))}  บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat(fa * fc * (af + as))}{" "}
+              </div>
               <div className="col-6">ค่าน้ำมันเครื่อง</div>
-              <div className="col-6 text-right">{NumberFormat((ol/oa)*oc*(af+as))} บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat((ol / oa) * oc * (af + as))}{" "}
+              </div>
               <div className="col-6">ค่าซ่อมแซมและบำรุงรักษา</div>
-              <div className="col-6 text-right">{NumberFormat(mc*(af+as))} บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat(mc * (af + as))}{" "}
+              </div>
               <div className="col-6">ค่าขนย้ายเครื่อง</div>
-              <div className="col-6 text-right">{NumberFormat(tsa*(af+as))} บาท/ปี</div>
+              <div className="col-6 text-right">
+                {NumberFormat(tsa * (af + as))}{" "}
+              </div>
             </div>
           </div>
         </div>
