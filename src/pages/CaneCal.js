@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function CaneCal() {
   return (
     <div>
@@ -9,8 +8,5 @@ function CaneCal() {
     </div>
   );
 }
-
-
-
 
 export default CaneCal;
